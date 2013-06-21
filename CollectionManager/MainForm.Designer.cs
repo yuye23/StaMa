@@ -35,6 +35,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAddStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbEditStamp = new System.Windows.Forms.ToolStripButton();
+            this.tsbDeleteAtamp = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -124,7 +125,8 @@
             this.toolStrip1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbAddStamp,
-            this.tsbEditStamp});
+            this.tsbEditStamp,
+            this.tsbDeleteAtamp});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -153,6 +155,16 @@
             this.tsbEditStamp.Text = "编辑邮票";
             this.tsbEditStamp.Click += new System.EventHandler(this.tsbEditStamp_Click);
             // 
+            // tsbDeleteAtamp
+            // 
+            this.tsbDeleteAtamp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteAtamp.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteAtamp.Image")));
+            this.tsbDeleteAtamp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteAtamp.Name = "tsbDeleteAtamp";
+            this.tsbDeleteAtamp.Size = new System.Drawing.Size(76, 22);
+            this.tsbDeleteAtamp.Text = "删除邮票";
+            this.tsbDeleteAtamp.Click += new System.EventHandler(this.tsbDeleteAtamp_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -168,11 +180,11 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 656);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 655);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -191,7 +203,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 648);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 647);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
@@ -202,7 +214,7 @@
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 644);
+            this.treeView1.Size = new System.Drawing.Size(236, 643);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -222,8 +234,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 648);
-            this.splitContainer2.SplitterDistance = 199;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 647);
+            this.splitContainer2.SplitterDistance = 198;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -262,7 +274,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 194);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -620,11 +632,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 656);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 655);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -636,28 +648,29 @@
             this.deleteNode,
             this.addStampMS});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // addChild
             // 
             this.addChild.Name = "addChild";
-            this.addChild.Size = new System.Drawing.Size(118, 22);
+            this.addChild.Size = new System.Drawing.Size(152, 22);
             this.addChild.Text = "增加子类";
             this.addChild.Click += new System.EventHandler(this.addChild_Click);
             // 
             // deleteNode
             // 
             this.deleteNode.Name = "deleteNode";
-            this.deleteNode.Size = new System.Drawing.Size(118, 22);
+            this.deleteNode.Size = new System.Drawing.Size(152, 22);
             this.deleteNode.Text = "删除选中";
             this.deleteNode.Click += new System.EventHandler(this.deleteNode_Click);
             // 
             // addStampMS
             // 
             this.addStampMS.Name = "addStampMS";
-            this.addStampMS.Size = new System.Drawing.Size(118, 22);
+            this.addStampMS.Size = new System.Drawing.Size(152, 22);
             this.addStampMS.Text = "新增邮票";
+            this.addStampMS.Click += new System.EventHandler(this.addStampMS_Click);
             // 
             // view_stampinfoTableAdapter
             // 
@@ -765,5 +778,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem addStampMS;
         private System.Windows.Forms.ToolStripButton tsbEditStamp;
+        private System.Windows.Forms.ToolStripButton tsbDeleteAtamp;
     }
 }

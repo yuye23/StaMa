@@ -60,9 +60,9 @@ namespace CollectionManager
             {
                 foreach (DataRow r in row)
                 {
-                    TreeNode node = nodes.Nodes.Add(r["ID"].ToString(), r["typename"].ToString());
+                    TreeNode node = nodes.Nodes.Add(r["id"].ToString(), r["typename"].ToString());
                     node.ContextMenuStrip = contextMenuStrip1;
-                    recursionShow(node, r["ID"].ToString());
+                    recursionShow(node, r["id"].ToString());
                 }
             }
         }
@@ -274,30 +274,36 @@ namespace CollectionManager
 
         private void addStampMS_Click(object sender, EventArgs e)
         {
-
+            tsbAddStamp_Click(sender, e);
         }
 
         private void tsbAddStamp_Click(object sender, EventArgs e)
         {
             AddStampForm addStampForm=new AddStampForm();
+            addStampForm.Tag = this.treeView1.SelectedNode.Name;
+            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
             if (addStampForm.ShowDialog() == DialogResult.OK)
             {
+                view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                this.treeView1.SelectedNode = selectedTreeNode;
                 
-                //this.treeView1.SelectedNode = this.treeView1.Nodes[((ComboBox)addStampForm.Controls["cbType"]).SelectedValue.ToString()];
             }
         }
 
         private void tsbEditStamp_Click(object sender, EventArgs e)
         {
             AddStampForm addStampForm = new AddStampForm();
-
+            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
+            //this.dataGridView1.se;
+            addStampForm.Text = "编辑邮票";
             if (dataGridView1.SelectedRows.Count != 0)
             {
                 addStampForm.Tag = dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value;
                 if (addStampForm.ShowDialog() == DialogResult.OK)
                 {
-
-                    view_stampinfoTableAdapter.Fill(this.collectionDataSet.view_stampinfo);
+                    ////////
+                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                    this.treeView1.SelectedNode = selectedTreeNode;
                 }
             }
             else
@@ -305,6 +311,30 @@ namespace CollectionManager
                 MessageBox.Show("请先选择要编辑的邮票！");
             }
         }
+
+        private void tsbDeleteAtamp_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                try
+                {
+                    stampinfoTableAdapter stainfoAdp = new stampinfoTableAdapter();
+                    stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
+                }
+                catch
+                {
+                    MessageBox.Show("未成功删除！");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("请先选择要编辑的邮票！");
+            }
+               
+        }
+
+
 
 
     }

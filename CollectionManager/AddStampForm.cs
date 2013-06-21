@@ -34,85 +34,95 @@ namespace CollectionManager
             this.stamptypeTableAdapter.Fill(this.collectionDataSet.stamptype);
             // TODO: 这行代码将数据加载到表“collectionDataSet.stampunit”中。您可以根据需要移动或删除它。
             this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
-            if (this.Tag != null)
+
+            if (((AddStampForm)sender).Text == "编辑邮票")
             {
-                this.Text = "编辑邮票";
-                this.btnAccept.Text = "保存编辑";
-                CollectionManager.Database.CollectionDataSet.stampinfoDataTable stampinfo = stampinfoTA.GetDataByID(Convert.ToInt32(this.Tag));
-                if (stampinfo != null)
+
+                if (this.Tag != null)
                 {
-                    this.tbSCode.Text = stampinfo.Rows[0]["code"].ToString();
-                    this.tbSName.Text = stampinfo.Rows[0]["name"].ToString();
-                    this.tbSPubDate.Text = stampinfo.Rows[0]["publishdate"].ToString();
-                    this.tbSPrice.Text = stampinfo.Rows[0]["price_ori"].ToString();
-                    this.cbUnit.SelectedValue = stampinfo.Rows[0]["unitid"].ToString();
-                    this.cbType.SelectedValue = stampinfo.Rows[0]["typeid"].ToString();
-                    this.cbClass.SelectedValue = stampinfo.Rows[0]["classid"].ToString();
-                    string picPath = stampinfo.Rows[0]["picpath"].ToString();
-                    String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
-                    while (picPath.IndexOf(",") != -1)
+                    this.Text = "编辑邮票";
+                    this.btnAccept.Text = "保存编辑";
+                    CollectionManager.Database.CollectionDataSet.stampinfoDataTable stampinfo = stampinfoTA.GetDataByID(Convert.ToInt32(this.Tag));
+                    if (stampinfo != null)
                     {
-                        imgArray.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
-                        picPath = picPath.Substring(picPath.IndexOf(",") + 1);
+                        this.tbSCode.Text = stampinfo.Rows[0]["code"].ToString();
+                        this.tbSName.Text = stampinfo.Rows[0]["name"].ToString();
+                        this.tbSPubDate.Text = stampinfo.Rows[0]["publishdate"].ToString();
+                        this.tbSPrice.Text = stampinfo.Rows[0]["price_ori"].ToString();
+                        this.cbUnit.SelectedValue = stampinfo.Rows[0]["unitid"].ToString();
+                        this.cbType.SelectedValue = stampinfo.Rows[0]["typeid"].ToString();
+                        this.cbClass.SelectedValue = stampinfo.Rows[0]["classid"].ToString();
+                        string picPath = stampinfo.Rows[0]["picpath"].ToString();
+                        String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+                        while (picPath.IndexOf(",") != -1)
+                        {
+                            imgArray.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
+                            picPath = picPath.Substring(picPath.IndexOf(",") + 1);
+
+
+                        }
+
+                        this.flowLayoutPanel1.Controls.Clear();
+                        int i = 0;
+                        foreach (string img in imgArray)
+                        {
+                            Panel panel = new Panel();
+                            panel.Size = new System.Drawing.Size(200, 185);
+                            panel.BorderStyle = BorderStyle.FixedSingle;
+                            Bitmap newbitmap = (Bitmap)Image.FromFile(img);
+                            PictureBox picBox = new PictureBox();
+                            picBox.Image = newbitmap;
+                            picBox.SizeMode = PictureBoxSizeMode.Zoom;
+                            picBox.Width = 200;
+                            picBox.Height = 150;
+                            picBox.Location = new Point(0, 0);
+                            //panel.Name = Path.GetFileNameWithoutExtension(img);
+                            picBox.Tag = i;
+
+                            Button btnEditImg = new Button();
+                            Button btnDelImg = new Button();
+                            btnEditImg.Name = "btnEditImg";
+                            btnEditImg.Text = "编辑图片";
+                            btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
+                            btnEditImg.Width = 80;
+                            btnEditImg.Height = 25;
+                            btnEditImg.Location = new Point(10, 155);
+                            btnEditImg.Tag = newbitmap;
+                            btnEditImg.Click += new System.EventHandler(this.btnEditImg_Click);
+
+                            btnDelImg.Name = "btnDelImg";
+                            btnDelImg.Text = "放弃插入";
+                            btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
+                            btnDelImg.Width = 80;
+                            btnDelImg.Height = 25;
+                            btnDelImg.Location = new Point(110, 155);
+                            btnDelImg.Tag = img;
+                            btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
+
+                            panel.Controls.Add(picBox);
+                            panel.Controls.Add(btnEditImg);
+                            panel.Controls.Add(btnDelImg);
+
+
+
+                            this.flowLayoutPanel1.Controls.Add(panel);
+                            //imgArray.Add(img);
+                            listImage.Add(newbitmap);
+                            i++;
+                        }
 
 
                     }
-
-                    this.flowLayoutPanel1.Controls.Clear();
-                    int i = 0;
-                    foreach (string img in imgArray)
+                    else
                     {
-                        Panel panel = new Panel();
-                        panel.Size = new System.Drawing.Size(200, 185);
-                        panel.BorderStyle = BorderStyle.FixedSingle;
-                        Bitmap newbitmap = (Bitmap)Image.FromFile(img);
-                        PictureBox picBox = new PictureBox();
-                        picBox.Image = newbitmap;
-                        picBox.SizeMode = PictureBoxSizeMode.Zoom;
-                        picBox.Width = 200;
-                        picBox.Height = 150;
-                        picBox.Location = new Point(0, 0);
-                        //panel.Name = Path.GetFileNameWithoutExtension(img);
-                        picBox.Tag = i;
-
-                        Button btnEditImg = new Button();
-                        Button btnDelImg = new Button();
-                        btnEditImg.Name = "btnEditImg";
-                        btnEditImg.Text = "编辑图片";
-                        btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
-                        btnEditImg.Width = 80;
-                        btnEditImg.Height = 25;
-                        btnEditImg.Location = new Point(10, 155);
-                        btnEditImg.Tag = newbitmap;
-                        btnEditImg.Click += new System.EventHandler(this.btnEditImg_Click);
-
-                        btnDelImg.Name = "btnDelImg";
-                        btnDelImg.Text = "放弃插入";
-                        btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
-                        btnDelImg.Width = 80;
-                        btnDelImg.Height = 25;
-                        btnDelImg.Location = new Point(110, 155);
-                        btnDelImg.Tag = img;
-                        btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
-
-                        panel.Controls.Add(picBox);
-                        panel.Controls.Add(btnEditImg);
-                        panel.Controls.Add(btnDelImg);
-
-
-
-                        this.flowLayoutPanel1.Controls.Add(panel);
-                        //imgArray.Add(img);
-                        listImage.Add(newbitmap);
-                        i++;
+                        MessageBox.Show("请先选择要编辑的邮票！");
                     }
-
-
                 }
-                else
-                {
-                    MessageBox.Show("请先选择要编辑的邮票！");
-                }
+
+            }
+            else
+            {
+                this.cbType.SelectedValue = this.Tag.ToString();
             }
 
         }
