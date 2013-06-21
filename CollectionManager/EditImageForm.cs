@@ -179,15 +179,16 @@ namespace CollectionManager
                     this.Tag = pictureBox1.Image;
                     isSaveed = 1;
                     //((PictureBox)(((Button)sender).Parent.Controls[0])).Image = pictureBox1.Image;
-                    //this.DialogResult = DialogResult.OK;
+                    this.DialogResult = DialogResult.OK;
                 }
             }
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            this.Tag = pictureBox1.Image;
+
             this.DialogResult = DialogResult.OK;
+
         }
 
 

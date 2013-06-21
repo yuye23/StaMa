@@ -246,7 +246,7 @@ namespace CollectionManager
                         btnEditImg.Width = 80;
                         btnEditImg.Height = 25;
                         btnEditImg.Location = new Point(10, 155);
-                        btnEditImg.Tag = img;
+                        btnEditImg.Tag = newbitmap;
                         btnEditImg.Click += new System.EventHandler(this.btnEditImg_Click);
 
                         btnDelImg.Name = "btnDelImg";

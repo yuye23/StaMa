@@ -157,7 +157,7 @@
             // 
             // btnEndView
             // 
-            this.btnEndView.Location = new System.Drawing.Point(697, 3);
+            this.btnEndView.Location = new System.Drawing.Point(631, 16);
             this.btnEndView.Name = "btnEndView";
             this.btnEndView.Size = new System.Drawing.Size(100, 30);
             this.btnEndView.TabIndex = 9;
