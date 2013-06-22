@@ -105,21 +105,38 @@ namespace CollectionManager
             }
         }
 
+        private Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoAdapter= new Database.CollectionDataSetTableAdapters.stampinfoTableAdapter();
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count != 0)
             {
                 if (this.Text == "邮票类型管理")
                 {
+                    if (stampinfoAdapter.ScalarQueryByClassID(Convert.ToInt32(this.listBox1.SelectedValue)) == 0)
+                    {
+                        this.stampclassTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
+                        this.stampclassTableAdapter.Fill(this.collectionDataSet.stampclass);
 
-                    this.stampclassTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
-                    this.stampclassTableAdapter.Fill(this.collectionDataSet.stampclass);
+                    }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此类型的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                 }
                 if (this.Text == "邮票单位管理")
                 {
-                    this.stampunitTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
-                    this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
+                    if (stampinfoAdapter.ScalarQueryByUnitID(Convert.ToInt32(this.listBox1.SelectedValue)) == 0)
+                    {
+                        this.stampunitTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
+                        this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
+                    }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此单位的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
+
 
             }
             else

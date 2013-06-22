@@ -37,6 +37,7 @@
             this.tsddbStampQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiStampClassManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStampUnitManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAddStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbEditStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteAtamp = new System.Windows.Forms.ToolStripButton();
@@ -84,10 +85,15 @@
             this.rtMemo = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addStampMS = new System.Windows.Forms.ToolStripMenuItem();
-            this.addChild = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.cMSDataGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiEditStamp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteStamp = new System.Windows.Forms.ToolStripMenuItem();
+            this.cMSTypeTreeNode = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmiAddStamp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAddChild = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDeleteNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUpNode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiDownNode = new System.Windows.Forms.ToolStripMenuItem();
             this.view_stampinfoTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -113,7 +119,8 @@
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.cMSDataGridView.SuspendLayout();
+            this.cMSTypeTreeNode.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -138,6 +145,7 @@
             this.toolStrip1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsddbStampQueryManage,
+            this.toolStripSeparator1,
             this.tsbAddStamp,
             this.tsbEditStamp,
             this.tsbDeleteAtamp});
@@ -173,6 +181,11 @@
             this.tsmiStampUnitManage.Size = new System.Drawing.Size(140, 22);
             this.tsmiStampUnitManage.Text = "单位管理";
             this.tsmiStampUnitManage.Click += new System.EventHandler(this.tsmiUnitManage_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // tsbAddStamp
             // 
@@ -254,6 +267,7 @@
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.FullRowSelect = true;
             this.treeView1.HideSelection = false;
+            this.treeView1.ItemHeight = 22;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
@@ -321,6 +335,8 @@
             this.dataGridView1.Size = new System.Drawing.Size(764, 193);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -685,36 +701,74 @@
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // contextMenuStrip1
+            // cMSDataGridView
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStampMS,
-            this.addChild,
-            this.deleteNode});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.cMSDataGridView.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiEditStamp,
+            this.tsmiDeleteStamp});
+            this.cMSDataGridView.Name = "cMSDataGridView";
+            this.cMSDataGridView.Size = new System.Drawing.Size(125, 48);
             // 
-            // addStampMS
+            // tsmiEditStamp
             // 
-            this.addStampMS.Name = "addStampMS";
-            this.addStampMS.Size = new System.Drawing.Size(124, 22);
-            this.addStampMS.Text = "新增邮票";
-            this.addStampMS.Click += new System.EventHandler(this.addStampMS_Click);
+            this.tsmiEditStamp.Name = "tsmiEditStamp";
+            this.tsmiEditStamp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiEditStamp.Text = "编辑邮票";
+            this.tsmiEditStamp.Click += new System.EventHandler(this.tsmiEditStamp_Click);
             // 
-            // addChild
+            // tsmiDeleteStamp
             // 
-            this.addChild.Name = "addChild";
-            this.addChild.Size = new System.Drawing.Size(124, 22);
-            this.addChild.Text = "增加子类";
-            this.addChild.Click += new System.EventHandler(this.addChild_Click);
+            this.tsmiDeleteStamp.Name = "tsmiDeleteStamp";
+            this.tsmiDeleteStamp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDeleteStamp.Text = "删除邮票";
+            this.tsmiDeleteStamp.Click += new System.EventHandler(this.tsmiDeleteStamp_Click);
             // 
-            // deleteNode
+            // cMSTypeTreeNode
             // 
-            this.deleteNode.Name = "deleteNode";
-            this.deleteNode.Size = new System.Drawing.Size(124, 22);
-            this.deleteNode.Text = "删除选中";
-            this.deleteNode.Click += new System.EventHandler(this.deleteNode_Click);
+            this.cMSTypeTreeNode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAddStamp,
+            this.tsmiAddChild,
+            this.tsmiDeleteNode,
+            this.tsmiUpNode,
+            this.tsmiDownNode});
+            this.cMSTypeTreeNode.Name = "contextMenuStrip1";
+            this.cMSTypeTreeNode.Size = new System.Drawing.Size(125, 114);
+            this.cMSTypeTreeNode.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // tsmiAddStamp
+            // 
+            this.tsmiAddStamp.Name = "tsmiAddStamp";
+            this.tsmiAddStamp.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddStamp.Text = "新增邮票";
+            this.tsmiAddStamp.Click += new System.EventHandler(this.addStampMS_Click);
+            // 
+            // tsmiAddChild
+            // 
+            this.tsmiAddChild.Name = "tsmiAddChild";
+            this.tsmiAddChild.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddChild.Text = "增加子类";
+            this.tsmiAddChild.Click += new System.EventHandler(this.addChild_Click);
+            // 
+            // tsmiDeleteNode
+            // 
+            this.tsmiDeleteNode.Name = "tsmiDeleteNode";
+            this.tsmiDeleteNode.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDeleteNode.Text = "删除选中";
+            this.tsmiDeleteNode.Click += new System.EventHandler(this.deleteNode_Click);
+            // 
+            // tsmiUpNode
+            // 
+            this.tsmiUpNode.Name = "tsmiUpNode";
+            this.tsmiUpNode.Size = new System.Drawing.Size(152, 22);
+            this.tsmiUpNode.Text = "向上移动";
+            this.tsmiUpNode.Click += new System.EventHandler(this.tsmiUpNode_Click);
+            // 
+            // tsmiDownNode
+            // 
+            this.tsmiDownNode.Name = "tsmiDownNode";
+            this.tsmiDownNode.Size = new System.Drawing.Size(152, 22);
+            this.tsmiDownNode.Text = "向下移动";
+            this.tsmiDownNode.Click += new System.EventHandler(this.tsmiDownNode_Click);
             // 
             // view_stampinfoTableAdapter
             // 
@@ -763,7 +817,8 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.cMSDataGridView.ResumeLayout(false);
+            this.cMSTypeTreeNode.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,9 +833,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem addChild;
-        private System.Windows.Forms.ToolStripMenuItem deleteNode;
+        private System.Windows.Forms.ContextMenuStrip cMSTypeTreeNode;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddChild;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteNode;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private Database.CollectionDataSet collectionDataSet;
@@ -822,12 +877,18 @@
         private System.Windows.Forms.RichTextBox rtMemo;
         private System.Windows.Forms.ToolStripButton tsbAddStamp;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.ToolStripMenuItem addStampMS;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddStamp;
         private System.Windows.Forms.ToolStripButton tsbEditStamp;
         private System.Windows.Forms.ToolStripButton tsbDeleteAtamp;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripDropDownButton tsddbStampQueryManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStampClassManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStampUnitManage;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ContextMenuStrip cMSDataGridView;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditStamp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDeleteStamp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUpNode;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDownNode;
     }
 }

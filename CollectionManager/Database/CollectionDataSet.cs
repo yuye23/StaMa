@@ -7,10 +7,6 @@
 
 namespace CollectionManager.Database.CollectionDataSetTableAdapters
 {
-    partial class stamptypeTableAdapter
-    {
-    }
-    
-    
+  
 
 }
