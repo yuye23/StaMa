@@ -9,27 +9,26 @@ using System.Windows.Forms;
 
 namespace CollectionManager
 {
-    public partial class AddNodeForm : Form
+    public partial class AddQueryItemNameForm : Form
     {
-        public AddNodeForm()
+        public AddQueryItemNameForm()
         {
             InitializeComponent();
         }
-        public string addNodeTxt="";
-
+        public string addTxt = "";
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
             {
 
-                addNodeTxt = textBox1.Text;
+                addTxt = textBox1.Text;
                 this.DialogResult = DialogResult.OK;
             }
             else
             {
-                MessageBox.Show("请输入子节点名称！");
+                MessageBox.Show("请输入项目名称！");
+
             }
         }
-
     }
 }

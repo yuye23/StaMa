@@ -113,11 +113,12 @@ namespace CollectionManager
 
 
                     }
-                    else
-                    {
-                        MessageBox.Show("请先选择要编辑的邮票！");
-                    }
                 }
+                else
+                {
+                    MessageBox.Show("请先选择要编辑的邮票！");
+                }
+                
 
             }
             else

@@ -32,7 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsddbStampQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiStampClassManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiStampUnitManage = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbAddStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbEditStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteAtamp = new System.Windows.Forms.ToolStripButton();
@@ -81,10 +85,11 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addStampMS = new System.Windows.Forms.ToolStripMenuItem();
             this.addChild = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteNode = new System.Windows.Forms.ToolStripMenuItem();
-            this.addStampMS = new System.Windows.Forms.ToolStripMenuItem();
             this.view_stampinfoTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter();
+            this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -113,26 +118,61 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1026, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 21);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbStampQueryManage,
             this.tsbAddStamp,
             this.tsbEditStamp,
             this.tsbDeleteAtamp});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.Size = new System.Drawing.Size(1026, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsddbStampQueryManage
+            // 
+            this.tsddbStampQueryManage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbStampQueryManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiStampClassManage,
+            this.tsmiStampUnitManage});
+            this.tsddbStampQueryManage.Image = ((System.Drawing.Image)(resources.GetObject("tsddbStampQueryManage.Image")));
+            this.tsddbStampQueryManage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbStampQueryManage.Name = "tsddbStampQueryManage";
+            this.tsddbStampQueryManage.Size = new System.Drawing.Size(85, 22);
+            this.tsddbStampQueryManage.Text = "查询管理";
+            // 
+            // tsmiStampClassManage
+            // 
+            this.tsmiStampClassManage.Name = "tsmiStampClassManage";
+            this.tsmiStampClassManage.Size = new System.Drawing.Size(140, 22);
+            this.tsmiStampClassManage.Text = "分类管理";
+            this.tsmiStampClassManage.Click += new System.EventHandler(this.tsmiClassManage_Click);
+            // 
+            // tsmiStampUnitManage
+            // 
+            this.tsmiStampUnitManage.Name = "tsmiStampUnitManage";
+            this.tsmiStampUnitManage.Size = new System.Drawing.Size(140, 22);
+            this.tsmiStampUnitManage.Text = "单位管理";
+            this.tsmiStampUnitManage.Click += new System.EventHandler(this.tsmiUnitManage_Click);
             // 
             // tsbAddStamp
             // 
@@ -170,11 +210,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
+            this.tabControl1.Location = new System.Drawing.Point(0, 52);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1026, 685);
+            this.tabControl1.Size = new System.Drawing.Size(1026, 682);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -184,7 +224,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 655);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 652);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -203,18 +243,21 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 647);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 644);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
             // 
             // treeView1
             // 
+            this.treeView1.BackColor = System.Drawing.SystemColors.Window;
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.FullRowSelect = true;
+            this.treeView1.HideSelection = false;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 643);
+            this.treeView1.Size = new System.Drawing.Size(236, 640);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -234,8 +277,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 647);
-            this.splitContainer2.SplitterDistance = 198;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 644);
+            this.splitContainer2.SplitterDistance = 197;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -272,9 +315,10 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 194);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 193);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -424,7 +468,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(764, 442);
+            this.groupBox1.Size = new System.Drawing.Size(764, 440);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "详细信息";
@@ -442,7 +486,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer3.Size = new System.Drawing.Size(758, 417);
+            this.splitContainer3.Size = new System.Drawing.Size(758, 415);
             this.splitContainer3.SplitterDistance = 318;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
@@ -477,7 +521,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtMemo);
-            this.splitContainer4.Size = new System.Drawing.Size(318, 417);
+            this.splitContainer4.Size = new System.Drawing.Size(318, 415);
             this.splitContainer4.SplitterDistance = 228;
             this.splitContainer4.TabIndex = 16;
             // 
@@ -615,7 +659,7 @@
             this.rtMemo.Location = new System.Drawing.Point(0, 0);
             this.rtMemo.Name = "rtMemo";
             this.rtMemo.ReadOnly = true;
-            this.rtMemo.Size = new System.Drawing.Size(318, 185);
+            this.rtMemo.Size = new System.Drawing.Size(318, 183);
             this.rtMemo.TabIndex = 0;
             this.rtMemo.Text = "";
             // 
@@ -627,7 +671,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 417);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 415);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // tabPage2
@@ -636,7 +680,7 @@
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 655);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 652);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -644,33 +688,33 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addStampMS,
             this.addChild,
-            this.deleteNode,
-            this.addStampMS});
+            this.deleteNode});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // addStampMS
+            // 
+            this.addStampMS.Name = "addStampMS";
+            this.addStampMS.Size = new System.Drawing.Size(124, 22);
+            this.addStampMS.Text = "新增邮票";
+            this.addStampMS.Click += new System.EventHandler(this.addStampMS_Click);
             // 
             // addChild
             // 
             this.addChild.Name = "addChild";
-            this.addChild.Size = new System.Drawing.Size(152, 22);
+            this.addChild.Size = new System.Drawing.Size(124, 22);
             this.addChild.Text = "增加子类";
             this.addChild.Click += new System.EventHandler(this.addChild_Click);
             // 
             // deleteNode
             // 
             this.deleteNode.Name = "deleteNode";
-            this.deleteNode.Size = new System.Drawing.Size(152, 22);
+            this.deleteNode.Size = new System.Drawing.Size(124, 22);
             this.deleteNode.Text = "删除选中";
             this.deleteNode.Click += new System.EventHandler(this.deleteNode_Click);
-            // 
-            // addStampMS
-            // 
-            this.addStampMS.Name = "addStampMS";
-            this.addStampMS.Size = new System.Drawing.Size(152, 22);
-            this.addStampMS.Text = "新增邮票";
-            this.addStampMS.Click += new System.EventHandler(this.addStampMS_Click);
             // 
             // view_stampinfoTableAdapter
             // 
@@ -691,6 +735,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "收藏管理";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -779,5 +825,9 @@
         private System.Windows.Forms.ToolStripMenuItem addStampMS;
         private System.Windows.Forms.ToolStripButton tsbEditStamp;
         private System.Windows.Forms.ToolStripButton tsbDeleteAtamp;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbStampQueryManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStampClassManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiStampUnitManage;
     }
 }

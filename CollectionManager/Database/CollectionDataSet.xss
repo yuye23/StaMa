@@ -8,16 +8,16 @@
   <Shapes>
     <Shape ID="DesignTable:stamptype" ZOrder="9" X="626" Y="244" Height="246" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:ciontype" ZOrder="8" X="485" Y="43" Height="139" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="92" />
-    <Shape ID="DesignTable:stampclass" ZOrder="7" X="704" Y="70" Height="130" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="79" />
-    <Shape ID="DesignTable:stampunit" ZOrder="6" X="1251" Y="70" Height="105" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="58" />
-    <Shape ID="DesignTable:stampinfo" ZOrder="2" X="977" Y="65" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
-    <Shape ID="DesignTable:view_stampinfo" ZOrder="1" X="1199" Y="193" Height="298" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
+    <Shape ID="DesignTable:stampclass" ZOrder="1" X="704" Y="70" Height="134" Width="218" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:stampunit" ZOrder="7" X="1251" Y="70" Height="105" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="58" />
+    <Shape ID="DesignTable:stampinfo" ZOrder="3" X="977" Y="65" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:view_stampinfo" ZOrder="2" X="1199" Y="193" Height="362" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:stampclassstampinfo" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:stampclassstampinfo" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>911</X>
+          <X>922</X>
           <Y>76</Y>
         </Point>
         <Point>
@@ -26,7 +26,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:stamptypestampinfo" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:stamptypestampinfo" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>926</X>
@@ -38,7 +38,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:stampunitstampinfo" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:stampunitstampinfo" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1294</X>

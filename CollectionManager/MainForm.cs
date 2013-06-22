@@ -16,7 +16,46 @@ namespace CollectionManager
         public MainForm()
         {
             InitializeComponent();
+            this.treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
+            this.treeView1.DrawNode += new DrawTreeNodeEventHandler(treeView1_DrawNode);
         }
+
+
+        //在绘制节点事件中，按自已想的绘制
+        private void treeView1_DrawNode(object sender, DrawTreeNodeEventArgs e)
+        {
+            e.DrawDefault = true; //我这里用默认颜色即可，只需要在TreeView失去焦点时选中节点仍然突显
+            return;
+
+            //if ((e.State & TreeNodeStates.Selected) != 0)
+            //{
+            //    //演示为绿底白字
+            //    e.Graphics.FillRectangle(Brushes.DarkBlue, e.Node.Bounds);
+
+            //    Font nodeFont = e.Node.NodeFont;
+            //    if (nodeFont == null) nodeFont = ((TreeView)sender).Font;
+            //    e.Graphics.DrawString(e.Node.Text, nodeFont, Brushes.White, Rectangle.Inflate(e.Bounds, 2, 0));
+            //}
+            //else
+            //{
+            //    e.DrawDefault = true;
+            //}
+
+            //if ((e.State & TreeNodeStates.Focused) != 0)
+            //{
+            //    using (Pen focusPen = new Pen(Color.Black))
+            //    {
+            //        focusPen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            //        Rectangle focusBounds = e.Node.Bounds;
+            //        focusBounds.Size = new Size(focusBounds.Width - 1,
+            //        focusBounds.Height - 1);
+            //        e.Graphics.DrawRectangle(focusPen, focusBounds);
+            //    }
+            //}
+
+        }
+
+
         stamptypeTableAdapter sta = new stamptypeTableAdapter();
         CollectionDataSet dataSet1 = new CollectionDataSet();
         view_stampinfoTableAdapter vstainfoAdp = new view_stampinfoTableAdapter();
@@ -35,11 +74,14 @@ namespace CollectionManager
             treeView1.BeginUpdate();
             treeView1.Nodes.Clear();
             loadTreeView();
-
+            loadTreeViewByClass();
+            loadTreeViewByUnit();
             treeView1.EndUpdate();
             treeView1.TopNode.Expand();
+            treeView1.SelectedNode = treeView1.TopNode;
 
         }
+
         private void loadTreeView()
         {
             this.sta.Fill(dataSet1.stamptype);
@@ -66,17 +108,103 @@ namespace CollectionManager
                 }
             }
         }
+        stampclassTableAdapter staClaTA = new stampclassTableAdapter();
+        private void loadTreeViewByClass()
+        {
+            this.staClaTA.Fill(dataSet1.stampclass);
+            DataTable table = dataSet1.stampclass;
+            DataRow[] row = table.Select();
+            TreeNode classNode = new TreeNode("按类型查询");
+            classNode.Name = "-1";
+            foreach (DataRow r in row)
+            {
+                classNode.Nodes.Add(r["id"].ToString(), r["classname"].ToString());
+               // nodes[ = treeView1.Nodes.Add(r["id"].ToString(), r["classname"].ToString());
+                //node.ContextMenuStrip = contextMenuStrip1;
+            }
+            //TreeNode classNode = new TreeNode("按类型查询", nodes);
+
+            treeView1.Nodes.Add(classNode);
+
+        }
+
+        stampunitTableAdapter staUnitTA = new stampunitTableAdapter();
+        private void loadTreeViewByUnit()
+        {
+            this.staUnitTA.Fill(dataSet1.stampunit);
+            DataTable table = dataSet1.stampunit;
+            DataRow[] row = table.Select();
+            TreeNode classNode = new TreeNode("按单位查询");
+            classNode.Name = "-2";
+            foreach (DataRow r in row)
+            {
+                classNode.Nodes.Add(r["id"].ToString(), r["unitname"].ToString());
+                // nodes[ = treeView1.Nodes.Add(r["id"].ToString(), r["classname"].ToString());
+                //node.ContextMenuStrip = contextMenuStrip1;
+            }
+            //TreeNode classNode = new TreeNode("按类型查询", nodes);
+
+            treeView1.Nodes.Add(classNode);
+
+        }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            if (this.treeView1.SelectedNode.Parent != null)
+            {
+                if (this.treeView1.SelectedNode.Parent.Name == "1")
+                {
 
-            try
-            {
-                this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                    try
+                    {
+                        this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
+
+                        //this.dataGridView1.
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.Rows[0].Selected = false;
+                        }
+                        ClearStampInfoPanel();
+
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+                if (this.treeView1.SelectedNode.Parent.Name == "-1")
+                {
+                    try
+                    {
+                        this.view_stampinfoTableAdapter.FillByClassID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.Rows[0].Selected = false;
+                        }
+                        ClearStampInfoPanel();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+                if (this.treeView1.SelectedNode.Parent.Name == "-2")
+                {
+                    try
+                    {
+                        this.view_stampinfoTableAdapter.FillByUnitID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            dataGridView1.Rows[0].Selected = false;
+                        }
+                        ClearStampInfoPanel();
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                }
+
             }
         }
 
@@ -174,6 +302,91 @@ namespace CollectionManager
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            FillStampInfoPanel();
+        }
+                    
+        private void btnViewImg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EditImageForm editImgForm = new EditImageForm();
+                editImgForm.Tag = ((Button)sender).Tag;
+                editImgForm.Text = "查看大图";
+                if (editImgForm.ShowDialog() == DialogResult.OK)
+                {
+                    //((PictureBox)((Button)sender).Parent.Controls[0]).Image = (Image)editImgForm.Tag;
+                }
+            }
+            catch
+            {
+            }
+        }
+
+
+        private void addStampMS_Click(object sender, EventArgs e)
+        {
+            tsbAddStamp_Click(sender, e);
+        }
+
+        private void tsbAddStamp_Click(object sender, EventArgs e)
+        {
+            AddStampForm addStampForm=new AddStampForm();
+            addStampForm.Tag = this.treeView1.SelectedNode.Name;
+            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
+            if (addStampForm.ShowDialog() == DialogResult.OK)
+            {
+                view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                this.treeView1.SelectedNode = selectedTreeNode;
+
+                ClearStampInfoPanel();
+                
+            }
+        }
+
+        private void ClearStampInfoPanel()
+        {
+            this.tbSCode.Text = "";
+            this.tbSClass.Text = "";
+            this.tbSName.Text = "";
+            this.tbSPrice.Text = "";
+            this.tbSPubDate.Text = "";
+            this.tbSType.Text = "";
+            this.tbSUnit.Text = "";
+            this.rtMemo.Text = "";
+            this.flowLayoutPanel1.Controls.Clear();
+        }
+
+        private void tsbEditStamp_Click(object sender, EventArgs e)
+        {
+            AddStampForm addStampForm = new AddStampForm();
+            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
+            //this.dataGridView1.se;
+            addStampForm.Text = "编辑邮票";
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                addStampForm.Tag = dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value;
+                if (addStampForm.ShowDialog() == DialogResult.OK)
+                {
+                    ////////
+                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                    this.treeView1.SelectedNode = selectedTreeNode;
+
+
+                    FillStampInfoPanel();
+
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择要编辑的邮票！");
+            }
+
+        }
+
+        private void FillStampInfoPanel()
+        {
             DataGridViewRow row = dataGridView1.SelectedRows[0];
 
             this.tbSCode.Text = row.Cells["codeDataGridViewTextBoxColumn"].Value.ToString();
@@ -190,19 +403,12 @@ namespace CollectionManager
             String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
             while (picPath.IndexOf(",") != -1)
             {
-                imgPath.Add(imgdr+picPath.Substring(0, picPath.IndexOf(",")));
-                picPath = picPath.Substring(picPath.IndexOf(",")+1);
-            
-            
+                imgPath.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
+                picPath = picPath.Substring(picPath.IndexOf(",") + 1);
+
+
             }
 
-
-
-
-           // string[] imgPath = fileDialog.FileNames;
-
-
-            //string directory = Path.GetDirectoryName(imgPath);
             this.flowLayoutPanel1.Controls.Clear();
             foreach (string img in imgPath)
             {
@@ -242,73 +448,6 @@ namespace CollectionManager
                     MessageBox.Show("未找到图片，请重新添加!");
                 }
 
-
-
-                //File.Copy(img,img+DateTime.Today.
-            }
-        }
-                    
-        private void btnViewImg_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                EditImageForm editImgForm = new EditImageForm();
-                editImgForm.Tag = ((Button)sender).Tag;
-                editImgForm.Text = "查看大图";
-                if (editImgForm.ShowDialog() == DialogResult.OK)
-                {
-                    //((PictureBox)((Button)sender).Parent.Controls[0]).Image = (Image)editImgForm.Tag;
-                }
-            }
-            catch
-            {
-            }
-        }
-
-
-
-
-        
-
-
-
-        private void addStampMS_Click(object sender, EventArgs e)
-        {
-            tsbAddStamp_Click(sender, e);
-        }
-
-        private void tsbAddStamp_Click(object sender, EventArgs e)
-        {
-            AddStampForm addStampForm=new AddStampForm();
-            addStampForm.Tag = this.treeView1.SelectedNode.Name;
-            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
-            if (addStampForm.ShowDialog() == DialogResult.OK)
-            {
-                view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                this.treeView1.SelectedNode = selectedTreeNode;
-                
-            }
-        }
-
-        private void tsbEditStamp_Click(object sender, EventArgs e)
-        {
-            AddStampForm addStampForm = new AddStampForm();
-            TreeNode selectedTreeNode = this.treeView1.SelectedNode;
-            //this.dataGridView1.se;
-            addStampForm.Text = "编辑邮票";
-            if (dataGridView1.SelectedRows.Count != 0)
-            {
-                addStampForm.Tag = dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value;
-                if (addStampForm.ShowDialog() == DialogResult.OK)
-                {
-                    ////////
-                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                    this.treeView1.SelectedNode = selectedTreeNode;
-                }
-            }
-            else
-            {
-                MessageBox.Show("请先选择要编辑的邮票！");
             }
         }
 
@@ -319,7 +458,12 @@ namespace CollectionManager
                 try
                 {
                     stampinfoTableAdapter stainfoAdp = new stampinfoTableAdapter();
+                    TreeNode selectedTreeNode = this.treeView1.SelectedNode;
                     stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
+                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                    this.treeView1.SelectedNode = selectedTreeNode;
+
+                    ClearStampInfoPanel();
                 }
                 catch
                 {
@@ -331,7 +475,27 @@ namespace CollectionManager
             {
                 MessageBox.Show("请先选择要编辑的邮票！");
             }
-               
+
+        }
+
+        private void tsmiClassManage_Click(object sender, EventArgs e)
+        {
+            StampQueryManageForm stampClassManageFrom = new StampQueryManageForm();
+            stampClassManageFrom.Text = "邮票类型管理";
+            if (stampClassManageFrom.ShowDialog() == DialogResult.OK)
+            {
+
+            }
+        }
+
+        private void tsmiUnitManage_Click(object sender, EventArgs e)
+        {
+            StampQueryManageForm stampUnitManageFrom = new StampQueryManageForm();
+            stampUnitManageFrom.Text = "邮票单位管理";
+            if (stampUnitManageFrom.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
 
 
