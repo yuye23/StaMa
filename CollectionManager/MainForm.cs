@@ -71,6 +71,12 @@ namespace CollectionManager
 
 
 
+            TreeView_Init();
+
+        }
+
+        private void TreeView_Init()
+        {
             treeView1.BeginUpdate();
             treeView1.Nodes.Clear();
             loadTreeView();
@@ -80,7 +86,6 @@ namespace CollectionManager
             treeView1.EndUpdate();
             treeView1.TopNode.Expand();
             treeView1.SelectedNode = treeView1.TopNode;
-
         }
         string rootNodeName = "";
         private void loadTreeView()
@@ -203,6 +208,12 @@ namespace CollectionManager
                 this.cMSTypeTreeNode.Items["tsmiDeleteNode"].Enabled = false;
                 this.cMSTypeTreeNode.Items["tsmiUpNode"].Enabled = false;
                 this.cMSTypeTreeNode.Items["tsmiDownNode"].Enabled = false;
+            }
+            else
+            {
+                this.cMSTypeTreeNode.Items["tsmiDeleteNode"].Enabled = true;
+                this.cMSTypeTreeNode.Items["tsmiUpNode"].Enabled = true;
+                this.cMSTypeTreeNode.Items["tsmiDownNode"].Enabled = true;
             }
         }
 
@@ -500,9 +511,9 @@ namespace CollectionManager
         {
             StampQueryManageForm stampClassManageFrom = new StampQueryManageForm();
             stampClassManageFrom.Text = "邮票类型管理";
-            if (stampClassManageFrom.ShowDialog() == DialogResult.OK)
+            if (stampClassManageFrom.ShowDialog() == DialogResult.Cancel)
             {
-
+                TreeView_Init();
             }
         }
 
@@ -510,9 +521,9 @@ namespace CollectionManager
         {
             StampQueryManageForm stampUnitManageFrom = new StampQueryManageForm();
             stampUnitManageFrom.Text = "邮票单位管理";
-            if (stampUnitManageFrom.ShowDialog() == DialogResult.OK)
+            if (stampUnitManageFrom.ShowDialog() == DialogResult.Cancel)
             {
-
+                TreeView_Init();
             }
         }
 

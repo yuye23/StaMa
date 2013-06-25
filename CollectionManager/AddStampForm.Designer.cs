@@ -289,7 +289,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 16);
             this.label5.TabIndex = 5;
-            this.label5.Text = "价    格：";
+            this.label5.Text = "面    值：";
             // 
             // label4
             // 

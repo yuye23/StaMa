@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionManager", "CollectionManager\CollectionManager.csproj", "{FA7C481A-3173-4424-AA4F-9BF0242DB52D}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{39EF74E4-4104-411A-AC5E-4FC9CE484154}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,8 @@ Global
 		{FA7C481A-3173-4424-AA4F-9BF0242DB52D}.Debug|x86.Build.0 = Debug|x86
 		{FA7C481A-3173-4424-AA4F-9BF0242DB52D}.Release|x86.ActiveCfg = Release|x86
 		{FA7C481A-3173-4424-AA4F-9BF0242DB52D}.Release|x86.Build.0 = Release|x86
+		{39EF74E4-4104-411A-AC5E-4FC9CE484154}.Debug|x86.ActiveCfg = Debug
+		{39EF74E4-4104-411A-AC5E-4FC9CE484154}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
