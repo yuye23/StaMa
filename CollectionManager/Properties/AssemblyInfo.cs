@@ -1,16 +1,17 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Resources;
 
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("CollectionManager")]
+[assembly: AssemblyTitle("收藏管理")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("微软中国")]
-[assembly: AssemblyProduct("CollectionManager")]
-[assembly: AssemblyCopyright("Copyright © 微软中国 2013")]
+[assembly: AssemblyCompany("HYG")]
+[assembly: AssemblyProduct("收藏管理")]
+[assembly: AssemblyCopyright("Copyright © PDS 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguageAttribute("zh-Hans")]

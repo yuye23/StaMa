@@ -27,7 +27,7 @@ namespace CollectionManager
             }
             else
             {
-                MessageBox.Show("请输入子节点名称！");
+                MessageBox.Show("请输入节点名称！");
             }
         }
 

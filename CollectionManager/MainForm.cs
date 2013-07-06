@@ -18,6 +18,7 @@ namespace CollectionManager
             InitializeComponent();
             this.treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
             this.treeView1.DrawNode += new DrawTreeNodeEventHandler(treeView1_DrawNode);
+            
         }
 
 
@@ -353,13 +354,15 @@ namespace CollectionManager
             AddStampForm addStampForm = new AddStampForm();
             addStampForm.Tag = this.treeView1.SelectedNode.Name;
             TreeNode selectedTreeNode = this.treeView1.SelectedNode;
+            
             if (addStampForm.ShowDialog() == DialogResult.OK)
             {
                 view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                this.treeView1.SelectedNode = selectedTreeNode;
-
+                
+ this.treeView1.SelectedNode = selectedTreeNode;
                 ClearStampInfoPanel();
-
+               dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
+               FillStampInfoPanel();
             }
         }
 
@@ -390,6 +393,7 @@ namespace CollectionManager
             addStampForm.Text = "编辑邮票";
             if (dataGridView1.SelectedRows.Count != 0)
             {
+                int selectedrow = dataGridView1.SelectedRows[0].Index;
                 addStampForm.Tag = dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value;
                 if (addStampForm.ShowDialog() == DialogResult.OK)
                 {
@@ -398,6 +402,8 @@ namespace CollectionManager
                     this.treeView1.SelectedNode = selectedTreeNode;
 
 
+                    ClearStampInfoPanel();
+                    dataGridView1.Rows[selectedrow].Selected = true;
                     FillStampInfoPanel();
 
 
@@ -653,6 +659,47 @@ namespace CollectionManager
                 {
 
                 }
+
+            }
+        }
+
+        private void tsmiEditNode_Click(object sender, EventArgs e)
+        {
+            //首先判断是否选定组件中的位置
+            if (treeView1.SelectedNode == null)
+            {
+                MessageBox.Show("请选择一个节点", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                AddNodeForm addNodeform = new AddNodeForm();
+addNodeform.Text = "请输入新的节点名称";
+                if (addNodeform.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    string txt = addNodeform.addNodeTxt;
+                    //创建一个节点对象，并初始化
+
+                    int parentid = Convert.ToInt32(treeView1.SelectedNode.Parent.Name);
+
+                    sta.UpdateByID(txt, parentid, treeView1.SelectedNode.Index, Convert.ToInt32(treeView1.SelectedNode.Name));
+                    sta.GetData();
+                    sta.Fill(dataSet1.stamptype);
+
+                    treeView1.SelectedNode.Text = txt;
+
+                    //TreeNode node = treeView1.SelectedNode;
+                    //TreeView_Init();
+                    //treeView1.SelectedNode.Expand();
+                    //treeView1.SelectedNode = node;
+                    
+                     //UpdateStampTypeOrderID();
+                    //treeView1.SelectedNode = tmp;
+                    //treeView1.SelectedNode.Expand();
+                    //treeView1.SelectedNode = tmp;
+                    //treeView1.ExpandAll();
+                }
+
 
             }
         }

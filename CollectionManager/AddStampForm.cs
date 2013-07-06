@@ -13,7 +13,7 @@ namespace CollectionManager
 {
     public partial class AddStampForm : Form
     {
-        List<string> imgArray = new List<string>();
+        
         List<Bitmap> listImage = new List<Bitmap>();
 
         stampinfoTableAdapter stampinfoTA = new stampinfoTableAdapter();
@@ -40,6 +40,7 @@ namespace CollectionManager
 
                 if (this.Tag != null)
                 {
+                    List<string> imgArray = new List<string>();
                     this.Text = "编辑邮票";
                     this.btnAccept.Text = "保存编辑";
                     CollectionManager.Database.CollectionDataSet.stampinfoDataTable stampinfo = stampinfoTA.GetDataByID(Convert.ToInt32(this.Tag));
@@ -232,7 +233,7 @@ namespace CollectionManager
                 {
                     string[] imgPath = fileDialog.FileNames;
                     //string directory = Path.GetDirectoryName(imgPath);
-                    int i = 0;
+                    //int i = 0;
                     foreach (string img in imgPath)
                     {
                         Panel panel = new Panel();
@@ -245,7 +246,7 @@ namespace CollectionManager
                         picBox.Width = 200;
                         picBox.Height = 150;
                         picBox.Location = new Point(0, 0);
-                        picBox.Tag = i;
+                        //picBox.Tag = newbitmap;
                         //panel.Name = Path.GetFileNameWithoutExtension(img);
                         
 
@@ -266,7 +267,7 @@ namespace CollectionManager
                         btnDelImg.Width = 80;
                         btnDelImg.Height = 25;
                         btnDelImg.Location = new Point(110, 155);
-                        btnDelImg.Tag = img;
+                        btnDelImg.Tag = newbitmap;
                         btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
 
                         panel.Controls.Add(picBox);
@@ -276,9 +277,9 @@ namespace CollectionManager
 
 
                         this.flowLayoutPanel1.Controls.Add(panel);
-                        imgArray.Add(img);
+                        //imgArray.Add(img);
                         listImage.Add(newbitmap);
-                        i++;//标识图片在listImage中的序号
+                        //i++;//标识图片在listImage中的序号
 
 
 
@@ -317,8 +318,10 @@ namespace CollectionManager
                 if (editImgForm.ShowDialog() == DialogResult.OK)
                 {
                     ((PictureBox)((Button)sender).Parent.Controls[0]).Image = (Image)editImgForm.Tag;
+                    
+
+                    listImage[listImage.IndexOf((Bitmap)((Button)sender).Tag)] = (Bitmap)editImgForm.Tag;
                     ((Button)sender).Tag = (Image)editImgForm.Tag;
-                    listImage[Convert.ToInt32(((PictureBox)((Button)sender).Parent.Controls[0]).Tag)] = (Bitmap)editImgForm.Tag;
                 }
             }
             catch
@@ -328,9 +331,11 @@ namespace CollectionManager
 
         private void btnDelImg_Click(object sender, EventArgs e)
         {
-            string img = ((Button)sender).Tag.ToString();
-            imgArray.Remove(img);
-            listImage.RemoveAt(Convert.ToInt32(((PictureBox)((Button)sender).Parent.Controls[0]).Tag));
+            //string img = ((Button)sender).Tag.ToString();
+            //imgArray.Remove(img);
+            Bitmap delimg=(Bitmap)((Button)sender).Tag;
+            listImage.Remove(delimg);
+            //listImage.RemoveAt(Convert.ToInt32(((PictureBox)((Button)sender).Parent.Controls[0]).Tag));
             this.flowLayoutPanel1.Controls.Remove(((Button)sender).Parent);
 
         }
