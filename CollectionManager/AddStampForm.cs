@@ -64,7 +64,7 @@ namespace CollectionManager
                         }
 
                         this.flowLayoutPanel1.Controls.Clear();
-                        int i = 0;
+                        
                         foreach (string img in imgArray)
                         {
                             Panel panel = new Panel();
@@ -78,7 +78,7 @@ namespace CollectionManager
                             picBox.Height = 150;
                             picBox.Location = new Point(0, 0);
                             //panel.Name = Path.GetFileNameWithoutExtension(img);
-                            picBox.Tag = i;
+                            
 
                             Button btnEditImg = new Button();
                             Button btnDelImg = new Button();
@@ -97,7 +97,7 @@ namespace CollectionManager
                             btnDelImg.Width = 80;
                             btnDelImg.Height = 25;
                             btnDelImg.Location = new Point(110, 155);
-                            btnDelImg.Tag = img;
+                            btnDelImg.Tag = newbitmap;
                             btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
 
                             panel.Controls.Add(picBox);
@@ -109,7 +109,8 @@ namespace CollectionManager
                             this.flowLayoutPanel1.Controls.Add(panel);
                             //imgArray.Add(img);
                             listImage.Add(newbitmap);
-                            i++;
+
+                            
                         }
 
 
@@ -219,6 +220,9 @@ namespace CollectionManager
             {
                 MessageBox.Show("新增信息不成功，请检查数据输入是否正确！");
             }
+
+            //返回增加邮票的分类
+            this.Tag = cbType.Text;
             
         }
 
@@ -323,6 +327,7 @@ namespace CollectionManager
                     listImage[listImage.IndexOf((Bitmap)((Button)sender).Tag)] = (Bitmap)editImgForm.Tag;
                     ((Button)sender).Tag = (Image)editImgForm.Tag;
                 }
+                editImgForm.Dispose();
             }
             catch
             {

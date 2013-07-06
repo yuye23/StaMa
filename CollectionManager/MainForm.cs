@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CollectionManager.Database;
 using CollectionManager.Database.CollectionDataSetTableAdapters;
+using System.IO;
 
 namespace CollectionManager
 {
@@ -18,7 +19,7 @@ namespace CollectionManager
             InitializeComponent();
             this.treeView1.DrawMode = TreeViewDrawMode.OwnerDrawText;
             this.treeView1.DrawNode += new DrawTreeNodeEventHandler(treeView1_DrawNode);
-            
+
         }
 
 
@@ -59,9 +60,9 @@ namespace CollectionManager
 
         stamptypeTableAdapter sta = new stamptypeTableAdapter();
         CollectionDataSet dataSet1 = new CollectionDataSet();
-        view_stampinfoTableAdapter vstainfoAdp = new view_stampinfoTableAdapter();
-        List<string> imgArray = new List<string>();
-        List<PictureBox> listPicBox = new List<PictureBox>();
+        // view_stampinfoTableAdapter vstainfoAdp = new view_stampinfoTableAdapter();
+        //List<string> imgArray = new List<string>();
+        //List<PictureBox> listPicBox = new List<PictureBox>();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -96,7 +97,7 @@ namespace CollectionManager
             DataRow[] row = table.Select("parentid=0");
             foreach (DataRow r in row)
             {
-                TreeNode node = treeView1.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()),r["id"].ToString(), r["typename"].ToString());
+                TreeNode node = treeView1.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()), r["id"].ToString(), r["typename"].ToString());
                 node.ContextMenuStrip = cMSTypeTreeNode;
                 recursionShow(node, r["id"].ToString());
             }
@@ -200,18 +201,33 @@ namespace CollectionManager
 
 
             }
+            else
+            {
+                try
+                {
+                    this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, 1);
+                    ClearStampInfoPanel();
+
+                }
+                catch (System.Exception ex)
+                {
+                    System.Windows.Forms.MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
             if (this.treeView1.SelectedNode.Parent == null)
             {
+                this.cMSTypeTreeNode.Items["tsmiAddStamp"].Enabled = false;
                 this.cMSTypeTreeNode.Items["tsmiDeleteNode"].Enabled = false;
                 this.cMSTypeTreeNode.Items["tsmiUpNode"].Enabled = false;
                 this.cMSTypeTreeNode.Items["tsmiDownNode"].Enabled = false;
             }
             else
             {
+                this.cMSTypeTreeNode.Items["tsmiAddStamp"].Enabled = true;
                 this.cMSTypeTreeNode.Items["tsmiDeleteNode"].Enabled = true;
                 this.cMSTypeTreeNode.Items["tsmiUpNode"].Enabled = true;
                 this.cMSTypeTreeNode.Items["tsmiDownNode"].Enabled = true;
@@ -263,8 +279,9 @@ namespace CollectionManager
                     //treeView1.ExpandAll();
                 }
 
-
+                addNodeform.Dispose();
             }
+
         }
 
         private Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoTableAdapter = new stampinfoTableAdapter();
@@ -337,10 +354,12 @@ namespace CollectionManager
                 {
                     //((PictureBox)((Button)sender).Parent.Controls[0]).Image = (Image)editImgForm.Tag;
                 }
+                editImgForm.Dispose();
             }
             catch
             {
             }
+
         }
 
 
@@ -354,17 +373,50 @@ namespace CollectionManager
             AddStampForm addStampForm = new AddStampForm();
             addStampForm.Tag = this.treeView1.SelectedNode.Name;
             TreeNode selectedTreeNode = this.treeView1.SelectedNode;
-            
+
             if (addStampForm.ShowDialog() == DialogResult.OK)
             {
                 view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                
- this.treeView1.SelectedNode = selectedTreeNode;
+
+                string name = addStampForm.Tag.ToString();
+                for (int i = 0; i < this.treeView1.Nodes.Count; i++)
+                {
+                    if (this.treeView1.Nodes[i].Text == name)
+                    {
+                        this.treeView1.SelectedNode = this.treeView1.Nodes[i];
+                    }
+                    SelectTreeNodeByName(this.treeView1.SelectedNode, name);
+                }
+
+                //this.treeView1.SelectedNode = this.treeView1.Nodes[addStampForm.Tag.ToString()];
                 ClearStampInfoPanel();
-               dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
-               FillStampInfoPanel();
+                //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
+                dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
+                FillStampInfoPanel();
             }
+            addStampForm.Dispose();
         }
+
+        private void SelectTreeNodeByName(TreeNode node, string name)
+        {
+            for (int i = 0; i < node.Nodes.Count; i++)
+            {
+                if (node.Nodes[i].Text == name)
+                {
+                    this.treeView1.SelectedNode = node.Nodes[i];
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
 
         private void ClearStampInfoPanel()
         {
@@ -414,7 +466,7 @@ namespace CollectionManager
             {
                 MessageBox.Show("请先选择要编辑的邮票！");
             }
-
+            addStampForm.Dispose();
         }
 
         private void FillStampInfoPanel()
@@ -475,7 +527,7 @@ namespace CollectionManager
                         panel.Controls.Add(btnViewImg);
 
                         this.flowLayoutPanel1.Controls.Add(panel);
-                        imgArray.Add(img);
+                        //imgArray.Add(img);
                     }
                     catch
                     {
@@ -574,7 +626,7 @@ namespace CollectionManager
                     }
                     else
                     {
-                       
+
                         TreeNode newNode = new TreeNode();
                         newNode = selectedNodeParent.Nodes[index];
                         selectedNodeParent.Nodes.RemoveAt(index);
@@ -600,7 +652,7 @@ namespace CollectionManager
             {
                 if (selectedNodeParent.Name != "0")
                 {
-                    if (selectedNode.Index == selectedNodeParent.Nodes.Count-1)
+                    if (selectedNode.Index == selectedNodeParent.Nodes.Count - 1)
                     {
                         MessageBox.Show("该节点已在最下方！");
                     }
@@ -611,7 +663,7 @@ namespace CollectionManager
                         newNode = selectedNodeParent.Nodes[index];
                         selectedNodeParent.Nodes.RemoveAt(index);
                         selectedNodeParent.Nodes.Insert(index + 1, newNode);
-                        
+
                         treeView1.SelectedNode.Expand();
                         treeView1.SelectedNode = selectedNode;
                         UpdateStampTypeOrderID();
@@ -673,10 +725,10 @@ namespace CollectionManager
             else
             {
                 AddNodeForm addNodeform = new AddNodeForm();
-addNodeform.Text = "请输入新的节点名称";
+                addNodeform.Text = "请输入新的节点名称";
                 if (addNodeform.ShowDialog() == DialogResult.OK)
                 {
-                    
+
                     string txt = addNodeform.addNodeTxt;
                     //创建一个节点对象，并初始化
 
@@ -692,17 +744,165 @@ addNodeform.Text = "请输入新的节点名称";
                     //TreeView_Init();
                     //treeView1.SelectedNode.Expand();
                     //treeView1.SelectedNode = node;
-                    
-                     //UpdateStampTypeOrderID();
+
+                    //UpdateStampTypeOrderID();
                     //treeView1.SelectedNode = tmp;
                     //treeView1.SelectedNode.Expand();
                     //treeView1.SelectedNode = tmp;
                     //treeView1.ExpandAll();
                 }
 
-
+                addNodeform.Dispose();
             }
         }
 
+
+        private void deleteUnnecessaryImge()
+        {
+            //返回picture下所有文件列表
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + "\\picture\\");
+            FileInfo[] files = TheFolder.GetFiles();
+            List<string> allFiles = new List<string>();
+            foreach (FileInfo file in files)
+            {
+                allFiles.Add(file.FullName);
+            }
+            //获取数据库中的文件列表
+            this.view_stampinfoTableAdapter.Fill(this.dataSet1.view_stampinfo);
+            DataTable table = dataSet1.view_stampinfo;
+            DataRow[] row = table.Select();
+            List<string> imgPath = new List<string>();
+
+            if (row != null)
+            {
+                foreach (DataRow r in row)
+                {
+                    string picPath = r["picpath"].ToString();
+
+                    String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+
+                    while (picPath.IndexOf(",") != -1)
+                    {
+                        imgPath.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
+                        picPath = picPath.Substring(picPath.IndexOf(",") + 1);
+                    }
+
+                }
+            }
+
+            //比对两个列表，从所有文件列表中去掉数据库中有的文件
+
+            foreach (string img in imgPath)
+            {
+                allFiles.Remove(img);
+            }
+
+            //删除picture下allFiles中剩余的文件
+            foreach (string file in allFiles)
+            {
+                try
+                {
+                    if (File.Exists(file))
+                    {
+                        //如果存在则删除
+                        File.Delete(file);
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+        }
+
+        private void tsmideleteUnnecessaryImge_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show((MainForm)sender, "清除多余图片应在打开程序未进行其他操作时进行！是否继续", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                deleteUnnecessaryImge();
+                MessageBox.Show("清除完毕！");
+            }
+        }
+
+        private void tsmiBackData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                BackImg();
+
+                BackDB();
+                MessageBox.Show("备份成功!，请妥善保管备份文件。");
+            }
+            catch
+            {
+                MessageBox.Show("备份不成功!，请重启程序重新备份。");
+            }
+        }
+
+        private static void BackImg()
+        {
+            string copyPath = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+            string zipFilePath = System.Windows.Forms.Application.StartupPath + "\\back\\";
+
+            if (!File.Exists(copyPath))
+            {
+                Directory.CreateDirectory(copyPath);
+            }
+
+            if (!File.Exists(zipFilePath))
+            {
+                Directory.CreateDirectory(zipFilePath);
+            }
+
+            zipFilePath = zipFilePath + @"\back" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".zip";
+
+
+            ZipFloClass Zc = new ZipFloClass();
+            Zc.ZipFile(copyPath, zipFilePath);
+        }
+
+        /**
+         *
+         * 数据库备份
+         */
+        private void BackDB()
+        {
+
+
+
+
+                SaveFileDialog savefile = new SaveFileDialog();//提示用户选择保存文件
+                savefile.InitialDirectory =System.Windows.Forms.Application.StartupPath + "\\back\\";//打开文件的初始目录
+                savefile.Filter = "数据库文件(*.mdb)|";
+
+                savefile.FileName = "数据备份" +
+                    System.DateTime.Now.ToString("yyyyMMddHHmmss");//格式转换如此简单
+
+                savefile.DefaultExt = ".mdb";//设置或获取文件后缀
+                DialogResult dr = savefile.ShowDialog();
+
+                if (dr == DialogResult.OK)
+                {
+                    String filePath = savefile.FileName.ToString();//数据备份,BackDB为备份保存的位置 
+                    try
+                    {
+                        string path = System.Windows.Forms.Application.StartupPath + "\\Database\\Collection.mdb";
+                        File.Copy(path, filePath, true);
+
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+
+            
+
+        }
     }
 }

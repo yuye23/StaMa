@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>C:\Users\yuye\Desktop\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -110,6 +113,8 @@
     <Compile Include="StampQueryManageForm.Designer.cs">
       <DependentUpon>StampQueryManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UnZipFloClass .cs" />
+    <Compile Include="ZipFloClass.cs" />
     <EmbeddedResource Include="AddNodeForm.resx">
       <DependentUpon>AddNodeForm.cs</DependentUpon>
     </EmbeddedResource>
