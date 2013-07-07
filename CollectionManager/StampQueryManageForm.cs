@@ -15,14 +15,14 @@ namespace CollectionManager
         {
             InitializeComponent();
         }
-        private Database.CollectionDataSetTableAdapters.stampclassTableAdapter stampclassTableAdapter;
-        private Database.CollectionDataSetTableAdapters.stampunitTableAdapter stampunitTableAdapter;
+        private DATA.Database.CollectionDataSetTableAdapters.stampclassTableAdapter stampclassTableAdapter;
+        private DATA.Database.CollectionDataSetTableAdapters.stampunitTableAdapter stampunitTableAdapter;
         private void StampClassManage_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“collectionDataSet.stampclass”中。您可以根据需要移动或删除它。
             if (this.Text == "邮票类型管理")
             {
-                this.stampclassTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.stampclassTableAdapter();
+                this.stampclassTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.stampclassTableAdapter();
                 this.listBoxBindingSource.DataMember = "stampclass";
                 this.listBox1.ValueMember = "id";
                 this.listBox1.DisplayMember = "classname";
@@ -32,7 +32,7 @@ namespace CollectionManager
 
             if (this.Text == "邮票单位管理")
             {
-                this.stampunitTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.stampunitTableAdapter();
+                this.stampunitTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.stampunitTableAdapter();
                 this.listBoxBindingSource.DataMember = "stampunit";
                 this.listBox1.ValueMember = "id";
                 this.listBox1.DisplayMember = "unitname";
@@ -105,7 +105,7 @@ namespace CollectionManager
             }
         }
 
-        private Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoAdapter= new Database.CollectionDataSetTableAdapters.stampinfoTableAdapter();
+        private DATA.Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoAdapter = new DATA.Database.CollectionDataSetTableAdapters.stampinfoTableAdapter();
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count != 0)

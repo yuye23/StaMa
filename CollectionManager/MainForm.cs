@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using CollectionManager.Database;
-using CollectionManager.Database.CollectionDataSetTableAdapters;
+using CollectionManager.DATA.Database;
+using CollectionManager.DATA.Database.CollectionDataSetTableAdapters;
 using System.IO;
 
 namespace CollectionManager
@@ -284,7 +284,7 @@ namespace CollectionManager
 
         }
 
-        private Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoTableAdapter = new stampinfoTableAdapter();
+        private DATA.Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoTableAdapter = new stampinfoTableAdapter();
         private void deleteNode_Click(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode != null)
@@ -486,7 +486,7 @@ namespace CollectionManager
                 string picPath = row.Cells["picpathDataGridViewTextBoxColumn"].Value.ToString();
 
                 List<string> imgPath = new List<string>();
-                String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+                String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
                 while (picPath.IndexOf(",") != -1)
                 {
                     imgPath.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
@@ -760,7 +760,7 @@ namespace CollectionManager
         private void deleteUnnecessaryImge()
         {
             //返回picture下所有文件列表
-            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + "\\picture\\");
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\");
             FileInfo[] files = TheFolder.GetFiles();
             List<string> allFiles = new List<string>();
             foreach (FileInfo file in files)
@@ -779,7 +779,7 @@ namespace CollectionManager
                 {
                     string picPath = r["picpath"].ToString();
 
-                    String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+                    String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
 
                     while (picPath.IndexOf(",") != -1)
                     {
@@ -831,7 +831,7 @@ namespace CollectionManager
 
                 BackImg();
 
-                BackDB();
+                //BackDB();
                 MessageBox.Show("备份成功!，请妥善保管备份文件。");
             }
             catch
@@ -842,8 +842,8 @@ namespace CollectionManager
 
         private static void BackImg()
         {
-            string copyPath = System.Windows.Forms.Application.StartupPath + "\\picture\\";
-            string zipFilePath = System.Windows.Forms.Application.StartupPath + "\\back\\";
+            string copyPath = System.Windows.Forms.Application.StartupPath + "\\DATA\\";
+            string zipFilePath = System.Windows.Forms.Application.StartupPath + "\\DataBack\\";
 
             if (!File.Exists(copyPath))
             {

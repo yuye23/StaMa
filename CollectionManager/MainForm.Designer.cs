@@ -1,4 +1,5 @@
-﻿namespace CollectionManager
+﻿using CollectionManager.DATA.Database;
+namespace CollectionManager
 {
     partial class MainForm
     {
@@ -32,11 +33,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmideleteUnnecessaryImge = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBackData = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRestoreData = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsddbStampQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiStampClassManage = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,7 +70,7 @@
             this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewstampinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.collectionDataSet = new CollectionManager.Database.CollectionDataSet();
+            this.collectionDataSet = new CollectionManager.DATA.Database.CollectionDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
@@ -99,9 +102,7 @@
             this.tsmiDeleteNode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpNode = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDownNode = new System.Windows.Forms.ToolStripMenuItem();
-            this.view_stampinfoTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter();
-            this.tsmiBackData = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRestoreData = new System.Windows.Forms.ToolStripMenuItem();
+            this.view_stampinfoTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -165,6 +166,19 @@
             this.tsmideleteUnnecessaryImge.Size = new System.Drawing.Size(162, 24);
             this.tsmideleteUnnecessaryImge.Text = "清除多余图片";
             this.tsmideleteUnnecessaryImge.Click += new System.EventHandler(this.tsmideleteUnnecessaryImge_Click);
+            // 
+            // tsmiBackData
+            // 
+            this.tsmiBackData.Name = "tsmiBackData";
+            this.tsmiBackData.Size = new System.Drawing.Size(162, 24);
+            this.tsmiBackData.Text = "备份数据";
+            this.tsmiBackData.Click += new System.EventHandler(this.tsmiBackData_Click);
+            // 
+            // tsmiRestoreData
+            // 
+            this.tsmiRestoreData.Name = "tsmiRestoreData";
+            this.tsmiRestoreData.Size = new System.Drawing.Size(162, 24);
+            this.tsmiRestoreData.Text = "恢复数据";
             // 
             // toolStrip1
             // 
@@ -327,8 +341,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -808,19 +822,6 @@
             // 
             this.view_stampinfoTableAdapter.ClearBeforeFill = true;
             // 
-            // tsmiBackData
-            // 
-            this.tsmiBackData.Name = "tsmiBackData";
-            this.tsmiBackData.Size = new System.Drawing.Size(162, 24);
-            this.tsmiBackData.Text = "备份数据";
-            this.tsmiBackData.Click += new System.EventHandler(this.tsmiBackData_Click);
-            // 
-            // tsmiRestoreData
-            // 
-            this.tsmiRestoreData.Name = "tsmiRestoreData";
-            this.tsmiRestoreData.Size = new System.Drawing.Size(162, 24);
-            this.tsmiRestoreData.Text = "恢复数据";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -885,9 +886,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiDeleteNode;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Database.CollectionDataSet collectionDataSet;
         private System.Windows.Forms.BindingSource viewstampinfoBindingSource;
-        private Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter view_stampinfoTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.TextBox tbSClass;
@@ -942,5 +941,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmideleteUnnecessaryImge;
         private System.Windows.Forms.ToolStripMenuItem tsmiBackData;
         private System.Windows.Forms.ToolStripMenuItem tsmiRestoreData;
+        private CollectionManager.DATA.Database.CollectionDataSet collectionDataSet;
+        private CollectionManager.DATA.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter view_stampinfoTableAdapter;
     }
 }

@@ -77,11 +77,11 @@
     <Compile Include="AddStampForm.Designer.cs">
       <DependentUpon>AddStampForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\CollectionDataSet.cs">
+    <Compile Include="DATA\Database\CollectionDataSet.cs">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Database\CollectionDataSet.Designer.cs">
+    <Compile Include="DATA\Database\CollectionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
@@ -144,15 +144,15 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="Database\CollectionDataSet.xsc">
+    <None Include="DATA\Database\CollectionDataSet.xsc">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\CollectionDataSet.xsd">
+    <None Include="DATA\Database\CollectionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CollectionDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Database\CollectionDataSet.xss">
+    <None Include="DATA\Database\CollectionDataSet.xss">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -188,9 +188,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Collection.mdb">
+    <Content Include="DATA\Database\Collection.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DATA\CionPicture\" />
+    <Folder Include="DATA\StampPicture\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

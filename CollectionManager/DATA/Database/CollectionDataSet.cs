@@ -1,11 +1,12 @@
-﻿namespace CollectionManager.Database {
+﻿namespace CollectionManager.DATA.Database
+{
     
     
     public partial class CollectionDataSet {
     }
 }
 
-namespace CollectionManager.Database.CollectionDataSetTableAdapters
+namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters
 {
   
 

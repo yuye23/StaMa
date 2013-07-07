@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBoxBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.collectionDataSet = new CollectionManager.Database.CollectionDataSet();
-            this.stampclassTableAdapter = new CollectionManager.Database.CollectionDataSetTableAdapters.stampclassTableAdapter();
+            this.collectionDataSet = new CollectionManager.DATA.Database.CollectionDataSet();
+            this.stampclassTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.stampclassTableAdapter();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -120,7 +120,7 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private Database.CollectionDataSet collectionDataSet;
+        private DATA.Database.CollectionDataSet collectionDataSet;
         private System.Windows.Forms.BindingSource listBoxBindingSource;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;

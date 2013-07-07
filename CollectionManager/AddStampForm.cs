@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using CollectionManager.Database.CollectionDataSetTableAdapters;
+using CollectionManager.DATA.Database.CollectionDataSetTableAdapters;
 using System.IO;
 
 namespace CollectionManager
@@ -43,7 +43,7 @@ namespace CollectionManager
                     List<string> imgArray = new List<string>();
                     this.Text = "编辑邮票";
                     this.btnAccept.Text = "保存编辑";
-                    CollectionManager.Database.CollectionDataSet.stampinfoDataTable stampinfo = stampinfoTA.GetDataByID(Convert.ToInt32(this.Tag));
+                    CollectionManager.DATA.Database.CollectionDataSet.stampinfoDataTable stampinfo = stampinfoTA.GetDataByID(Convert.ToInt32(this.Tag));
                     if (stampinfo != null)
                     {
                         this.tbSCode.Text = stampinfo.Rows[0]["code"].ToString();
@@ -54,7 +54,7 @@ namespace CollectionManager
                         this.cbType.SelectedValue = stampinfo.Rows[0]["typeid"].ToString();
                         this.cbClass.SelectedValue = stampinfo.Rows[0]["classid"].ToString();
                         string picPath = stampinfo.Rows[0]["picpath"].ToString();
-                        String imgdr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+                        String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
                         while (picPath.IndexOf(",") != -1)
                         {
                             imgArray.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
@@ -170,7 +170,7 @@ namespace CollectionManager
             try
             {
                 //List<string> picnames = new List<string>();
-                String targetPathDr = System.Windows.Forms.Application.StartupPath + "\\picture\\";
+                String targetPathDr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
                 if (!System.IO.Directory.Exists(targetPathDr))
                     {
                         // 目录不存在，建立目录 
