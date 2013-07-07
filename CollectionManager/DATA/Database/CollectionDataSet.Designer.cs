@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CollectionManager.Database {
+namespace CollectionManager.DATA.Database {
     
     
     /// <summary>
@@ -3794,7 +3794,7 @@ namespace CollectionManager.Database {
         }
     }
 }
-namespace CollectionManager.Database.CollectionDataSetTableAdapters {
+namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     
     
     /// <summary>

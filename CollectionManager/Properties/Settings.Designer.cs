@@ -26,8 +26,8 @@ namespace CollectionManager.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\Database\\Collection." +
-            "mdb;Persist Security Info=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\\DATA\\Database\\Collec" +
+            "tion.mdb;Persist Security Info=True")]
         public string CollectionConnectionString {
             get {
                 return ((string)(this["CollectionConnectionString"]));
