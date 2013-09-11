@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CollectionManager
 {
-    public partial class StampQueryManageForm : Form
+    public partial class ClassManageForm : Form
     {
-        public StampQueryManageForm()
+        public ClassManageForm()
         {
             InitializeComponent();
         }

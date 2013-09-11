@@ -567,7 +567,7 @@ namespace CollectionManager
 
         private void tsmiClassManage_Click(object sender, EventArgs e)
         {
-            StampQueryManageForm stampClassManageFrom = new StampQueryManageForm();
+            ClassManageForm stampClassManageFrom = new ClassManageForm();
             stampClassManageFrom.Text = "邮票类型管理";
             if (stampClassManageFrom.ShowDialog() == DialogResult.Cancel)
             {
@@ -577,7 +577,7 @@ namespace CollectionManager
 
         private void tsmiUnitManage_Click(object sender, EventArgs e)
         {
-            StampQueryManageForm stampUnitManageFrom = new StampQueryManageForm();
+            ClassManageForm stampUnitManageFrom = new ClassManageForm();
             stampUnitManageFrom.Text = "邮票单位管理";
             if (stampUnitManageFrom.ShowDialog() == DialogResult.Cancel)
             {

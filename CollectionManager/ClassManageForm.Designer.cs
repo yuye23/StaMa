@@ -1,6 +1,6 @@
 ﻿namespace CollectionManager
 {
-    partial class StampQueryManageForm
+    partial class ClassManageForm
     {
         /// <summary>
         /// Required designer variable.
