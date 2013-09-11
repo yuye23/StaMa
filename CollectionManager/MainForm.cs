@@ -817,7 +817,7 @@ namespace CollectionManager
 
         private void tsmideleteUnnecessaryImge_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show((MainForm)sender, "清除多余图片应在打开程序未进行其他操作时进行！是否继续", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("清除多余图片应在打开程序未进行其他操作时进行！是否继续", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 deleteUnnecessaryImge();
                 MessageBox.Show("清除完毕！");
