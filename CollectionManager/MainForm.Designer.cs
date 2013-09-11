@@ -747,19 +747,19 @@ namespace CollectionManager
             this.tsmiEditStamp,
             this.tsmiDeleteStamp});
             this.cMSDataGridView.Name = "cMSDataGridView";
-            this.cMSDataGridView.Size = new System.Drawing.Size(125, 48);
+            this.cMSDataGridView.Size = new System.Drawing.Size(119, 48);
             // 
             // tsmiEditStamp
             // 
             this.tsmiEditStamp.Name = "tsmiEditStamp";
-            this.tsmiEditStamp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiEditStamp.Size = new System.Drawing.Size(118, 22);
             this.tsmiEditStamp.Text = "编辑邮票";
             this.tsmiEditStamp.Click += new System.EventHandler(this.tsmiEditStamp_Click);
             // 
             // tsmiDeleteStamp
             // 
             this.tsmiDeleteStamp.Name = "tsmiDeleteStamp";
-            this.tsmiDeleteStamp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDeleteStamp.Size = new System.Drawing.Size(118, 22);
             this.tsmiDeleteStamp.Text = "删除邮票";
             this.tsmiDeleteStamp.Click += new System.EventHandler(this.tsmiDeleteStamp_Click);
             // 
@@ -773,48 +773,48 @@ namespace CollectionManager
             this.tsmiUpNode,
             this.tsmiDownNode});
             this.cMSTypeTreeNode.Name = "contextMenuStrip1";
-            this.cMSTypeTreeNode.Size = new System.Drawing.Size(125, 136);
+            this.cMSTypeTreeNode.Size = new System.Drawing.Size(119, 136);
             this.cMSTypeTreeNode.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // tsmiAddStamp
             // 
             this.tsmiAddStamp.Name = "tsmiAddStamp";
-            this.tsmiAddStamp.Size = new System.Drawing.Size(124, 22);
+            this.tsmiAddStamp.Size = new System.Drawing.Size(118, 22);
             this.tsmiAddStamp.Text = "新增邮票";
             this.tsmiAddStamp.Click += new System.EventHandler(this.addStampMS_Click);
             // 
             // tsmiAddChild
             // 
             this.tsmiAddChild.Name = "tsmiAddChild";
-            this.tsmiAddChild.Size = new System.Drawing.Size(124, 22);
+            this.tsmiAddChild.Size = new System.Drawing.Size(118, 22);
             this.tsmiAddChild.Text = "增加子类";
             this.tsmiAddChild.Click += new System.EventHandler(this.addChild_Click);
             // 
             // tsmiEditNode
             // 
             this.tsmiEditNode.Name = "tsmiEditNode";
-            this.tsmiEditNode.Size = new System.Drawing.Size(124, 22);
+            this.tsmiEditNode.Size = new System.Drawing.Size(118, 22);
             this.tsmiEditNode.Text = "编辑子类";
             this.tsmiEditNode.Click += new System.EventHandler(this.tsmiEditNode_Click);
             // 
             // tsmiDeleteNode
             // 
             this.tsmiDeleteNode.Name = "tsmiDeleteNode";
-            this.tsmiDeleteNode.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDeleteNode.Size = new System.Drawing.Size(118, 22);
             this.tsmiDeleteNode.Text = "删除选中";
             this.tsmiDeleteNode.Click += new System.EventHandler(this.deleteNode_Click);
             // 
             // tsmiUpNode
             // 
             this.tsmiUpNode.Name = "tsmiUpNode";
-            this.tsmiUpNode.Size = new System.Drawing.Size(124, 22);
+            this.tsmiUpNode.Size = new System.Drawing.Size(118, 22);
             this.tsmiUpNode.Text = "向上移动";
             this.tsmiUpNode.Click += new System.EventHandler(this.tsmiUpNode_Click);
             // 
             // tsmiDownNode
             // 
             this.tsmiDownNode.Name = "tsmiDownNode";
-            this.tsmiDownNode.Size = new System.Drawing.Size(124, 22);
+            this.tsmiDownNode.Size = new System.Drawing.Size(118, 22);
             this.tsmiDownNode.Text = "向下移动";
             this.tsmiDownNode.Click += new System.EventHandler(this.tsmiDownNode_Click);
             // 

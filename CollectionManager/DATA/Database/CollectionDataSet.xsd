@@ -755,7 +755,7 @@ WHERE   (unitid = ?)</CommandText>
               <DbSource ConnectionRef="CollectionConnectionString (Settings)" DbObjectName="view_cioninfo" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, unitname, classname FROM view_cioninfo</CommandText>
+                    <CommandText>SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, unitname, classname, picpath, [memo], unitid, classid, typeid FROM view_cioninfo</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -772,6 +772,11 @@ WHERE   (unitid = ?)</CommandText>
               <Mapping SourceColumn="price_ori" DataSetColumn="price_ori" />
               <Mapping SourceColumn="unitname" DataSetColumn="unitname" />
               <Mapping SourceColumn="classname" DataSetColumn="classname" />
+              <Mapping SourceColumn="picpath" DataSetColumn="picpath" />
+              <Mapping SourceColumn="memo" DataSetColumn="memo" />
+              <Mapping SourceColumn="unitid" DataSetColumn="unitid" />
+              <Mapping SourceColumn="classid" DataSetColumn="classid" />
+              <Mapping SourceColumn="typeid" DataSetColumn="typeid" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1075,6 +1080,23 @@ WHERE   (unitid = ?)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="picpath" msprop:Generator_ColumnVarNameInTable="columnpicpath" msprop:Generator_ColumnPropNameInRow="picpath" msprop:Generator_ColumnPropNameInTable="picpathColumn" msprop:Generator_UserColumnName="picpath" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="memo" msprop:Generator_ColumnVarNameInTable="columnmemo" msprop:Generator_ColumnPropNameInRow="memo" msprop:Generator_ColumnPropNameInTable="memoColumn" msprop:Generator_UserColumnName="memo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unitid" msprop:Generator_ColumnVarNameInTable="columnunitid" msprop:Generator_ColumnPropNameInRow="unitid" msprop:Generator_ColumnPropNameInTable="unitidColumn" msprop:Generator_UserColumnName="unitid" type="xs:int" minOccurs="0" />
+              <xs:element name="classid" msprop:Generator_ColumnVarNameInTable="columnclassid" msprop:Generator_ColumnPropNameInRow="classid" msprop:Generator_ColumnPropNameInTable="classidColumn" msprop:Generator_UserColumnName="classid" type="xs:int" minOccurs="0" />
+              <xs:element name="typeid" msprop:Generator_ColumnVarNameInTable="columntypeid" msprop:Generator_ColumnPropNameInRow="typeid" msprop:Generator_ColumnPropNameInTable="typeidColumn" msprop:Generator_UserColumnName="typeid" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
