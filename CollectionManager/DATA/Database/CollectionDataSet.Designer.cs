@@ -26,7 +26,7 @@ namespace CollectionManager.DATA.Database {
         
         private stamptypeDataTable tablestamptype;
         
-        private ciontypeDataTable tableciontype;
+        private cointypeDataTable tablecointype;
         
         private stampclassDataTable tablestampclass;
         
@@ -36,13 +36,13 @@ namespace CollectionManager.DATA.Database {
         
         private view_stampinfoDataTable tableview_stampinfo;
         
-        private cionclassDataTable tablecionclass;
+        private coinclassDataTable tablecoinclass;
         
-        private cionunitDataTable tablecionunit;
+        private coinunitDataTable tablecoinunit;
         
-        private cioninfoDataTable tablecioninfo;
+        private coininfoDataTable tablecoininfo;
         
-        private view_cioninfoDataTable tableview_cioninfo;
+        private view_coininfoDataTable tableview_coininfo;
         
         private global::System.Data.DataRelation relationstampclassstampinfo;
         
@@ -50,11 +50,11 @@ namespace CollectionManager.DATA.Database {
         
         private global::System.Data.DataRelation relationstampunitstampinfo;
         
-        private global::System.Data.DataRelation relationcionclasscioninfo;
+        private global::System.Data.DataRelation relationcoinclasscoininfo;
         
-        private global::System.Data.DataRelation relationciontypecioninfo;
+        private global::System.Data.DataRelation relationcointypecoininfo;
         
-        private global::System.Data.DataRelation relationcionunitcioninfo;
+        private global::System.Data.DataRelation relationcoinunitcoininfo;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -87,8 +87,8 @@ namespace CollectionManager.DATA.Database {
                 if ((ds.Tables["stamptype"] != null)) {
                     base.Tables.Add(new stamptypeDataTable(ds.Tables["stamptype"]));
                 }
-                if ((ds.Tables["ciontype"] != null)) {
-                    base.Tables.Add(new ciontypeDataTable(ds.Tables["ciontype"]));
+                if ((ds.Tables["cointype"] != null)) {
+                    base.Tables.Add(new cointypeDataTable(ds.Tables["cointype"]));
                 }
                 if ((ds.Tables["stampclass"] != null)) {
                     base.Tables.Add(new stampclassDataTable(ds.Tables["stampclass"]));
@@ -102,17 +102,17 @@ namespace CollectionManager.DATA.Database {
                 if ((ds.Tables["view_stampinfo"] != null)) {
                     base.Tables.Add(new view_stampinfoDataTable(ds.Tables["view_stampinfo"]));
                 }
-                if ((ds.Tables["cionclass"] != null)) {
-                    base.Tables.Add(new cionclassDataTable(ds.Tables["cionclass"]));
+                if ((ds.Tables["coinclass"] != null)) {
+                    base.Tables.Add(new coinclassDataTable(ds.Tables["coinclass"]));
                 }
-                if ((ds.Tables["cionunit"] != null)) {
-                    base.Tables.Add(new cionunitDataTable(ds.Tables["cionunit"]));
+                if ((ds.Tables["coinunit"] != null)) {
+                    base.Tables.Add(new coinunitDataTable(ds.Tables["coinunit"]));
                 }
-                if ((ds.Tables["cioninfo"] != null)) {
-                    base.Tables.Add(new cioninfoDataTable(ds.Tables["cioninfo"]));
+                if ((ds.Tables["coininfo"] != null)) {
+                    base.Tables.Add(new coininfoDataTable(ds.Tables["coininfo"]));
                 }
-                if ((ds.Tables["view_cioninfo"] != null)) {
-                    base.Tables.Add(new view_cioninfoDataTable(ds.Tables["view_cioninfo"]));
+                if ((ds.Tables["view_coininfo"] != null)) {
+                    base.Tables.Add(new view_coininfoDataTable(ds.Tables["view_coininfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -146,9 +146,9 @@ namespace CollectionManager.DATA.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ciontypeDataTable ciontype {
+        public cointypeDataTable cointype {
             get {
-                return this.tableciontype;
+                return this.tablecointype;
             }
         }
         
@@ -196,9 +196,9 @@ namespace CollectionManager.DATA.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public cionclassDataTable cionclass {
+        public coinclassDataTable coinclass {
             get {
-                return this.tablecionclass;
+                return this.tablecoinclass;
             }
         }
         
@@ -206,9 +206,9 @@ namespace CollectionManager.DATA.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public cionunitDataTable cionunit {
+        public coinunitDataTable coinunit {
             get {
-                return this.tablecionunit;
+                return this.tablecoinunit;
             }
         }
         
@@ -216,9 +216,9 @@ namespace CollectionManager.DATA.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public cioninfoDataTable cioninfo {
+        public coininfoDataTable coininfo {
             get {
-                return this.tablecioninfo;
+                return this.tablecoininfo;
             }
         }
         
@@ -226,9 +226,9 @@ namespace CollectionManager.DATA.Database {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public view_cioninfoDataTable view_cioninfo {
+        public view_coininfoDataTable view_coininfo {
             get {
-                return this.tableview_cioninfo;
+                return this.tableview_coininfo;
             }
         }
         
@@ -302,8 +302,8 @@ namespace CollectionManager.DATA.Database {
                 if ((ds.Tables["stamptype"] != null)) {
                     base.Tables.Add(new stamptypeDataTable(ds.Tables["stamptype"]));
                 }
-                if ((ds.Tables["ciontype"] != null)) {
-                    base.Tables.Add(new ciontypeDataTable(ds.Tables["ciontype"]));
+                if ((ds.Tables["cointype"] != null)) {
+                    base.Tables.Add(new cointypeDataTable(ds.Tables["cointype"]));
                 }
                 if ((ds.Tables["stampclass"] != null)) {
                     base.Tables.Add(new stampclassDataTable(ds.Tables["stampclass"]));
@@ -317,17 +317,17 @@ namespace CollectionManager.DATA.Database {
                 if ((ds.Tables["view_stampinfo"] != null)) {
                     base.Tables.Add(new view_stampinfoDataTable(ds.Tables["view_stampinfo"]));
                 }
-                if ((ds.Tables["cionclass"] != null)) {
-                    base.Tables.Add(new cionclassDataTable(ds.Tables["cionclass"]));
+                if ((ds.Tables["coinclass"] != null)) {
+                    base.Tables.Add(new coinclassDataTable(ds.Tables["coinclass"]));
                 }
-                if ((ds.Tables["cionunit"] != null)) {
-                    base.Tables.Add(new cionunitDataTable(ds.Tables["cionunit"]));
+                if ((ds.Tables["coinunit"] != null)) {
+                    base.Tables.Add(new coinunitDataTable(ds.Tables["coinunit"]));
                 }
-                if ((ds.Tables["cioninfo"] != null)) {
-                    base.Tables.Add(new cioninfoDataTable(ds.Tables["cioninfo"]));
+                if ((ds.Tables["coininfo"] != null)) {
+                    base.Tables.Add(new coininfoDataTable(ds.Tables["coininfo"]));
                 }
-                if ((ds.Tables["view_cioninfo"] != null)) {
-                    base.Tables.Add(new view_cioninfoDataTable(ds.Tables["view_cioninfo"]));
+                if ((ds.Tables["view_coininfo"] != null)) {
+                    base.Tables.Add(new view_coininfoDataTable(ds.Tables["view_coininfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -368,10 +368,10 @@ namespace CollectionManager.DATA.Database {
                     this.tablestamptype.InitVars();
                 }
             }
-            this.tableciontype = ((ciontypeDataTable)(base.Tables["ciontype"]));
+            this.tablecointype = ((cointypeDataTable)(base.Tables["cointype"]));
             if ((initTable == true)) {
-                if ((this.tableciontype != null)) {
-                    this.tableciontype.InitVars();
+                if ((this.tablecointype != null)) {
+                    this.tablecointype.InitVars();
                 }
             }
             this.tablestampclass = ((stampclassDataTable)(base.Tables["stampclass"]));
@@ -398,36 +398,36 @@ namespace CollectionManager.DATA.Database {
                     this.tableview_stampinfo.InitVars();
                 }
             }
-            this.tablecionclass = ((cionclassDataTable)(base.Tables["cionclass"]));
+            this.tablecoinclass = ((coinclassDataTable)(base.Tables["coinclass"]));
             if ((initTable == true)) {
-                if ((this.tablecionclass != null)) {
-                    this.tablecionclass.InitVars();
+                if ((this.tablecoinclass != null)) {
+                    this.tablecoinclass.InitVars();
                 }
             }
-            this.tablecionunit = ((cionunitDataTable)(base.Tables["cionunit"]));
+            this.tablecoinunit = ((coinunitDataTable)(base.Tables["coinunit"]));
             if ((initTable == true)) {
-                if ((this.tablecionunit != null)) {
-                    this.tablecionunit.InitVars();
+                if ((this.tablecoinunit != null)) {
+                    this.tablecoinunit.InitVars();
                 }
             }
-            this.tablecioninfo = ((cioninfoDataTable)(base.Tables["cioninfo"]));
+            this.tablecoininfo = ((coininfoDataTable)(base.Tables["coininfo"]));
             if ((initTable == true)) {
-                if ((this.tablecioninfo != null)) {
-                    this.tablecioninfo.InitVars();
+                if ((this.tablecoininfo != null)) {
+                    this.tablecoininfo.InitVars();
                 }
             }
-            this.tableview_cioninfo = ((view_cioninfoDataTable)(base.Tables["view_cioninfo"]));
+            this.tableview_coininfo = ((view_coininfoDataTable)(base.Tables["view_coininfo"]));
             if ((initTable == true)) {
-                if ((this.tableview_cioninfo != null)) {
-                    this.tableview_cioninfo.InitVars();
+                if ((this.tableview_coininfo != null)) {
+                    this.tableview_coininfo.InitVars();
                 }
             }
             this.relationstampclassstampinfo = this.Relations["stampclassstampinfo"];
             this.relationstamptypestampinfo = this.Relations["stamptypestampinfo"];
             this.relationstampunitstampinfo = this.Relations["stampunitstampinfo"];
-            this.relationcionclasscioninfo = this.Relations["cionclasscioninfo"];
-            this.relationciontypecioninfo = this.Relations["ciontypecioninfo"];
-            this.relationcionunitcioninfo = this.Relations["cionunitcioninfo"];
+            this.relationcoinclasscoininfo = this.Relations["coinclasscoininfo"];
+            this.relationcointypecoininfo = this.Relations["cointypecoininfo"];
+            this.relationcoinunitcoininfo = this.Relations["coinunitcoininfo"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -440,8 +440,8 @@ namespace CollectionManager.DATA.Database {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablestamptype = new stamptypeDataTable();
             base.Tables.Add(this.tablestamptype);
-            this.tableciontype = new ciontypeDataTable();
-            base.Tables.Add(this.tableciontype);
+            this.tablecointype = new cointypeDataTable();
+            base.Tables.Add(this.tablecointype);
             this.tablestampclass = new stampclassDataTable();
             base.Tables.Add(this.tablestampclass);
             this.tablestampunit = new stampunitDataTable();
@@ -450,14 +450,14 @@ namespace CollectionManager.DATA.Database {
             base.Tables.Add(this.tablestampinfo);
             this.tableview_stampinfo = new view_stampinfoDataTable();
             base.Tables.Add(this.tableview_stampinfo);
-            this.tablecionclass = new cionclassDataTable();
-            base.Tables.Add(this.tablecionclass);
-            this.tablecionunit = new cionunitDataTable();
-            base.Tables.Add(this.tablecionunit);
-            this.tablecioninfo = new cioninfoDataTable();
-            base.Tables.Add(this.tablecioninfo);
-            this.tableview_cioninfo = new view_cioninfoDataTable();
-            base.Tables.Add(this.tableview_cioninfo);
+            this.tablecoinclass = new coinclassDataTable();
+            base.Tables.Add(this.tablecoinclass);
+            this.tablecoinunit = new coinunitDataTable();
+            base.Tables.Add(this.tablecoinunit);
+            this.tablecoininfo = new coininfoDataTable();
+            base.Tables.Add(this.tablecoininfo);
+            this.tableview_coininfo = new view_coininfoDataTable();
+            base.Tables.Add(this.tableview_coininfo);
             this.relationstampclassstampinfo = new global::System.Data.DataRelation("stampclassstampinfo", new global::System.Data.DataColumn[] {
                         this.tablestampclass.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablestampinfo.classidColumn}, false);
@@ -470,18 +470,18 @@ namespace CollectionManager.DATA.Database {
                         this.tablestampunit.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablestampinfo.unitidColumn}, false);
             this.Relations.Add(this.relationstampunitstampinfo);
-            this.relationcionclasscioninfo = new global::System.Data.DataRelation("cionclasscioninfo", new global::System.Data.DataColumn[] {
-                        this.tablecionclass.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablecioninfo.classidColumn}, false);
-            this.Relations.Add(this.relationcionclasscioninfo);
-            this.relationciontypecioninfo = new global::System.Data.DataRelation("ciontypecioninfo", new global::System.Data.DataColumn[] {
-                        this.tableciontype.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablecioninfo.typeidColumn}, false);
-            this.Relations.Add(this.relationciontypecioninfo);
-            this.relationcionunitcioninfo = new global::System.Data.DataRelation("cionunitcioninfo", new global::System.Data.DataColumn[] {
-                        this.tablecionunit.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablecioninfo.unitidColumn}, false);
-            this.Relations.Add(this.relationcionunitcioninfo);
+            this.relationcoinclasscoininfo = new global::System.Data.DataRelation("coinclasscoininfo", new global::System.Data.DataColumn[] {
+                        this.tablecoinclass.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecoininfo.classidColumn}, false);
+            this.Relations.Add(this.relationcoinclasscoininfo);
+            this.relationcointypecoininfo = new global::System.Data.DataRelation("cointypecoininfo", new global::System.Data.DataColumn[] {
+                        this.tablecointype.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecoininfo.typeidColumn}, false);
+            this.Relations.Add(this.relationcointypecoininfo);
+            this.relationcoinunitcoininfo = new global::System.Data.DataRelation("coinunitcoininfo", new global::System.Data.DataColumn[] {
+                        this.tablecoinunit.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecoininfo.unitidColumn}, false);
+            this.Relations.Add(this.relationcoinunitcoininfo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,7 +492,7 @@ namespace CollectionManager.DATA.Database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeciontype() {
+        private bool ShouldSerializecointype() {
             return false;
         }
         
@@ -522,25 +522,25 @@ namespace CollectionManager.DATA.Database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializecionclass() {
+        private bool ShouldSerializecoinclass() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializecionunit() {
+        private bool ShouldSerializecoinunit() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializecioninfo() {
+        private bool ShouldSerializecoininfo() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeview_cioninfo() {
+        private bool ShouldSerializeview_coininfo() {
             return false;
         }
         
@@ -603,7 +603,7 @@ namespace CollectionManager.DATA.Database {
         public delegate void stamptypeRowChangeEventHandler(object sender, stamptypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ciontypeRowChangeEventHandler(object sender, ciontypeRowChangeEvent e);
+        public delegate void cointypeRowChangeEventHandler(object sender, cointypeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void stampclassRowChangeEventHandler(object sender, stampclassRowChangeEvent e);
@@ -618,16 +618,16 @@ namespace CollectionManager.DATA.Database {
         public delegate void view_stampinfoRowChangeEventHandler(object sender, view_stampinfoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void cionclassRowChangeEventHandler(object sender, cionclassRowChangeEvent e);
+        public delegate void coinclassRowChangeEventHandler(object sender, coinclassRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void cionunitRowChangeEventHandler(object sender, cionunitRowChangeEvent e);
+        public delegate void coinunitRowChangeEventHandler(object sender, coinunitRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void cioninfoRowChangeEventHandler(object sender, cioninfoRowChangeEvent e);
+        public delegate void coininfoRowChangeEventHandler(object sender, coininfoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void view_cioninfoRowChangeEventHandler(object sender, view_cioninfoRowChangeEvent e);
+        public delegate void view_coininfoRowChangeEventHandler(object sender, view_coininfoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -938,7 +938,7 @@ namespace CollectionManager.DATA.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ciontypeDataTable : global::System.Data.TypedTableBase<ciontypeRow> {
+        public partial class cointypeDataTable : global::System.Data.TypedTableBase<cointypeRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -950,8 +950,8 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeDataTable() {
-                this.TableName = "ciontype";
+            public cointypeDataTable() {
+                this.TableName = "cointype";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -959,7 +959,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ciontypeDataTable(global::System.Data.DataTable table) {
+            internal cointypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -976,7 +976,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ciontypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected cointypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1024,55 +1024,55 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow this[int index] {
+            public cointypeRow this[int index] {
                 get {
-                    return ((ciontypeRow)(this.Rows[index]));
+                    return ((cointypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ciontypeRowChangeEventHandler ciontypeRowChanging;
+            public event cointypeRowChangeEventHandler cointypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ciontypeRowChangeEventHandler ciontypeRowChanged;
+            public event cointypeRowChangeEventHandler cointypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ciontypeRowChangeEventHandler ciontypeRowDeleting;
+            public event cointypeRowChangeEventHandler cointypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ciontypeRowChangeEventHandler ciontypeRowDeleted;
+            public event cointypeRowChangeEventHandler cointypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddciontypeRow(ciontypeRow row) {
+            public void AddcointypeRow(cointypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow AddciontypeRow(string typename, int parentid, int orderid) {
-                ciontypeRow rowciontypeRow = ((ciontypeRow)(this.NewRow()));
+            public cointypeRow AddcointypeRow(string typename, int parentid, int orderid) {
+                cointypeRow rowcointypeRow = ((cointypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         typename,
                         parentid,
                         orderid};
-                rowciontypeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowciontypeRow);
-                return rowciontypeRow;
+                rowcointypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcointypeRow);
+                return rowcointypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow FindByid(int id) {
-                return ((ciontypeRow)(this.Rows.Find(new object[] {
+            public cointypeRow FindByid(int id) {
+                return ((cointypeRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ciontypeDataTable cln = ((ciontypeDataTable)(base.Clone()));
+                cointypeDataTable cln = ((cointypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1080,7 +1080,7 @@ namespace CollectionManager.DATA.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ciontypeDataTable();
+                return new cointypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1115,28 +1115,28 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow NewciontypeRow() {
-                return ((ciontypeRow)(this.NewRow()));
+            public cointypeRow NewcointypeRow() {
+                return ((cointypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ciontypeRow(builder);
+                return new cointypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ciontypeRow);
+                return typeof(cointypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ciontypeRowChanged != null)) {
-                    this.ciontypeRowChanged(this, new ciontypeRowChangeEvent(((ciontypeRow)(e.Row)), e.Action));
+                if ((this.cointypeRowChanged != null)) {
+                    this.cointypeRowChanged(this, new cointypeRowChangeEvent(((cointypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1144,8 +1144,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ciontypeRowChanging != null)) {
-                    this.ciontypeRowChanging(this, new ciontypeRowChangeEvent(((ciontypeRow)(e.Row)), e.Action));
+                if ((this.cointypeRowChanging != null)) {
+                    this.cointypeRowChanging(this, new cointypeRowChangeEvent(((cointypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1153,8 +1153,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ciontypeRowDeleted != null)) {
-                    this.ciontypeRowDeleted(this, new ciontypeRowChangeEvent(((ciontypeRow)(e.Row)), e.Action));
+                if ((this.cointypeRowDeleted != null)) {
+                    this.cointypeRowDeleted(this, new cointypeRowChangeEvent(((cointypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1162,14 +1162,14 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ciontypeRowDeleting != null)) {
-                    this.ciontypeRowDeleting(this, new ciontypeRowChangeEvent(((ciontypeRow)(e.Row)), e.Action));
+                if ((this.cointypeRowDeleting != null)) {
+                    this.cointypeRowDeleting(this, new cointypeRowChangeEvent(((cointypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveciontypeRow(ciontypeRow row) {
+            public void RemovecointypeRow(cointypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1196,7 +1196,7 @@ namespace CollectionManager.DATA.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ciontypeDataTable";
+                attribute2.FixedValue = "cointypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2648,7 +2648,7 @@ namespace CollectionManager.DATA.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class cionclassDataTable : global::System.Data.TypedTableBase<cionclassRow> {
+        public partial class coinclassDataTable : global::System.Data.TypedTableBase<coinclassRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -2656,8 +2656,8 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassDataTable() {
-                this.TableName = "cionclass";
+            public coinclassDataTable() {
+                this.TableName = "coinclass";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2665,7 +2665,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cionclassDataTable(global::System.Data.DataTable table) {
+            internal coinclassDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2682,7 +2682,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected cionclassDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected coinclassDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2714,53 +2714,53 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow this[int index] {
+            public coinclassRow this[int index] {
                 get {
-                    return ((cionclassRow)(this.Rows[index]));
+                    return ((coinclassRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionclassRowChangeEventHandler cionclassRowChanging;
+            public event coinclassRowChangeEventHandler coinclassRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionclassRowChangeEventHandler cionclassRowChanged;
+            public event coinclassRowChangeEventHandler coinclassRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionclassRowChangeEventHandler cionclassRowDeleting;
+            public event coinclassRowChangeEventHandler coinclassRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionclassRowChangeEventHandler cionclassRowDeleted;
+            public event coinclassRowChangeEventHandler coinclassRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddcionclassRow(cionclassRow row) {
+            public void AddcoinclassRow(coinclassRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow AddcionclassRow(string classname) {
-                cionclassRow rowcionclassRow = ((cionclassRow)(this.NewRow()));
+            public coinclassRow AddcoinclassRow(string classname) {
+                coinclassRow rowcoinclassRow = ((coinclassRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         classname};
-                rowcionclassRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowcionclassRow);
-                return rowcionclassRow;
+                rowcoinclassRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcoinclassRow);
+                return rowcoinclassRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow FindByid(int id) {
-                return ((cionclassRow)(this.Rows.Find(new object[] {
+            public coinclassRow FindByid(int id) {
+                return ((coinclassRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                cionclassDataTable cln = ((cionclassDataTable)(base.Clone()));
+                coinclassDataTable cln = ((coinclassDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2768,7 +2768,7 @@ namespace CollectionManager.DATA.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new cionclassDataTable();
+                return new coinclassDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2797,28 +2797,28 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow NewcionclassRow() {
-                return ((cionclassRow)(this.NewRow()));
+            public coinclassRow NewcoinclassRow() {
+                return ((coinclassRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new cionclassRow(builder);
+                return new coinclassRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(cionclassRow);
+                return typeof(coinclassRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.cionclassRowChanged != null)) {
-                    this.cionclassRowChanged(this, new cionclassRowChangeEvent(((cionclassRow)(e.Row)), e.Action));
+                if ((this.coinclassRowChanged != null)) {
+                    this.coinclassRowChanged(this, new coinclassRowChangeEvent(((coinclassRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2826,8 +2826,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.cionclassRowChanging != null)) {
-                    this.cionclassRowChanging(this, new cionclassRowChangeEvent(((cionclassRow)(e.Row)), e.Action));
+                if ((this.coinclassRowChanging != null)) {
+                    this.coinclassRowChanging(this, new coinclassRowChangeEvent(((coinclassRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2835,8 +2835,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.cionclassRowDeleted != null)) {
-                    this.cionclassRowDeleted(this, new cionclassRowChangeEvent(((cionclassRow)(e.Row)), e.Action));
+                if ((this.coinclassRowDeleted != null)) {
+                    this.coinclassRowDeleted(this, new coinclassRowChangeEvent(((coinclassRow)(e.Row)), e.Action));
                 }
             }
             
@@ -2844,14 +2844,14 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.cionclassRowDeleting != null)) {
-                    this.cionclassRowDeleting(this, new cionclassRowChangeEvent(((cionclassRow)(e.Row)), e.Action));
+                if ((this.coinclassRowDeleting != null)) {
+                    this.coinclassRowDeleting(this, new coinclassRowChangeEvent(((coinclassRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovecionclassRow(cionclassRow row) {
+            public void RemovecoinclassRow(coinclassRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -2878,7 +2878,7 @@ namespace CollectionManager.DATA.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "cionclassDataTable";
+                attribute2.FixedValue = "coinclassDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2924,7 +2924,7 @@ namespace CollectionManager.DATA.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class cionunitDataTable : global::System.Data.TypedTableBase<cionunitRow> {
+        public partial class coinunitDataTable : global::System.Data.TypedTableBase<coinunitRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -2932,8 +2932,8 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitDataTable() {
-                this.TableName = "cionunit";
+            public coinunitDataTable() {
+                this.TableName = "coinunit";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -2941,7 +2941,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cionunitDataTable(global::System.Data.DataTable table) {
+            internal coinunitDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2958,7 +2958,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected cionunitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected coinunitDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2990,53 +2990,53 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow this[int index] {
+            public coinunitRow this[int index] {
                 get {
-                    return ((cionunitRow)(this.Rows[index]));
+                    return ((coinunitRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionunitRowChangeEventHandler cionunitRowChanging;
+            public event coinunitRowChangeEventHandler coinunitRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionunitRowChangeEventHandler cionunitRowChanged;
+            public event coinunitRowChangeEventHandler coinunitRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionunitRowChangeEventHandler cionunitRowDeleting;
+            public event coinunitRowChangeEventHandler coinunitRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cionunitRowChangeEventHandler cionunitRowDeleted;
+            public event coinunitRowChangeEventHandler coinunitRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddcionunitRow(cionunitRow row) {
+            public void AddcoinunitRow(coinunitRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow AddcionunitRow(string unitname) {
-                cionunitRow rowcionunitRow = ((cionunitRow)(this.NewRow()));
+            public coinunitRow AddcoinunitRow(string unitname) {
+                coinunitRow rowcoinunitRow = ((coinunitRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         unitname};
-                rowcionunitRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowcionunitRow);
-                return rowcionunitRow;
+                rowcoinunitRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcoinunitRow);
+                return rowcoinunitRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow FindByid(int id) {
-                return ((cionunitRow)(this.Rows.Find(new object[] {
+            public coinunitRow FindByid(int id) {
+                return ((coinunitRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                cionunitDataTable cln = ((cionunitDataTable)(base.Clone()));
+                coinunitDataTable cln = ((coinunitDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3044,7 +3044,7 @@ namespace CollectionManager.DATA.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new cionunitDataTable();
+                return new coinunitDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3073,28 +3073,28 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow NewcionunitRow() {
-                return ((cionunitRow)(this.NewRow()));
+            public coinunitRow NewcoinunitRow() {
+                return ((coinunitRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new cionunitRow(builder);
+                return new coinunitRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(cionunitRow);
+                return typeof(coinunitRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.cionunitRowChanged != null)) {
-                    this.cionunitRowChanged(this, new cionunitRowChangeEvent(((cionunitRow)(e.Row)), e.Action));
+                if ((this.coinunitRowChanged != null)) {
+                    this.coinunitRowChanged(this, new coinunitRowChangeEvent(((coinunitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3102,8 +3102,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.cionunitRowChanging != null)) {
-                    this.cionunitRowChanging(this, new cionunitRowChangeEvent(((cionunitRow)(e.Row)), e.Action));
+                if ((this.coinunitRowChanging != null)) {
+                    this.coinunitRowChanging(this, new coinunitRowChangeEvent(((coinunitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3111,8 +3111,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.cionunitRowDeleted != null)) {
-                    this.cionunitRowDeleted(this, new cionunitRowChangeEvent(((cionunitRow)(e.Row)), e.Action));
+                if ((this.coinunitRowDeleted != null)) {
+                    this.coinunitRowDeleted(this, new coinunitRowChangeEvent(((coinunitRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3120,14 +3120,14 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.cionunitRowDeleting != null)) {
-                    this.cionunitRowDeleting(this, new cionunitRowChangeEvent(((cionunitRow)(e.Row)), e.Action));
+                if ((this.coinunitRowDeleting != null)) {
+                    this.coinunitRowDeleting(this, new coinunitRowChangeEvent(((coinunitRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovecionunitRow(cionunitRow row) {
+            public void RemovecoinunitRow(coinunitRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3154,7 +3154,7 @@ namespace CollectionManager.DATA.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "cionunitDataTable";
+                attribute2.FixedValue = "coinunitDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3200,7 +3200,7 @@ namespace CollectionManager.DATA.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class cioninfoDataTable : global::System.Data.TypedTableBase<cioninfoRow> {
+        public partial class coininfoDataTable : global::System.Data.TypedTableBase<coininfoRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -3224,8 +3224,8 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoDataTable() {
-                this.TableName = "cioninfo";
+            public coininfoDataTable() {
+                this.TableName = "coininfo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3233,7 +3233,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cioninfoDataTable(global::System.Data.DataTable table) {
+            internal coininfoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3250,7 +3250,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected cioninfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected coininfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3346,34 +3346,34 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow this[int index] {
+            public coininfoRow this[int index] {
                 get {
-                    return ((cioninfoRow)(this.Rows[index]));
+                    return ((coininfoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cioninfoRowChangeEventHandler cioninfoRowChanging;
+            public event coininfoRowChangeEventHandler coininfoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cioninfoRowChangeEventHandler cioninfoRowChanged;
+            public event coininfoRowChangeEventHandler coininfoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cioninfoRowChangeEventHandler cioninfoRowDeleting;
+            public event coininfoRowChangeEventHandler coininfoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event cioninfoRowChangeEventHandler cioninfoRowDeleted;
+            public event coininfoRowChangeEventHandler coininfoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddcioninfoRow(cioninfoRow row) {
+            public void AddcoininfoRow(coininfoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow AddcioninfoRow(string publisher, string name, ciontypeRow parentciontypeRowByciontypecioninfo, System.DateTime publishdate, string price_ori, cionunitRow parentcionunitRowBycionunitcioninfo, cionclassRow parentcionclassRowBycionclasscioninfo, string picpath, string memo) {
-                cioninfoRow rowcioninfoRow = ((cioninfoRow)(this.NewRow()));
+            public coininfoRow AddcoininfoRow(string publisher, string name, cointypeRow parentcointypeRowBycointypecoininfo, System.DateTime publishdate, string price_ori, coinunitRow parentcoinunitRowBycoinunitcoininfo, coinclassRow parentcoinclassRowBycoinclasscoininfo, string picpath, string memo) {
+                coininfoRow rowcoininfoRow = ((coininfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         publisher,
@@ -3385,31 +3385,31 @@ namespace CollectionManager.DATA.Database {
                         null,
                         picpath,
                         memo};
-                if ((parentciontypeRowByciontypecioninfo != null)) {
-                    columnValuesArray[3] = parentciontypeRowByciontypecioninfo[0];
+                if ((parentcointypeRowBycointypecoininfo != null)) {
+                    columnValuesArray[3] = parentcointypeRowBycointypecoininfo[0];
                 }
-                if ((parentcionunitRowBycionunitcioninfo != null)) {
-                    columnValuesArray[6] = parentcionunitRowBycionunitcioninfo[0];
+                if ((parentcoinunitRowBycoinunitcoininfo != null)) {
+                    columnValuesArray[6] = parentcoinunitRowBycoinunitcoininfo[0];
                 }
-                if ((parentcionclassRowBycionclasscioninfo != null)) {
-                    columnValuesArray[7] = parentcionclassRowBycionclasscioninfo[0];
+                if ((parentcoinclassRowBycoinclasscoininfo != null)) {
+                    columnValuesArray[7] = parentcoinclassRowBycoinclasscoininfo[0];
                 }
-                rowcioninfoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowcioninfoRow);
-                return rowcioninfoRow;
+                rowcoininfoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcoininfoRow);
+                return rowcoininfoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow FindByid(int id) {
-                return ((cioninfoRow)(this.Rows.Find(new object[] {
+            public coininfoRow FindByid(int id) {
+                return ((coininfoRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                cioninfoDataTable cln = ((cioninfoDataTable)(base.Clone()));
+                coininfoDataTable cln = ((coininfoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3417,7 +3417,7 @@ namespace CollectionManager.DATA.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new cioninfoDataTable();
+                return new coininfoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3474,28 +3474,28 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow NewcioninfoRow() {
-                return ((cioninfoRow)(this.NewRow()));
+            public coininfoRow NewcoininfoRow() {
+                return ((coininfoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new cioninfoRow(builder);
+                return new coininfoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(cioninfoRow);
+                return typeof(coininfoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.cioninfoRowChanged != null)) {
-                    this.cioninfoRowChanged(this, new cioninfoRowChangeEvent(((cioninfoRow)(e.Row)), e.Action));
+                if ((this.coininfoRowChanged != null)) {
+                    this.coininfoRowChanged(this, new coininfoRowChangeEvent(((coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3503,8 +3503,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.cioninfoRowChanging != null)) {
-                    this.cioninfoRowChanging(this, new cioninfoRowChangeEvent(((cioninfoRow)(e.Row)), e.Action));
+                if ((this.coininfoRowChanging != null)) {
+                    this.coininfoRowChanging(this, new coininfoRowChangeEvent(((coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3512,8 +3512,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.cioninfoRowDeleted != null)) {
-                    this.cioninfoRowDeleted(this, new cioninfoRowChangeEvent(((cioninfoRow)(e.Row)), e.Action));
+                if ((this.coininfoRowDeleted != null)) {
+                    this.coininfoRowDeleted(this, new coininfoRowChangeEvent(((coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3521,14 +3521,14 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.cioninfoRowDeleting != null)) {
-                    this.cioninfoRowDeleting(this, new cioninfoRowChangeEvent(((cioninfoRow)(e.Row)), e.Action));
+                if ((this.coininfoRowDeleting != null)) {
+                    this.coininfoRowDeleting(this, new coininfoRowChangeEvent(((coininfoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovecioninfoRow(cioninfoRow row) {
+            public void RemovecoininfoRow(coininfoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -3555,7 +3555,7 @@ namespace CollectionManager.DATA.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "cioninfoDataTable";
+                attribute2.FixedValue = "coininfoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3601,7 +3601,7 @@ namespace CollectionManager.DATA.Database {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class view_cioninfoDataTable : global::System.Data.TypedTableBase<view_cioninfoRow> {
+        public partial class view_coininfoDataTable : global::System.Data.TypedTableBase<view_coininfoRow> {
             
             private global::System.Data.DataColumn columnid;
             
@@ -3635,8 +3635,8 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoDataTable() {
-                this.TableName = "view_cioninfo";
+            public view_coininfoDataTable() {
+                this.TableName = "view_coininfo";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -3644,7 +3644,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal view_cioninfoDataTable(global::System.Data.DataTable table) {
+            internal view_coininfoDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -3661,7 +3661,7 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected view_cioninfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected view_coininfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -3797,34 +3797,34 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoRow this[int index] {
+            public view_coininfoRow this[int index] {
                 get {
-                    return ((view_cioninfoRow)(this.Rows[index]));
+                    return ((view_coininfoRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event view_cioninfoRowChangeEventHandler view_cioninfoRowChanging;
+            public event view_coininfoRowChangeEventHandler view_coininfoRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event view_cioninfoRowChangeEventHandler view_cioninfoRowChanged;
+            public event view_coininfoRowChangeEventHandler view_coininfoRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event view_cioninfoRowChangeEventHandler view_cioninfoRowDeleting;
+            public event view_coininfoRowChangeEventHandler view_coininfoRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event view_cioninfoRowChangeEventHandler view_cioninfoRowDeleted;
+            public event view_coininfoRowChangeEventHandler view_coininfoRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addview_cioninfoRow(view_cioninfoRow row) {
+            public void Addview_coininfoRow(view_coininfoRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoRow Addview_cioninfoRow(string publisher, string name, string typename, int parentid, int orderid, System.DateTime publishdate, string price_ori, string unitname, string classname, string picpath, string memo, int unitid, int classid, int typeid) {
-                view_cioninfoRow rowview_cioninfoRow = ((view_cioninfoRow)(this.NewRow()));
+            public view_coininfoRow Addview_coininfoRow(string publisher, string name, string typename, int parentid, int orderid, System.DateTime publishdate, string price_ori, string unitname, string classname, string picpath, string memo, int unitid, int classid, int typeid) {
+                view_coininfoRow rowview_coininfoRow = ((view_coininfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         publisher,
@@ -3841,15 +3841,15 @@ namespace CollectionManager.DATA.Database {
                         unitid,
                         classid,
                         typeid};
-                rowview_cioninfoRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowview_cioninfoRow);
-                return rowview_cioninfoRow;
+                rowview_coininfoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowview_coininfoRow);
+                return rowview_coininfoRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                view_cioninfoDataTable cln = ((view_cioninfoDataTable)(base.Clone()));
+                view_coininfoDataTable cln = ((view_coininfoDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -3857,7 +3857,7 @@ namespace CollectionManager.DATA.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new view_cioninfoDataTable();
+                return new view_coininfoDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3928,28 +3928,28 @@ namespace CollectionManager.DATA.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoRow Newview_cioninfoRow() {
-                return ((view_cioninfoRow)(this.NewRow()));
+            public view_coininfoRow Newview_coininfoRow() {
+                return ((view_coininfoRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new view_cioninfoRow(builder);
+                return new view_coininfoRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(view_cioninfoRow);
+                return typeof(view_coininfoRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.view_cioninfoRowChanged != null)) {
-                    this.view_cioninfoRowChanged(this, new view_cioninfoRowChangeEvent(((view_cioninfoRow)(e.Row)), e.Action));
+                if ((this.view_coininfoRowChanged != null)) {
+                    this.view_coininfoRowChanged(this, new view_coininfoRowChangeEvent(((view_coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3957,8 +3957,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.view_cioninfoRowChanging != null)) {
-                    this.view_cioninfoRowChanging(this, new view_cioninfoRowChangeEvent(((view_cioninfoRow)(e.Row)), e.Action));
+                if ((this.view_coininfoRowChanging != null)) {
+                    this.view_coininfoRowChanging(this, new view_coininfoRowChangeEvent(((view_coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3966,8 +3966,8 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.view_cioninfoRowDeleted != null)) {
-                    this.view_cioninfoRowDeleted(this, new view_cioninfoRowChangeEvent(((view_cioninfoRow)(e.Row)), e.Action));
+                if ((this.view_coininfoRowDeleted != null)) {
+                    this.view_coininfoRowDeleted(this, new view_coininfoRowChangeEvent(((view_coininfoRow)(e.Row)), e.Action));
                 }
             }
             
@@ -3975,14 +3975,14 @@ namespace CollectionManager.DATA.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.view_cioninfoRowDeleting != null)) {
-                    this.view_cioninfoRowDeleting(this, new view_cioninfoRowChangeEvent(((view_cioninfoRow)(e.Row)), e.Action));
+                if ((this.view_coininfoRowDeleting != null)) {
+                    this.view_coininfoRowDeleting(this, new view_coininfoRowChangeEvent(((view_coininfoRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removeview_cioninfoRow(view_cioninfoRow row) {
+            public void Removeview_coininfoRow(view_coininfoRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -4009,7 +4009,7 @@ namespace CollectionManager.DATA.Database {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "view_cioninfoDataTable";
+                attribute2.FixedValue = "view_coininfoDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4174,25 +4174,25 @@ namespace CollectionManager.DATA.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ciontypeRow : global::System.Data.DataRow {
+        public partial class cointypeRow : global::System.Data.DataRow {
             
-            private ciontypeDataTable tableciontype;
+            private cointypeDataTable tablecointype;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ciontypeRow(global::System.Data.DataRowBuilder rb) : 
+            internal cointypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableciontype = ((ciontypeDataTable)(this.Table));
+                this.tablecointype = ((cointypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tableciontype.idColumn]));
+                    return ((int)(this[this.tablecointype.idColumn]));
                 }
                 set {
-                    this[this.tableciontype.idColumn] = value;
+                    this[this.tablecointype.idColumn] = value;
                 }
             }
             
@@ -4201,14 +4201,14 @@ namespace CollectionManager.DATA.Database {
             public string typename {
                 get {
                     try {
-                        return ((string)(this[this.tableciontype.typenameColumn]));
+                        return ((string)(this[this.tablecointype.typenameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“ciontype”中列“typename”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“cointype”中列“typename”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableciontype.typenameColumn] = value;
+                    this[this.tablecointype.typenameColumn] = value;
                 }
             }
             
@@ -4217,14 +4217,14 @@ namespace CollectionManager.DATA.Database {
             public int parentid {
                 get {
                     try {
-                        return ((int)(this[this.tableciontype.parentidColumn]));
+                        return ((int)(this[this.tablecointype.parentidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“ciontype”中列“parentid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“cointype”中列“parentid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableciontype.parentidColumn] = value;
+                    this[this.tablecointype.parentidColumn] = value;
                 }
             }
             
@@ -4233,61 +4233,61 @@ namespace CollectionManager.DATA.Database {
             public int orderid {
                 get {
                     try {
-                        return ((int)(this[this.tableciontype.orderidColumn]));
+                        return ((int)(this[this.tablecointype.orderidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“ciontype”中列“orderid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“cointype”中列“orderid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableciontype.orderidColumn] = value;
+                    this[this.tablecointype.orderidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IstypenameNull() {
-                return this.IsNull(this.tableciontype.typenameColumn);
+                return this.IsNull(this.tablecointype.typenameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettypenameNull() {
-                this[this.tableciontype.typenameColumn] = global::System.Convert.DBNull;
+                this[this.tablecointype.typenameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsparentidNull() {
-                return this.IsNull(this.tableciontype.parentidColumn);
+                return this.IsNull(this.tablecointype.parentidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetparentidNull() {
-                this[this.tableciontype.parentidColumn] = global::System.Convert.DBNull;
+                this[this.tablecointype.parentidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsorderidNull() {
-                return this.IsNull(this.tableciontype.orderidColumn);
+                return this.IsNull(this.tablecointype.orderidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetorderidNull() {
-                this[this.tableciontype.orderidColumn] = global::System.Convert.DBNull;
+                this[this.tablecointype.orderidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow[] GetcioninfoRows() {
-                if ((this.Table.ChildRelations["ciontypecioninfo"] == null)) {
-                    return new cioninfoRow[0];
+            public coininfoRow[] GetcoininfoRows() {
+                if ((this.Table.ChildRelations["cointypecoininfo"] == null)) {
+                    return new coininfoRow[0];
                 }
                 else {
-                    return ((cioninfoRow[])(base.GetChildRows(this.Table.ChildRelations["ciontypecioninfo"])));
+                    return ((coininfoRow[])(base.GetChildRows(this.Table.ChildRelations["cointypecoininfo"])));
                 }
             }
         }
@@ -5171,25 +5171,25 @@ namespace CollectionManager.DATA.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class cionclassRow : global::System.Data.DataRow {
+        public partial class coinclassRow : global::System.Data.DataRow {
             
-            private cionclassDataTable tablecionclass;
+            private coinclassDataTable tablecoinclass;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cionclassRow(global::System.Data.DataRowBuilder rb) : 
+            internal coinclassRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablecionclass = ((cionclassDataTable)(this.Table));
+                this.tablecoinclass = ((coinclassDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablecionclass.idColumn]));
+                    return ((int)(this[this.tablecoinclass.idColumn]));
                 }
                 set {
-                    this[this.tablecionclass.idColumn] = value;
+                    this[this.tablecoinclass.idColumn] = value;
                 }
             }
             
@@ -5198,37 +5198,37 @@ namespace CollectionManager.DATA.Database {
             public string classname {
                 get {
                     try {
-                        return ((string)(this[this.tablecionclass.classnameColumn]));
+                        return ((string)(this[this.tablecoinclass.classnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cionclass”中列“classname”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coinclass”中列“classname”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecionclass.classnameColumn] = value;
+                    this[this.tablecoinclass.classnameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsclassnameNull() {
-                return this.IsNull(this.tablecionclass.classnameColumn);
+                return this.IsNull(this.tablecoinclass.classnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetclassnameNull() {
-                this[this.tablecionclass.classnameColumn] = global::System.Convert.DBNull;
+                this[this.tablecoinclass.classnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow[] GetcioninfoRows() {
-                if ((this.Table.ChildRelations["cionclasscioninfo"] == null)) {
-                    return new cioninfoRow[0];
+            public coininfoRow[] GetcoininfoRows() {
+                if ((this.Table.ChildRelations["coinclasscoininfo"] == null)) {
+                    return new coininfoRow[0];
                 }
                 else {
-                    return ((cioninfoRow[])(base.GetChildRows(this.Table.ChildRelations["cionclasscioninfo"])));
+                    return ((coininfoRow[])(base.GetChildRows(this.Table.ChildRelations["coinclasscoininfo"])));
                 }
             }
         }
@@ -5236,25 +5236,25 @@ namespace CollectionManager.DATA.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class cionunitRow : global::System.Data.DataRow {
+        public partial class coinunitRow : global::System.Data.DataRow {
             
-            private cionunitDataTable tablecionunit;
+            private coinunitDataTable tablecoinunit;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cionunitRow(global::System.Data.DataRowBuilder rb) : 
+            internal coinunitRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablecionunit = ((cionunitDataTable)(this.Table));
+                this.tablecoinunit = ((coinunitDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablecionunit.idColumn]));
+                    return ((int)(this[this.tablecoinunit.idColumn]));
                 }
                 set {
-                    this[this.tablecionunit.idColumn] = value;
+                    this[this.tablecoinunit.idColumn] = value;
                 }
             }
             
@@ -5263,37 +5263,37 @@ namespace CollectionManager.DATA.Database {
             public string unitname {
                 get {
                     try {
-                        return ((string)(this[this.tablecionunit.unitnameColumn]));
+                        return ((string)(this[this.tablecoinunit.unitnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cionunit”中列“unitname”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coinunit”中列“unitname”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecionunit.unitnameColumn] = value;
+                    this[this.tablecoinunit.unitnameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsunitnameNull() {
-                return this.IsNull(this.tablecionunit.unitnameColumn);
+                return this.IsNull(this.tablecoinunit.unitnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetunitnameNull() {
-                this[this.tablecionunit.unitnameColumn] = global::System.Convert.DBNull;
+                this[this.tablecoinunit.unitnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow[] GetcioninfoRows() {
-                if ((this.Table.ChildRelations["cionunitcioninfo"] == null)) {
-                    return new cioninfoRow[0];
+            public coininfoRow[] GetcoininfoRows() {
+                if ((this.Table.ChildRelations["coinunitcoininfo"] == null)) {
+                    return new coininfoRow[0];
                 }
                 else {
-                    return ((cioninfoRow[])(base.GetChildRows(this.Table.ChildRelations["cionunitcioninfo"])));
+                    return ((coininfoRow[])(base.GetChildRows(this.Table.ChildRelations["coinunitcoininfo"])));
                 }
             }
         }
@@ -5301,25 +5301,25 @@ namespace CollectionManager.DATA.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class cioninfoRow : global::System.Data.DataRow {
+        public partial class coininfoRow : global::System.Data.DataRow {
             
-            private cioninfoDataTable tablecioninfo;
+            private coininfoDataTable tablecoininfo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal cioninfoRow(global::System.Data.DataRowBuilder rb) : 
+            internal coininfoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablecioninfo = ((cioninfoDataTable)(this.Table));
+                this.tablecoininfo = ((coininfoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablecioninfo.idColumn]));
+                    return ((int)(this[this.tablecoininfo.idColumn]));
                 }
                 set {
-                    this[this.tablecioninfo.idColumn] = value;
+                    this[this.tablecoininfo.idColumn] = value;
                 }
             }
             
@@ -5328,14 +5328,14 @@ namespace CollectionManager.DATA.Database {
             public string publisher {
                 get {
                     try {
-                        return ((string)(this[this.tablecioninfo.publisherColumn]));
+                        return ((string)(this[this.tablecoininfo.publisherColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“publisher”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“publisher”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.publisherColumn] = value;
+                    this[this.tablecoininfo.publisherColumn] = value;
                 }
             }
             
@@ -5344,14 +5344,14 @@ namespace CollectionManager.DATA.Database {
             public string name {
                 get {
                     try {
-                        return ((string)(this[this.tablecioninfo.nameColumn]));
+                        return ((string)(this[this.tablecoininfo.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“name”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“name”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.nameColumn] = value;
+                    this[this.tablecoininfo.nameColumn] = value;
                 }
             }
             
@@ -5360,14 +5360,14 @@ namespace CollectionManager.DATA.Database {
             public int typeid {
                 get {
                     try {
-                        return ((int)(this[this.tablecioninfo.typeidColumn]));
+                        return ((int)(this[this.tablecoininfo.typeidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“typeid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“typeid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.typeidColumn] = value;
+                    this[this.tablecoininfo.typeidColumn] = value;
                 }
             }
             
@@ -5376,14 +5376,14 @@ namespace CollectionManager.DATA.Database {
             public System.DateTime publishdate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablecioninfo.publishdateColumn]));
+                        return ((global::System.DateTime)(this[this.tablecoininfo.publishdateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“publishdate”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“publishdate”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.publishdateColumn] = value;
+                    this[this.tablecoininfo.publishdateColumn] = value;
                 }
             }
             
@@ -5392,14 +5392,14 @@ namespace CollectionManager.DATA.Database {
             public string price_ori {
                 get {
                     try {
-                        return ((string)(this[this.tablecioninfo.price_oriColumn]));
+                        return ((string)(this[this.tablecoininfo.price_oriColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“price_ori”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“price_ori”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.price_oriColumn] = value;
+                    this[this.tablecoininfo.price_oriColumn] = value;
                 }
             }
             
@@ -5408,14 +5408,14 @@ namespace CollectionManager.DATA.Database {
             public int unitid {
                 get {
                     try {
-                        return ((int)(this[this.tablecioninfo.unitidColumn]));
+                        return ((int)(this[this.tablecoininfo.unitidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“unitid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“unitid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.unitidColumn] = value;
+                    this[this.tablecoininfo.unitidColumn] = value;
                 }
             }
             
@@ -5424,14 +5424,14 @@ namespace CollectionManager.DATA.Database {
             public int classid {
                 get {
                     try {
-                        return ((int)(this[this.tablecioninfo.classidColumn]));
+                        return ((int)(this[this.tablecoininfo.classidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“classid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“classid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.classidColumn] = value;
+                    this[this.tablecoininfo.classidColumn] = value;
                 }
             }
             
@@ -5440,14 +5440,14 @@ namespace CollectionManager.DATA.Database {
             public string picpath {
                 get {
                     try {
-                        return ((string)(this[this.tablecioninfo.picpathColumn]));
+                        return ((string)(this[this.tablecoininfo.picpathColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“picpath”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“picpath”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.picpathColumn] = value;
+                    this[this.tablecoininfo.picpathColumn] = value;
                 }
             }
             
@@ -5456,171 +5456,171 @@ namespace CollectionManager.DATA.Database {
             public string memo {
                 get {
                     try {
-                        return ((string)(this[this.tablecioninfo.memoColumn]));
+                        return ((string)(this[this.tablecoininfo.memoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“cioninfo”中列“memo”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“coininfo”中列“memo”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tablecioninfo.memoColumn] = value;
+                    this[this.tablecoininfo.memoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow cionclassRow {
+            public coinclassRow coinclassRow {
                 get {
-                    return ((cionclassRow)(this.GetParentRow(this.Table.ParentRelations["cionclasscioninfo"])));
+                    return ((coinclassRow)(this.GetParentRow(this.Table.ParentRelations["coinclasscoininfo"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["cionclasscioninfo"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["coinclasscoininfo"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow ciontypeRow {
+            public cointypeRow cointypeRow {
                 get {
-                    return ((ciontypeRow)(this.GetParentRow(this.Table.ParentRelations["ciontypecioninfo"])));
+                    return ((cointypeRow)(this.GetParentRow(this.Table.ParentRelations["cointypecoininfo"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["ciontypecioninfo"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["cointypecoininfo"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow cionunitRow {
+            public coinunitRow coinunitRow {
                 get {
-                    return ((cionunitRow)(this.GetParentRow(this.Table.ParentRelations["cionunitcioninfo"])));
+                    return ((coinunitRow)(this.GetParentRow(this.Table.ParentRelations["coinunitcoininfo"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["cionunitcioninfo"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["coinunitcoininfo"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspublisherNull() {
-                return this.IsNull(this.tablecioninfo.publisherColumn);
+                return this.IsNull(this.tablecoininfo.publisherColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpublisherNull() {
-                this[this.tablecioninfo.publisherColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.publisherColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnameNull() {
-                return this.IsNull(this.tablecioninfo.nameColumn);
+                return this.IsNull(this.tablecoininfo.nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnameNull() {
-                this[this.tablecioninfo.nameColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IstypeidNull() {
-                return this.IsNull(this.tablecioninfo.typeidColumn);
+                return this.IsNull(this.tablecoininfo.typeidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettypeidNull() {
-                this[this.tablecioninfo.typeidColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.typeidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspublishdateNull() {
-                return this.IsNull(this.tablecioninfo.publishdateColumn);
+                return this.IsNull(this.tablecoininfo.publishdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpublishdateNull() {
-                this[this.tablecioninfo.publishdateColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.publishdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isprice_oriNull() {
-                return this.IsNull(this.tablecioninfo.price_oriColumn);
+                return this.IsNull(this.tablecoininfo.price_oriColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setprice_oriNull() {
-                this[this.tablecioninfo.price_oriColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.price_oriColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsunitidNull() {
-                return this.IsNull(this.tablecioninfo.unitidColumn);
+                return this.IsNull(this.tablecoininfo.unitidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetunitidNull() {
-                this[this.tablecioninfo.unitidColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.unitidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsclassidNull() {
-                return this.IsNull(this.tablecioninfo.classidColumn);
+                return this.IsNull(this.tablecoininfo.classidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetclassidNull() {
-                this[this.tablecioninfo.classidColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.classidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspicpathNull() {
-                return this.IsNull(this.tablecioninfo.picpathColumn);
+                return this.IsNull(this.tablecoininfo.picpathColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpicpathNull() {
-                this[this.tablecioninfo.picpathColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.picpathColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsmemoNull() {
-                return this.IsNull(this.tablecioninfo.memoColumn);
+                return this.IsNull(this.tablecoininfo.memoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmemoNull() {
-                this[this.tablecioninfo.memoColumn] = global::System.Convert.DBNull;
+                this[this.tablecoininfo.memoColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class view_cioninfoRow : global::System.Data.DataRow {
+        public partial class view_coininfoRow : global::System.Data.DataRow {
             
-            private view_cioninfoDataTable tableview_cioninfo;
+            private view_coininfoDataTable tableview_coininfo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal view_cioninfoRow(global::System.Data.DataRowBuilder rb) : 
+            internal view_coininfoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableview_cioninfo = ((view_cioninfoDataTable)(this.Table));
+                this.tableview_coininfo = ((view_coininfoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5628,14 +5628,14 @@ namespace CollectionManager.DATA.Database {
             public int id {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.idColumn]));
+                        return ((int)(this[this.tableview_coininfo.idColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“id”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“id”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.idColumn] = value;
+                    this[this.tableview_coininfo.idColumn] = value;
                 }
             }
             
@@ -5644,14 +5644,14 @@ namespace CollectionManager.DATA.Database {
             public string publisher {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.publisherColumn]));
+                        return ((string)(this[this.tableview_coininfo.publisherColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“publisher”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“publisher”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.publisherColumn] = value;
+                    this[this.tableview_coininfo.publisherColumn] = value;
                 }
             }
             
@@ -5660,14 +5660,14 @@ namespace CollectionManager.DATA.Database {
             public string name {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.nameColumn]));
+                        return ((string)(this[this.tableview_coininfo.nameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“name”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“name”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.nameColumn] = value;
+                    this[this.tableview_coininfo.nameColumn] = value;
                 }
             }
             
@@ -5676,14 +5676,14 @@ namespace CollectionManager.DATA.Database {
             public string typename {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.typenameColumn]));
+                        return ((string)(this[this.tableview_coininfo.typenameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“typename”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“typename”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.typenameColumn] = value;
+                    this[this.tableview_coininfo.typenameColumn] = value;
                 }
             }
             
@@ -5692,14 +5692,14 @@ namespace CollectionManager.DATA.Database {
             public int parentid {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.parentidColumn]));
+                        return ((int)(this[this.tableview_coininfo.parentidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“parentid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“parentid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.parentidColumn] = value;
+                    this[this.tableview_coininfo.parentidColumn] = value;
                 }
             }
             
@@ -5708,14 +5708,14 @@ namespace CollectionManager.DATA.Database {
             public int orderid {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.orderidColumn]));
+                        return ((int)(this[this.tableview_coininfo.orderidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“orderid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“orderid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.orderidColumn] = value;
+                    this[this.tableview_coininfo.orderidColumn] = value;
                 }
             }
             
@@ -5724,14 +5724,14 @@ namespace CollectionManager.DATA.Database {
             public System.DateTime publishdate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableview_cioninfo.publishdateColumn]));
+                        return ((global::System.DateTime)(this[this.tableview_coininfo.publishdateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“publishdate”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“publishdate”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.publishdateColumn] = value;
+                    this[this.tableview_coininfo.publishdateColumn] = value;
                 }
             }
             
@@ -5740,14 +5740,14 @@ namespace CollectionManager.DATA.Database {
             public string price_ori {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.price_oriColumn]));
+                        return ((string)(this[this.tableview_coininfo.price_oriColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“price_ori”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“price_ori”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.price_oriColumn] = value;
+                    this[this.tableview_coininfo.price_oriColumn] = value;
                 }
             }
             
@@ -5756,14 +5756,14 @@ namespace CollectionManager.DATA.Database {
             public string unitname {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.unitnameColumn]));
+                        return ((string)(this[this.tableview_coininfo.unitnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“unitname”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“unitname”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.unitnameColumn] = value;
+                    this[this.tableview_coininfo.unitnameColumn] = value;
                 }
             }
             
@@ -5772,14 +5772,14 @@ namespace CollectionManager.DATA.Database {
             public string classname {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.classnameColumn]));
+                        return ((string)(this[this.tableview_coininfo.classnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“classname”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“classname”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.classnameColumn] = value;
+                    this[this.tableview_coininfo.classnameColumn] = value;
                 }
             }
             
@@ -5788,14 +5788,14 @@ namespace CollectionManager.DATA.Database {
             public string picpath {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.picpathColumn]));
+                        return ((string)(this[this.tableview_coininfo.picpathColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“picpath”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“picpath”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.picpathColumn] = value;
+                    this[this.tableview_coininfo.picpathColumn] = value;
                 }
             }
             
@@ -5804,14 +5804,14 @@ namespace CollectionManager.DATA.Database {
             public string memo {
                 get {
                     try {
-                        return ((string)(this[this.tableview_cioninfo.memoColumn]));
+                        return ((string)(this[this.tableview_coininfo.memoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“memo”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“memo”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.memoColumn] = value;
+                    this[this.tableview_coininfo.memoColumn] = value;
                 }
             }
             
@@ -5820,14 +5820,14 @@ namespace CollectionManager.DATA.Database {
             public int unitid {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.unitidColumn]));
+                        return ((int)(this[this.tableview_coininfo.unitidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“unitid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“unitid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.unitidColumn] = value;
+                    this[this.tableview_coininfo.unitidColumn] = value;
                 }
             }
             
@@ -5836,14 +5836,14 @@ namespace CollectionManager.DATA.Database {
             public int classid {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.classidColumn]));
+                        return ((int)(this[this.tableview_coininfo.classidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“classid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“classid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.classidColumn] = value;
+                    this[this.tableview_coininfo.classidColumn] = value;
                 }
             }
             
@@ -5852,195 +5852,195 @@ namespace CollectionManager.DATA.Database {
             public int typeid {
                 get {
                     try {
-                        return ((int)(this[this.tableview_cioninfo.typeidColumn]));
+                        return ((int)(this[this.tableview_coininfo.typeidColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“view_cioninfo”中列“typeid”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“view_coininfo”中列“typeid”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableview_cioninfo.typeidColumn] = value;
+                    this[this.tableview_coininfo.typeidColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidNull() {
-                return this.IsNull(this.tableview_cioninfo.idColumn);
+                return this.IsNull(this.tableview_coininfo.idColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetidNull() {
-                this[this.tableview_cioninfo.idColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.idColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspublisherNull() {
-                return this.IsNull(this.tableview_cioninfo.publisherColumn);
+                return this.IsNull(this.tableview_coininfo.publisherColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpublisherNull() {
-                this[this.tableview_cioninfo.publisherColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.publisherColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnameNull() {
-                return this.IsNull(this.tableview_cioninfo.nameColumn);
+                return this.IsNull(this.tableview_coininfo.nameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetnameNull() {
-                this[this.tableview_cioninfo.nameColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IstypenameNull() {
-                return this.IsNull(this.tableview_cioninfo.typenameColumn);
+                return this.IsNull(this.tableview_coininfo.typenameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettypenameNull() {
-                this[this.tableview_cioninfo.typenameColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.typenameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsparentidNull() {
-                return this.IsNull(this.tableview_cioninfo.parentidColumn);
+                return this.IsNull(this.tableview_coininfo.parentidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetparentidNull() {
-                this[this.tableview_cioninfo.parentidColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.parentidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsorderidNull() {
-                return this.IsNull(this.tableview_cioninfo.orderidColumn);
+                return this.IsNull(this.tableview_coininfo.orderidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetorderidNull() {
-                this[this.tableview_cioninfo.orderidColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.orderidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspublishdateNull() {
-                return this.IsNull(this.tableview_cioninfo.publishdateColumn);
+                return this.IsNull(this.tableview_coininfo.publishdateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpublishdateNull() {
-                this[this.tableview_cioninfo.publishdateColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.publishdateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isprice_oriNull() {
-                return this.IsNull(this.tableview_cioninfo.price_oriColumn);
+                return this.IsNull(this.tableview_coininfo.price_oriColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setprice_oriNull() {
-                this[this.tableview_cioninfo.price_oriColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.price_oriColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsunitnameNull() {
-                return this.IsNull(this.tableview_cioninfo.unitnameColumn);
+                return this.IsNull(this.tableview_coininfo.unitnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetunitnameNull() {
-                this[this.tableview_cioninfo.unitnameColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.unitnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsclassnameNull() {
-                return this.IsNull(this.tableview_cioninfo.classnameColumn);
+                return this.IsNull(this.tableview_coininfo.classnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetclassnameNull() {
-                this[this.tableview_cioninfo.classnameColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.classnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IspicpathNull() {
-                return this.IsNull(this.tableview_cioninfo.picpathColumn);
+                return this.IsNull(this.tableview_coininfo.picpathColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetpicpathNull() {
-                this[this.tableview_cioninfo.picpathColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.picpathColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsmemoNull() {
-                return this.IsNull(this.tableview_cioninfo.memoColumn);
+                return this.IsNull(this.tableview_coininfo.memoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetmemoNull() {
-                this[this.tableview_cioninfo.memoColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.memoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsunitidNull() {
-                return this.IsNull(this.tableview_cioninfo.unitidColumn);
+                return this.IsNull(this.tableview_coininfo.unitidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetunitidNull() {
-                this[this.tableview_cioninfo.unitidColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.unitidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsclassidNull() {
-                return this.IsNull(this.tableview_cioninfo.classidColumn);
+                return this.IsNull(this.tableview_coininfo.classidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetclassidNull() {
-                this[this.tableview_cioninfo.classidColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.classidColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IstypeidNull() {
-                return this.IsNull(this.tableview_cioninfo.typeidColumn);
+                return this.IsNull(this.tableview_coininfo.typeidColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SettypeidNull() {
-                this[this.tableview_cioninfo.typeidColumn] = global::System.Convert.DBNull;
+                this[this.tableview_coininfo.typeidColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6082,22 +6082,22 @@ namespace CollectionManager.DATA.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ciontypeRowChangeEvent : global::System.EventArgs {
+        public class cointypeRowChangeEvent : global::System.EventArgs {
             
-            private ciontypeRow eventRow;
+            private cointypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRowChangeEvent(ciontypeRow row, global::System.Data.DataRowAction action) {
+            public cointypeRowChangeEvent(cointypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ciontypeRow Row {
+            public cointypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6252,22 +6252,22 @@ namespace CollectionManager.DATA.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class cionclassRowChangeEvent : global::System.EventArgs {
+        public class coinclassRowChangeEvent : global::System.EventArgs {
             
-            private cionclassRow eventRow;
+            private coinclassRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRowChangeEvent(cionclassRow row, global::System.Data.DataRowAction action) {
+            public coinclassRowChangeEvent(coinclassRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionclassRow Row {
+            public coinclassRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6286,22 +6286,22 @@ namespace CollectionManager.DATA.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class cionunitRowChangeEvent : global::System.EventArgs {
+        public class coinunitRowChangeEvent : global::System.EventArgs {
             
-            private cionunitRow eventRow;
+            private coinunitRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRowChangeEvent(cionunitRow row, global::System.Data.DataRowAction action) {
+            public coinunitRowChangeEvent(coinunitRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cionunitRow Row {
+            public coinunitRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6320,22 +6320,22 @@ namespace CollectionManager.DATA.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class cioninfoRowChangeEvent : global::System.EventArgs {
+        public class coininfoRowChangeEvent : global::System.EventArgs {
             
-            private cioninfoRow eventRow;
+            private coininfoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRowChangeEvent(cioninfoRow row, global::System.Data.DataRowAction action) {
+            public coininfoRowChangeEvent(coininfoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cioninfoRow Row {
+            public coininfoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6354,22 +6354,22 @@ namespace CollectionManager.DATA.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class view_cioninfoRowChangeEvent : global::System.EventArgs {
+        public class view_coininfoRowChangeEvent : global::System.EventArgs {
             
-            private view_cioninfoRow eventRow;
+            private view_coininfoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoRowChangeEvent(view_cioninfoRow row, global::System.Data.DataRowAction action) {
+            public view_coininfoRowChangeEvent(view_coininfoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public view_cioninfoRow Row {
+            public view_coininfoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6936,7 +6936,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ciontypeTableAdapter : global::System.ComponentModel.Component {
+    public partial class cointypeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -6950,7 +6950,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ciontypeTableAdapter() {
+        public cointypeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -7047,7 +7047,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ciontype";
+            tableMapping.DataSetTable = "cointype";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("typename", "typename");
             tableMapping.ColumnMappings.Add("parentid", "parentid");
@@ -7055,7 +7055,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `ciontype` WHERE ((`id` = ?) AND ((? = 1 AND `typename` IS NULL) OR (" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `cointype` WHERE ((`id` = ?) AND ((? = 1 AND `typename` IS NULL) OR (" +
                 "`typename` = ?)) AND ((? = 1 AND `parentid` IS NULL) OR (`parentid` = ?)) AND ((" +
                 "? = 1 AND `orderid` IS NULL) OR (`orderid` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
@@ -7068,14 +7068,14 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_orderid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "orderid", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `ciontype` (`typename`, `parentid`, `orderid`) VALUES (?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `cointype` (`typename`, `parentid`, `orderid`) VALUES (?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typename", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typename", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("parentid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "parentid", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "orderid", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `ciontype` SET `typename` = ?, `parentid` = ?, `orderid` = ? WHERE ((`id` " +
+            this._adapter.UpdateCommand.CommandText = "UPDATE `cointype` SET `typename` = ?, `parentid` = ?, `orderid` = ? WHERE ((`id` " +
                 "= ?) AND ((? = 1 AND `typename` IS NULL) OR (`typename` = ?)) AND ((? = 1 AND `p" +
                 "arentid` IS NULL) OR (`parentid` = ?)) AND ((? = 1 AND `orderid` IS NULL) OR (`o" +
                 "rderid` = ?)))";
@@ -7105,33 +7105,32 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[5];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, typename, parentid, orderid FROM ciontype";
+            this._commandCollection[0].CommandText = "SELECT id, typename, parentid, orderid\r\nFROM cointype\r\nORDER BY orderid";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `ciontype` WHERE ((`id` = ?))";
+            this._commandCollection[1].CommandText = "DELETE FROM `cointype` WHERE ((`id` = ?))";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO `ciontype` (`typename`, `parentid`, `orderid`) VALUES (?, ?, ?)";
+            this._commandCollection[2].CommandText = "INSERT INTO `cointype` (`typename`, `parentid`, `orderid`) VALUES (?, ?, ?)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typename", global::System.Data.OleDb.OleDbType.WChar, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typename", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("parentid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "parentid", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "orderid", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT id, typename, parentid, orderid\r\nFROM ciontype\r\nWHERE (typename = ?) AND (" +
+            this._commandCollection[3].CommandText = "SELECT id, typename, parentid, orderid\r\nFROM cointype\r\nWHERE (typename = ?) AND (" +
                 "parentid = ?)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typename", global::System.Data.OleDb.OleDbType.WChar, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typename", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("parentid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "parentid", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE `ciontype` SET `typename` = ?, `parentid` = ?, `orderid` = ? WHERE ((`id` " +
-                "= ?) ";
+            this._commandCollection[4].CommandText = "UPDATE cointype\r\nSET typename = ?, parentid = ?, orderid = ?\r\nWHERE (id = ?)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typename", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typename", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typename", global::System.Data.OleDb.OleDbType.WChar, 50, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typename", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("parentid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "parentid", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("orderid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "orderid", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
@@ -7141,7 +7140,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CollectionDataSet.ciontypeDataTable dataTable) {
+        public virtual int Fill(CollectionDataSet.cointypeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7154,9 +7153,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CollectionDataSet.ciontypeDataTable GetData() {
+        public virtual CollectionDataSet.cointypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CollectionDataSet.ciontypeDataTable dataTable = new CollectionDataSet.ciontypeDataTable();
+            CollectionDataSet.cointypeDataTable dataTable = new CollectionDataSet.cointypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7165,7 +7164,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual CollectionDataSet.ciontypeDataTable SelectByNameAndParentid(string typename, global::System.Nullable<int> parentid) {
+        public virtual CollectionDataSet.cointypeDataTable SelectByNameAndParentid(string typename, global::System.Nullable<int> parentid) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((typename == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -7179,7 +7178,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            CollectionDataSet.ciontypeDataTable dataTable = new CollectionDataSet.ciontypeDataTable();
+            CollectionDataSet.cointypeDataTable dataTable = new CollectionDataSet.cointypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7187,7 +7186,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CollectionDataSet.ciontypeDataTable dataTable) {
+        public virtual int Update(CollectionDataSet.cointypeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -7195,7 +7194,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(CollectionDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "ciontype");
+            return this.Adapter.Update(dataSet, "cointype");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7430,7 +7429,6 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateByID(string typename, global::System.Nullable<int> parentid, global::System.Nullable<int> orderid, int Original_id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[4];
             if ((typename == null)) {
@@ -9242,7 +9240,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class cionclassTableAdapter : global::System.ComponentModel.Component {
+    public partial class coinclassTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -9256,7 +9254,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public cionclassTableAdapter() {
+        public coinclassTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9353,13 +9351,13 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "cionclass";
+            tableMapping.DataSetTable = "coinclass";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("classname", "classname");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `cionclass` WHERE ((`id` = ?) AND ((? = 1 AND `classname` IS NULL) OR" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `coinclass` WHERE ((`id` = ?) AND ((? = 1 AND `classname` IS NULL) OR" +
                 " (`classname` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
@@ -9367,12 +9365,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_classname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classname", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `cionclass` (`classname`) VALUES (?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `coinclass` (`classname`) VALUES (?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("classname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classname", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `cionclass` SET `classname` = ? WHERE ((`id` = ?) AND ((? = 1 AND `classna" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE `coinclass` SET `classname` = ? WHERE ((`id` = ?) AND ((? = 1 AND `classna" +
                 "me` IS NULL) OR (`classname` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("classname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classname", global::System.Data.DataRowVersion.Current, false, null));
@@ -9394,7 +9392,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, classname FROM cionclass";
+            this._commandCollection[0].CommandText = "SELECT id, classname FROM coinclass";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9402,7 +9400,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CollectionDataSet.cionclassDataTable dataTable) {
+        public virtual int Fill(CollectionDataSet.coinclassDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9415,9 +9413,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CollectionDataSet.cionclassDataTable GetData() {
+        public virtual CollectionDataSet.coinclassDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CollectionDataSet.cionclassDataTable dataTable = new CollectionDataSet.cionclassDataTable();
+            CollectionDataSet.coinclassDataTable dataTable = new CollectionDataSet.coinclassDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9425,7 +9423,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CollectionDataSet.cionclassDataTable dataTable) {
+        public virtual int Update(CollectionDataSet.coinclassDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9433,7 +9431,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(CollectionDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "cionclass");
+            return this.Adapter.Update(dataSet, "coinclass");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9554,7 +9552,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class cionunitTableAdapter : global::System.ComponentModel.Component {
+    public partial class coinunitTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -9568,7 +9566,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public cionunitTableAdapter() {
+        public coinunitTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9665,13 +9663,13 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "cionunit";
+            tableMapping.DataSetTable = "coinunit";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("unitname", "unitname");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `cionunit` WHERE ((`id` = ?) AND ((? = 1 AND `unitname` IS NULL) OR (" +
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `coinunit` WHERE ((`id` = ?) AND ((? = 1 AND `unitname` IS NULL) OR (" +
                 "`unitname` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
@@ -9679,12 +9677,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_unitname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitname", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `cionunit` (`unitname`) VALUES (?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `coinunit` (`unitname`) VALUES (?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitname", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `cionunit` SET `unitname` = ? WHERE ((`id` = ?) AND ((? = 1 AND `unitname`" +
+            this._adapter.UpdateCommand.CommandText = "UPDATE `coinunit` SET `unitname` = ? WHERE ((`id` = ?) AND ((? = 1 AND `unitname`" +
                 " IS NULL) OR (`unitname` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitname", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitname", global::System.Data.DataRowVersion.Current, false, null));
@@ -9706,7 +9704,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, unitname FROM cionunit";
+            this._commandCollection[0].CommandText = "SELECT id, unitname FROM coinunit";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -9714,7 +9712,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CollectionDataSet.cionunitDataTable dataTable) {
+        public virtual int Fill(CollectionDataSet.coinunitDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9727,9 +9725,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CollectionDataSet.cionunitDataTable GetData() {
+        public virtual CollectionDataSet.coinunitDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CollectionDataSet.cionunitDataTable dataTable = new CollectionDataSet.cionunitDataTable();
+            CollectionDataSet.coinunitDataTable dataTable = new CollectionDataSet.coinunitDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9737,7 +9735,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CollectionDataSet.cionunitDataTable dataTable) {
+        public virtual int Update(CollectionDataSet.coinunitDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -9745,7 +9743,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(CollectionDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "cionunit");
+            return this.Adapter.Update(dataSet, "coinunit");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9866,7 +9864,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class cioninfoTableAdapter : global::System.ComponentModel.Component {
+    public partial class coininfoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -9880,7 +9878,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public cioninfoTableAdapter() {
+        public coininfoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -9977,7 +9975,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "cioninfo";
+            tableMapping.DataSetTable = "coininfo";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("publisher", "publisher");
             tableMapping.ColumnMappings.Add("name", "name");
@@ -9991,7 +9989,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `cioninfo` WHERE ((`id` = ?) AND ((? = 1 AND `publisher` IS NULL) OR (`publisher` = ?)) AND ((? = 1 AND `name` IS NULL) OR (`name` = ?)) AND ((? = 1 AND `typeid` IS NULL) OR (`typeid` = ?)) AND ((? = 1 AND `publishdate` IS NULL) OR (`publishdate` = ?)) AND ((? = 1 AND `price_ori` IS NULL) OR (`price_ori` = ?)) AND ((? = 1 AND `unitid` IS NULL) OR (`unitid` = ?)) AND ((? = 1 AND `classid` IS NULL) OR (`classid` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `coininfo` WHERE ((`id` = ?) AND ((? = 1 AND `publisher` IS NULL) OR (`publisher` = ?)) AND ((? = 1 AND `name` IS NULL) OR (`name` = ?)) AND ((? = 1 AND `typeid` IS NULL) OR (`typeid` = ?)) AND ((? = 1 AND `publishdate` IS NULL) OR (`publishdate` = ?)) AND ((? = 1 AND `price_ori` IS NULL) OR (`price_ori` = ?)) AND ((? = 1 AND `unitid` IS NULL) OR (`unitid` = ?)) AND ((? = 1 AND `classid` IS NULL) OR (`classid` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_publisher", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "publisher", global::System.Data.DataRowVersion.Original, true, null));
@@ -10010,7 +10008,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_classid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classid", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `cioninfo` (`publisher`, `name`, `typeid`, `publishdate`, `price_ori`" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `coininfo` (`publisher`, `name`, `typeid`, `publishdate`, `price_ori`" +
                 ", `unitid`, `classid`, `picpath`, `memo`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("publisher", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "publisher", global::System.Data.DataRowVersion.Current, false, null));
@@ -10024,7 +10022,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("memo", global::System.Data.OleDb.OleDbType.LongVarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "memo", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `cioninfo` SET `publisher` = ?, `name` = ?, `typeid` = ?, `publishdate` = ?, `price_ori` = ?, `unitid` = ?, `classid` = ?, `picpath` = ?, `memo` = ? WHERE ((`id` = ?) AND ((? = 1 AND `publisher` IS NULL) OR (`publisher` = ?)) AND ((? = 1 AND `name` IS NULL) OR (`name` = ?)) AND ((? = 1 AND `typeid` IS NULL) OR (`typeid` = ?)) AND ((? = 1 AND `publishdate` IS NULL) OR (`publishdate` = ?)) AND ((? = 1 AND `price_ori` IS NULL) OR (`price_ori` = ?)) AND ((? = 1 AND `unitid` IS NULL) OR (`unitid` = ?)) AND ((? = 1 AND `classid` IS NULL) OR (`classid` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `coininfo` SET `publisher` = ?, `name` = ?, `typeid` = ?, `publishdate` = ?, `price_ori` = ?, `unitid` = ?, `classid` = ?, `picpath` = ?, `memo` = ? WHERE ((`id` = ?) AND ((? = 1 AND `publisher` IS NULL) OR (`publisher` = ?)) AND ((? = 1 AND `name` IS NULL) OR (`name` = ?)) AND ((? = 1 AND `typeid` IS NULL) OR (`typeid` = ?)) AND ((? = 1 AND `publishdate` IS NULL) OR (`publishdate` = ?)) AND ((? = 1 AND `price_ori` IS NULL) OR (`price_ori` = ?)) AND ((? = 1 AND `unitid` IS NULL) OR (`unitid` = ?)) AND ((? = 1 AND `classid` IS NULL) OR (`classid` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("publisher", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "publisher", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
@@ -10062,19 +10060,61 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[7];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, publisher, name, typeid, publishdate, price_ori, unitid, classid, picp" +
-                "ath, [memo] FROM cioninfo";
+                "ath, [memo] FROM coininfo";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM `coininfo` WHERE ((`id` = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT id, publisher, name, typeid, publishdate, price_ori, unitid, classid, picp" +
+                "ath, \r\n      [memo]\r\nFROM coininfo\r\nWHERE (id = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT COUNT(*) AS num\r\nFROM coininfo\r\nWHERE (classid = ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("classid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[4] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT COUNT(*) AS num\r\nFROM coininfo\r\nWHERE (typeid = ?)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typeid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typeid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT COUNT(*) AS num\r\nFROM coininfo\r\nWHERE (unitid = ?)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE coininfo\r\nSET publisher = ?, name = ?, typeid = ?, publishdate = ?, price_" +
+                "ori = ?, unitid = ?, \r\n      classid = ?, picpath = ?, [memo] = ?\r\nWHERE (id = ?" +
+                ")";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("publisher", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "publisher", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("name", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "name", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typeid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typeid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("publishdate", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "publishdate", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("price_ori", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "price_ori", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("classid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("picpath", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "picpath", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("memo", global::System.Data.OleDb.OleDbType.WChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "memo", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CollectionDataSet.cioninfoDataTable dataTable) {
+        public virtual int Fill(CollectionDataSet.coininfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10087,9 +10127,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CollectionDataSet.cioninfoDataTable GetData() {
+        public virtual CollectionDataSet.coininfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CollectionDataSet.cioninfoDataTable dataTable = new CollectionDataSet.cioninfoDataTable();
+            CollectionDataSet.coininfoDataTable dataTable = new CollectionDataSet.coininfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10097,7 +10137,33 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CollectionDataSet.cioninfoDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(CollectionDataSet.coininfoDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CollectionDataSet.coininfoDataTable GetDataByID(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            CollectionDataSet.coininfoDataTable dataTable = new CollectionDataSet.coininfoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(CollectionDataSet.coininfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -10105,7 +10171,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(CollectionDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "cioninfo");
+            return this.Adapter.Update(dataSet, "coininfo");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10424,6 +10490,210 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 }
             }
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteByID(int id) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ScalarQueryByClassID(global::System.Nullable<int> classid) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            if ((classid.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(classid.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ScalarQueryByTypeID(global::System.Nullable<int> typeid) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[4];
+            if ((typeid.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(typeid.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> ScalarQueryUnitID(global::System.Nullable<int> unitid) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
+            if ((unitid.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(unitid.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateByID(string publisher, string name, global::System.Nullable<int> typeid, global::System.Nullable<global::System.DateTime> publishdate, string price_ori, global::System.Nullable<int> unitid, global::System.Nullable<int> classid, string picpath, string memo, int Original_id) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[6];
+            if ((publisher == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(publisher));
+            }
+            if ((name == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(name));
+            }
+            if ((typeid.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(typeid.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((publishdate.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(publishdate.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((price_ori == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(price_ori));
+            }
+            if ((unitid.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(unitid.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((classid.HasValue == true)) {
+                command.Parameters[6].Value = ((int)(classid.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((picpath == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(picpath));
+            }
+            if ((memo == null)) {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[8].Value = ((string)(memo));
+            }
+            command.Parameters[9].Value = ((int)(Original_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -10435,7 +10705,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class view_cioninfoTableAdapter : global::System.ComponentModel.Component {
+    public partial class view_coininfoTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.OleDb.OleDbDataAdapter _adapter;
         
@@ -10449,7 +10719,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public view_cioninfoTableAdapter() {
+        public view_coininfoTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -10546,7 +10816,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._adapter = new global::System.Data.OleDb.OleDbDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "view_cioninfo";
+            tableMapping.DataSetTable = "view_coininfo";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("publisher", "publisher");
             tableMapping.ColumnMappings.Add("name", "name");
@@ -10575,20 +10845,41 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, " +
-                "unitname, classname, picpath, [memo], unitid, classid, typeid FROM view_cioninfo" +
+                "unitname, classname, picpath, [memo], unitid, classid, typeid FROM view_coininfo" +
                 "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, " +
+                "unitname, \r\n      classname, picpath, [memo], unitid, classid, typeid\r\nFROM view" +
+                "_coininfo\r\nWHERE (classid = ?)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("classid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "classid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, " +
+                "unitname, \r\n      classname, picpath, [memo], unitid, classid, typeid\r\nFROM view" +
+                "_coininfo\r\nWHERE (typeid = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("typeid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "typeid", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT id, publisher, name, typename, parentid, orderid, publishdate, price_ori, " +
+                "unitname, \r\n      classname, picpath, [memo], unitid, classid, typeid\r\nFROM view" +
+                "_coininfo\r\nWHERE (unitid = ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("unitid", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "unitid", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CollectionDataSet.view_cioninfoDataTable dataTable) {
+        public virtual int Fill(CollectionDataSet.view_coininfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10601,11 +10892,85 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CollectionDataSet.view_cioninfoDataTable GetData() {
+        public virtual CollectionDataSet.view_coininfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CollectionDataSet.view_cioninfoDataTable dataTable = new CollectionDataSet.view_cioninfoDataTable();
+            CollectionDataSet.view_coininfoDataTable dataTable = new CollectionDataSet.view_coininfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByClassID(CollectionDataSet.view_coininfoDataTable dataTable, global::System.Nullable<int> classid) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((classid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(classid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTypeID(CollectionDataSet.view_coininfoDataTable dataTable, global::System.Nullable<int> typeid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((typeid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(typeid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual CollectionDataSet.view_coininfoDataTable GetDataByTypeID(global::System.Nullable<int> typeid) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((typeid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(typeid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            CollectionDataSet.view_coininfoDataTable dataTable = new CollectionDataSet.view_coininfoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByUnitID(CollectionDataSet.view_coininfoDataTable dataTable, global::System.Nullable<int> unitid) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((unitid.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(unitid.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     
@@ -10623,7 +10988,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         private stamptypeTableAdapter _stamptypeTableAdapter;
         
-        private ciontypeTableAdapter _ciontypeTableAdapter;
+        private cointypeTableAdapter _cointypeTableAdapter;
         
         private stampclassTableAdapter _stampclassTableAdapter;
         
@@ -10631,11 +10996,11 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         
         private stampinfoTableAdapter _stampinfoTableAdapter;
         
-        private cionclassTableAdapter _cionclassTableAdapter;
+        private coinclassTableAdapter _coinclassTableAdapter;
         
-        private cionunitTableAdapter _cionunitTableAdapter;
+        private coinunitTableAdapter _coinunitTableAdapter;
         
-        private cioninfoTableAdapter _cioninfoTableAdapter;
+        private coininfoTableAdapter _coininfoTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -10671,12 +11036,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ciontypeTableAdapter ciontypeTableAdapter {
+        public cointypeTableAdapter cointypeTableAdapter {
             get {
-                return this._ciontypeTableAdapter;
+                return this._cointypeTableAdapter;
             }
             set {
-                this._ciontypeTableAdapter = value;
+                this._cointypeTableAdapter = value;
             }
         }
         
@@ -10727,12 +11092,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public cionclassTableAdapter cionclassTableAdapter {
+        public coinclassTableAdapter coinclassTableAdapter {
             get {
-                return this._cionclassTableAdapter;
+                return this._coinclassTableAdapter;
             }
             set {
-                this._cionclassTableAdapter = value;
+                this._coinclassTableAdapter = value;
             }
         }
         
@@ -10741,12 +11106,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public cionunitTableAdapter cionunitTableAdapter {
+        public coinunitTableAdapter coinunitTableAdapter {
             get {
-                return this._cionunitTableAdapter;
+                return this._coinunitTableAdapter;
             }
             set {
-                this._cionunitTableAdapter = value;
+                this._coinunitTableAdapter = value;
             }
         }
         
@@ -10755,12 +11120,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public cioninfoTableAdapter cioninfoTableAdapter {
+        public coininfoTableAdapter coininfoTableAdapter {
             get {
-                return this._cioninfoTableAdapter;
+                return this._coininfoTableAdapter;
             }
             set {
-                this._cioninfoTableAdapter = value;
+                this._coininfoTableAdapter = value;
             }
         }
         
@@ -10787,9 +11152,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                             && (this._stamptypeTableAdapter.Connection != null))) {
                     return this._stamptypeTableAdapter.Connection;
                 }
-                if (((this._ciontypeTableAdapter != null) 
-                            && (this._ciontypeTableAdapter.Connection != null))) {
-                    return this._ciontypeTableAdapter.Connection;
+                if (((this._cointypeTableAdapter != null) 
+                            && (this._cointypeTableAdapter.Connection != null))) {
+                    return this._cointypeTableAdapter.Connection;
                 }
                 if (((this._stampclassTableAdapter != null) 
                             && (this._stampclassTableAdapter.Connection != null))) {
@@ -10803,17 +11168,17 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                             && (this._stampinfoTableAdapter.Connection != null))) {
                     return this._stampinfoTableAdapter.Connection;
                 }
-                if (((this._cionclassTableAdapter != null) 
-                            && (this._cionclassTableAdapter.Connection != null))) {
-                    return this._cionclassTableAdapter.Connection;
+                if (((this._coinclassTableAdapter != null) 
+                            && (this._coinclassTableAdapter.Connection != null))) {
+                    return this._coinclassTableAdapter.Connection;
                 }
-                if (((this._cionunitTableAdapter != null) 
-                            && (this._cionunitTableAdapter.Connection != null))) {
-                    return this._cionunitTableAdapter.Connection;
+                if (((this._coinunitTableAdapter != null) 
+                            && (this._coinunitTableAdapter.Connection != null))) {
+                    return this._coinunitTableAdapter.Connection;
                 }
-                if (((this._cioninfoTableAdapter != null) 
-                            && (this._cioninfoTableAdapter.Connection != null))) {
-                    return this._cioninfoTableAdapter.Connection;
+                if (((this._coininfoTableAdapter != null) 
+                            && (this._coininfoTableAdapter.Connection != null))) {
+                    return this._coininfoTableAdapter.Connection;
                 }
                 return null;
             }
@@ -10831,7 +11196,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 if ((this._stamptypeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._ciontypeTableAdapter != null)) {
+                if ((this._cointypeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._stampclassTableAdapter != null)) {
@@ -10843,13 +11208,13 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 if ((this._stampinfoTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._cionclassTableAdapter != null)) {
+                if ((this._coinclassTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._cionunitTableAdapter != null)) {
+                if ((this._coinunitTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._cioninfoTableAdapter != null)) {
+                if ((this._coininfoTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -10872,30 +11237,30 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cionunitTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.cionunit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._coinunitTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cionunitTableAdapter.Update(updatedRows));
+                    result = (result + this._coinunitTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cionclassTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.cionclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._coinclassTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cionclassTableAdapter.Update(updatedRows));
+                    result = (result + this._coinclassTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._ciontypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ciontype.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cointypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ciontypeTableAdapter.Update(updatedRows));
+                    result = (result + this._cointypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10917,12 +11282,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cioninfoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.cioninfo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._coininfoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.coininfo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cioninfoTableAdapter.Update(updatedRows));
+                    result = (result + this._coininfoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -10953,27 +11318,27 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cionunitTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.cionunit.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._coinunitTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cionunitTableAdapter.Update(addedRows));
+                    result = (result + this._coinunitTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cionclassTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.cionclass.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._coinclassTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cionclassTableAdapter.Update(addedRows));
+                    result = (result + this._coinclassTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._ciontypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ciontype.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cointypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ciontypeTableAdapter.Update(addedRows));
+                    result = (result + this._cointypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -10993,11 +11358,11 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cioninfoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.cioninfo.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._coininfoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.coininfo.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cioninfoTableAdapter.Update(addedRows));
+                    result = (result + this._coininfoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11027,11 +11392,11 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cioninfoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cioninfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._coininfoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.coininfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cioninfoTableAdapter.Update(deletedRows));
+                    result = (result + this._coininfoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11051,27 +11416,27 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._ciontypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ciontype.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cointypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._ciontypeTableAdapter.Update(deletedRows));
+                    result = (result + this._cointypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cionclassTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cionclass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._coinclassTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cionclassTableAdapter.Update(deletedRows));
+                    result = (result + this._coinclassTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cionunitTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cionunit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._coinunitTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cionunitTableAdapter.Update(deletedRows));
+                    result = (result + this._coinunitTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11126,8 +11491,8 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                         && (this.MatchTableAdapterConnection(this._stamptypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._ciontypeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._ciontypeTableAdapter.Connection) == false))) {
+            if (((this._cointypeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cointypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             if (((this._stampclassTableAdapter != null) 
@@ -11142,16 +11507,16 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                         && (this.MatchTableAdapterConnection(this._stampinfoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._cionclassTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cionclassTableAdapter.Connection) == false))) {
+            if (((this._coinclassTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._coinclassTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._cionunitTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cionunitTableAdapter.Connection) == false))) {
+            if (((this._coinunitTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._coinunitTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._cioninfoTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cioninfoTableAdapter.Connection) == false))) {
+            if (((this._coininfoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._coininfoTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -11194,13 +11559,13 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._stamptypeTableAdapter.Adapter);
                     }
                 }
-                if ((this._ciontypeTableAdapter != null)) {
-                    revertConnections.Add(this._ciontypeTableAdapter, this._ciontypeTableAdapter.Connection);
-                    this._ciontypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._ciontypeTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._ciontypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._ciontypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._ciontypeTableAdapter.Adapter);
+                if ((this._cointypeTableAdapter != null)) {
+                    revertConnections.Add(this._cointypeTableAdapter, this._cointypeTableAdapter.Connection);
+                    this._cointypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._cointypeTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._cointypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cointypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cointypeTableAdapter.Adapter);
                     }
                 }
                 if ((this._stampclassTableAdapter != null)) {
@@ -11230,31 +11595,31 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._stampinfoTableAdapter.Adapter);
                     }
                 }
-                if ((this._cionclassTableAdapter != null)) {
-                    revertConnections.Add(this._cionclassTableAdapter, this._cionclassTableAdapter.Connection);
-                    this._cionclassTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._cionclassTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._cionclassTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cionclassTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cionclassTableAdapter.Adapter);
+                if ((this._coinclassTableAdapter != null)) {
+                    revertConnections.Add(this._coinclassTableAdapter, this._coinclassTableAdapter.Connection);
+                    this._coinclassTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._coinclassTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._coinclassTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._coinclassTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._coinclassTableAdapter.Adapter);
                     }
                 }
-                if ((this._cionunitTableAdapter != null)) {
-                    revertConnections.Add(this._cionunitTableAdapter, this._cionunitTableAdapter.Connection);
-                    this._cionunitTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._cionunitTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._cionunitTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cionunitTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cionunitTableAdapter.Adapter);
+                if ((this._coinunitTableAdapter != null)) {
+                    revertConnections.Add(this._coinunitTableAdapter, this._coinunitTableAdapter.Connection);
+                    this._coinunitTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._coinunitTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._coinunitTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._coinunitTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._coinunitTableAdapter.Adapter);
                     }
                 }
-                if ((this._cioninfoTableAdapter != null)) {
-                    revertConnections.Add(this._cioninfoTableAdapter, this._cioninfoTableAdapter.Connection);
-                    this._cioninfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
-                    this._cioninfoTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
-                    if (this._cioninfoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cioninfoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cioninfoTableAdapter.Adapter);
+                if ((this._coininfoTableAdapter != null)) {
+                    revertConnections.Add(this._coininfoTableAdapter, this._coininfoTableAdapter.Connection);
+                    this._coininfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(workConnection));
+                    this._coininfoTableAdapter.Transaction = ((global::System.Data.OleDb.OleDbTransaction)(workTransaction));
+                    if (this._coininfoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._coininfoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._coininfoTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -11319,9 +11684,9 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     this._stamptypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._stamptypeTableAdapter]));
                     this._stamptypeTableAdapter.Transaction = null;
                 }
-                if ((this._ciontypeTableAdapter != null)) {
-                    this._ciontypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._ciontypeTableAdapter]));
-                    this._ciontypeTableAdapter.Transaction = null;
+                if ((this._cointypeTableAdapter != null)) {
+                    this._cointypeTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cointypeTableAdapter]));
+                    this._cointypeTableAdapter.Transaction = null;
                 }
                 if ((this._stampclassTableAdapter != null)) {
                     this._stampclassTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._stampclassTableAdapter]));
@@ -11335,17 +11700,17 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     this._stampinfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._stampinfoTableAdapter]));
                     this._stampinfoTableAdapter.Transaction = null;
                 }
-                if ((this._cionclassTableAdapter != null)) {
-                    this._cionclassTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cionclassTableAdapter]));
-                    this._cionclassTableAdapter.Transaction = null;
+                if ((this._coinclassTableAdapter != null)) {
+                    this._coinclassTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._coinclassTableAdapter]));
+                    this._coinclassTableAdapter.Transaction = null;
                 }
-                if ((this._cionunitTableAdapter != null)) {
-                    this._cionunitTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cionunitTableAdapter]));
-                    this._cionunitTableAdapter.Transaction = null;
+                if ((this._coinunitTableAdapter != null)) {
+                    this._coinunitTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._coinunitTableAdapter]));
+                    this._coinunitTableAdapter.Transaction = null;
                 }
-                if ((this._cioninfoTableAdapter != null)) {
-                    this._cioninfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._cioninfoTableAdapter]));
-                    this._cioninfoTableAdapter.Transaction = null;
+                if ((this._coininfoTableAdapter != null)) {
+                    this._coininfoTableAdapter.Connection = ((global::System.Data.OleDb.OleDbConnection)(revertConnections[this._coininfoTableAdapter]));
+                    this._coininfoTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

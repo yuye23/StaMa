@@ -194,7 +194,7 @@
     <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DATA\CionPicture\" />
+    <Folder Include="DATA\CoinPicture\" />
     <Folder Include="DATA\StampPicture\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
