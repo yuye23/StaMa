@@ -66,10 +66,10 @@ namespace CollectionManager
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“collectionDataSet.view_coininfo”中。您可以根据需要移动或删除它。
-            this.view_coininfoTableAdapter.Fill(this.collectionDataSet.view_coininfo);
+            this.view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, 1);
 
             // TODO: 这行代码将数据加载到表“collectionDataSet.view_stampinfo”中。您可以根据需要移动或删除它。
-            this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, 0);
+            this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, 1);
             // TODO: 这行代码将数据加载到表“collectionDataSet.view_stampinfo”中。您可以根据需要移动或删除它。
             //this.vstainfoAdp.Fill(this.dataSet1.view_stampinfo);
 
@@ -103,7 +103,7 @@ namespace CollectionManager
             DataRow[] row = table.Select("parentid=0");
             foreach (DataRow r in row)
             {
-                TreeNode node = treeView1.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()), r["id"].ToString(), r["typename"].ToString());
+                TreeNode node = treeView1.Nodes.Add(r["id"].ToString(), r["typename"].ToString());
                 node.ContextMenuStrip = cMSTypeTreeNode;
                 recursionShow1(node, r["id"].ToString());
             }
@@ -267,7 +267,7 @@ namespace CollectionManager
             DataRow[] row = table.Select("parentid=0");
             foreach (DataRow r in row)
             {
-                TreeNode node = treeView2.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()), r["id"].ToString(), r["typename"].ToString());
+                TreeNode node = treeView2.Nodes.Add(r["id"].ToString(), r["typename"].ToString());
                 node.ContextMenuStrip = cMCTypeTreeNode;
                 recursionShow2(node, r["id"].ToString());
             }
@@ -448,13 +448,17 @@ namespace CollectionManager
                     //创建一个节点对象，并初始化
 
                     int parentid = Convert.ToInt32(treeView1.SelectedNode.Name);
-
-                    sta.InsertByName(txt, parentid, 0);
+                    int? orderid = cia.ScalarQueryByParentID(parentid);
+                    if (orderid == null)
+                    {
+                        orderid = 0;
+                    }
+                    int idd = sta.InsertByName(txt, parentid, orderid);
                     sta.GetData();
                     sta.Fill(dataSet1.stamptype);
                     DataTable table = dataSet1.stamptype;
                     //////////////
-                    DataRow[] row = table.Select("parentid=" + parentid.ToString());
+                    DataRow[] row = table.Select("parentid=" + parentid.ToString() + " and typename='" + txt + "' and orderid=" + orderid);
                     /////////
                     string id = "";
                     if (row != null)
@@ -711,13 +715,17 @@ namespace CollectionManager
                     //创建一个节点对象，并初始化
 
                     int parentid = Convert.ToInt32(treeView2.SelectedNode.Name);
-
-                    cia.InsertByName(txt, parentid, 0);
+                    int? orderid=cia.ScalarQueryByParentID(parentid);
+                    if (orderid == null)
+                    {
+                        orderid = 0;
+                    }
+                    int idd=cia.InsertByName(txt, parentid,orderid);
                     cia.GetData();
                     cia.Fill(dataSet2.cointype);
                     DataTable table = dataSet2.cointype;
                     //////////////
-                    DataRow[] row = table.Select("parentid=" + parentid.ToString());
+                    DataRow[] row = table.Select("parentid=" + parentid.ToString() + " and typename='" + txt + "' and orderid=" + orderid);
                     /////////
                     string id = "";
                     if (row != null)
