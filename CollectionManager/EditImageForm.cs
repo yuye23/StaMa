@@ -136,21 +136,25 @@ namespace CollectionManager
                 int y = theRectangle.Y * pictureBox1.Image.Height / imgHeight;
                 int width = theRectangle.Width * pictureBox1.Image.Width / imgWidth;
                 int height = theRectangle.Height * pictureBox1.Image.Height / imgHeight;
-                
+                if (width > 0 && height > 0)
+                {
 
-                
-                
+                    pictureBox1.Image =
+                        ImageManager.CutImage((Bitmap)pictureBox1.Image, x, y, width, height);
 
-                pictureBox1.Image =
-                    ImageManager.CutImage((Bitmap)pictureBox1.Image, x, y, width, height);
-
-                imgHeight = 600;
-                imgWidth = (int)(pictureBox1.Image.Width / (((float)pictureBox1.Image.Height / 600)));
-                pictureBox1.Height = imgHeight;
-                pictureBox1.Width = imgWidth;
-                pictureBox1.Location = new Point(0, 0);
-                isSaveed = 0;
-                //pictureBox1.Image = ImageManager.CutImage((Bitmap)pictureBox1.Image, theRectangle.X, theRectangle.Y, theRectangle.Width, theRectangle.Height);
+                    imgHeight = 600;
+                    imgWidth = (int)(pictureBox1.Image.Width / (((float)pictureBox1.Image.Height / 600)));
+                    pictureBox1.Height = imgHeight;
+                    pictureBox1.Width = imgWidth;
+                    pictureBox1.Location = new Point(0, 0);
+                    isSaveed = 0;
+                    //pictureBox1.Image = ImageManager.CutImage((Bitmap)pictureBox1.Image, theRectangle.X, theRectangle.Y, theRectangle.Width, theRectangle.Height);
+                }
+                else
+                {
+                    MessageBox.Show("请先选择要剪裁的区域！");
+                }
+            
             }
             catch
             { }

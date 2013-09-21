@@ -70,46 +70,53 @@ namespace CollectionManager
                             Panel panel = new Panel();
                             panel.Size = new System.Drawing.Size(200, 185);
                             panel.BorderStyle = BorderStyle.FixedSingle;
-                            Bitmap newbitmap = (Bitmap)Image.FromFile(img);
-                            PictureBox picBox = new PictureBox();
-                            picBox.Image = newbitmap;
-                            picBox.SizeMode = PictureBoxSizeMode.Zoom;
-                            picBox.Width = 200;
-                            picBox.Height = 150;
-                            picBox.Location = new Point(0, 0);
-                            //panel.Name = Path.GetFileNameWithoutExtension(img);
-                            
-
-                            Button btnEditImg = new Button();
-                            Button btnDelImg = new Button();
-                            btnEditImg.Name = "btnEditImg";
-                            btnEditImg.Text = "编辑图片";
-                            btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
-                            btnEditImg.Width = 80;
-                            btnEditImg.Height = 25;
-                            btnEditImg.Location = new Point(10, 155);
-                            btnEditImg.Tag = newbitmap;
-                            btnEditImg.Click += new System.EventHandler(this.btnEditImg_Click);
-
-                            btnDelImg.Name = "btnDelImg";
-                            btnDelImg.Text = "放弃插入";
-                            btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
-                            btnDelImg.Width = 80;
-                            btnDelImg.Height = 25;
-                            btnDelImg.Location = new Point(110, 155);
-                            btnDelImg.Tag = newbitmap;
-                            btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
-
-                            panel.Controls.Add(picBox);
-                            panel.Controls.Add(btnEditImg);
-                            panel.Controls.Add(btnDelImg);
+                            try
+                            {
+                                Bitmap newbitmap = (Bitmap)Image.FromFile(img);
+                                PictureBox picBox = new PictureBox();
+                                picBox.Image = newbitmap;
+                                picBox.SizeMode = PictureBoxSizeMode.Zoom;
+                                picBox.Width = 200;
+                                picBox.Height = 150;
+                                picBox.Location = new Point(0, 0);
+                                //panel.Name = Path.GetFileNameWithoutExtension(img);
 
 
+                                Button btnEditImg = new Button();
+                                Button btnDelImg = new Button();
+                                btnEditImg.Name = "btnEditImg";
+                                btnEditImg.Text = "编辑图片";
+                                btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
+                                btnEditImg.Width = 80;
+                                btnEditImg.Height = 25;
+                                btnEditImg.Location = new Point(10, 155);
+                                btnEditImg.Tag = newbitmap;
+                                btnEditImg.Click += new System.EventHandler(this.btnEditImg_Click);
 
-                            this.flowLayoutPanel1.Controls.Add(panel);
-                            //imgArray.Add(img);
-                            listImage.Add(newbitmap);
+                                btnDelImg.Name = "btnDelImg";
+                                btnDelImg.Text = "放弃插入";
+                                btnEditImg.TextAlign = ContentAlignment.MiddleCenter;
+                                btnDelImg.Width = 80;
+                                btnDelImg.Height = 25;
+                                btnDelImg.Location = new Point(110, 155);
+                                btnDelImg.Tag = newbitmap;
+                                btnDelImg.Click += new System.EventHandler(this.btnDelImg_Click);
 
+                                panel.Controls.Add(picBox);
+                                panel.Controls.Add(btnEditImg);
+                                panel.Controls.Add(btnDelImg);
+
+
+
+                                this.flowLayoutPanel1.Controls.Add(panel);
+                                //imgArray.Add(img);
+                                listImage.Add(newbitmap);
+
+                            }
+                            catch
+                            {
+
+                            }
                             
                         }
 
@@ -222,7 +229,7 @@ namespace CollectionManager
             }
 
             //返回增加邮票的分类
-            this.Tag = cbType.Text;
+            this.Tag = cbType.SelectedValue;
             
         }
 

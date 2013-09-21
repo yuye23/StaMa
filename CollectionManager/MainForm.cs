@@ -179,6 +179,11 @@ namespace CollectionManager
                     {
                         this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
                         ClearStampInfoPanel();
+                        if (dataGridView1.Rows.Count != 0)
+                        {
+                            dataGridView1.Rows[0].Selected = true;
+                            FillStampInfoPanel();
+                        }
 
                     }
                     catch (System.Exception ex)
@@ -192,6 +197,11 @@ namespace CollectionManager
                     {
                         this.view_stampinfoTableAdapter.FillByClassID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
                         ClearStampInfoPanel();
+                        if (dataGridView1.Rows.Count != 0)
+                        {
+                            dataGridView1.Rows[0].Selected = true;
+                            FillStampInfoPanel();
+                        }
                     }
                     catch (System.Exception ex)
                     {
@@ -204,6 +214,11 @@ namespace CollectionManager
                     {
                         this.view_stampinfoTableAdapter.FillByUnitID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
                         ClearStampInfoPanel();
+                        if (dataGridView1.Rows.Count != 0)
+                        {
+                            dataGridView1.Rows[0].Selected = true;
+                            FillStampInfoPanel();
+                        }
                     }
                     catch (System.Exception ex)
                     {
@@ -344,6 +359,11 @@ namespace CollectionManager
                     {
                         this.view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView2.SelectedNode.Name, typeof(int))))));
                         ClearCoinInfoPanel();
+                        if (dataGridView2.Rows.Count != 0)
+                        {
+                            dataGridView2.Rows[0].Selected = true;
+                            FillCoinInfoPanel();
+                        }
 
                     }
                     catch (System.Exception ex)
@@ -357,6 +377,11 @@ namespace CollectionManager
                     {
                         this.view_coininfoTableAdapter.FillByClassID(this.collectionDataSet.view_coininfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView2.SelectedNode.Name, typeof(int))))));
                         ClearCoinInfoPanel();
+                        if (dataGridView2.Rows.Count != 0)
+                        {
+                            dataGridView2.Rows[0].Selected = true;
+                            FillCoinInfoPanel();
+                        }
                     }
                     catch (System.Exception ex)
                     {
@@ -369,6 +394,11 @@ namespace CollectionManager
                     {
                         this.view_coininfoTableAdapter.FillByUnitID(this.collectionDataSet.view_coininfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView2.SelectedNode.Name, typeof(int))))));
                         ClearCoinInfoPanel();
+                        if (dataGridView2.Rows.Count != 0)
+                        {
+                            dataGridView2.Rows[0].Selected = true;
+                            FillCoinInfoPanel();
+                        }
                     }
                     catch (System.Exception ex)
                     {
@@ -491,34 +521,42 @@ namespace CollectionManager
         {
             if (treeView1.SelectedNode != null)
             {
-                string id = treeView1.SelectedNode.Name.ToString();
-                if (stampinfoTableAdapter.ScalarQueryByTypeID(Convert.ToInt32(id)) == 0)
+                if (MessageBox.Show("是否确定要删除选中的节点？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataRow[] row = dataSet1.stamptype.Select("id=" + id);
-                    if (row != null)
+                    string id = treeView1.SelectedNode.Name.ToString();
+                    if (stampinfoTableAdapter.ScalarQueryByTypeID(Convert.ToInt32(id)) == 0)
                     {
-
-                        DataRow[] rowChildren = dataSet1.stamptype.Select("parentid=" + id);
-                        if (rowChildren.Length != 0)
+                        DataRow[] row = dataSet1.stamptype.Select("id=" + id);
+                        if (row != null)
                         {
-                            MessageBox.Show("请先删除此节点中的子节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            sta.DeleteByID(Convert.ToInt32(id));
-                            this.sta.Fill(dataSet1.stamptype);
-                            treeView1.SelectedNode.Remove();
-                        }
 
+                            DataRow[] rowChildren = dataSet1.stamptype.Select("parentid=" + id);
+                            if (rowChildren.Length != 0)
+                            {
+                                MessageBox.Show("请先删除此节点中的子节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                sta.DeleteByID(Convert.ToInt32(id));
+                                this.sta.Fill(dataSet1.stamptype);
+                                treeView1.SelectedNode.Remove();
+                            }
+
+                        }
                     }
-                }
-                else
-                {
-                    MessageBox.Show("请先删除所有属于此分类的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此分类的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择要删除的节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+            
 
 
         private void tsmiUpNode_Click(object sender, EventArgs e)
@@ -797,33 +835,40 @@ namespace CollectionManager
         {
             if (treeView2.SelectedNode != null)
             {
-                string id = treeView2.SelectedNode.Name.ToString();
-                if (coininfoTableAdapter.ScalarQueryByTypeID(Convert.ToInt32(id)) == 0)
+                if (MessageBox.Show("是否确定要删除选中的节点？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataRow[] row = dataSet2.cointype.Select("id=" + id);
-                    if (row != null)
+                    string id = treeView2.SelectedNode.Name.ToString();
+                    if (coininfoTableAdapter.ScalarQueryByTypeID(Convert.ToInt32(id)) == 0)
                     {
-
-                        DataRow[] rowChildren = dataSet2.cointype.Select("parentid=" + id);
-                        if (rowChildren.Length != 0)
+                        DataRow[] row = dataSet2.cointype.Select("id=" + id);
+                        if (row != null)
                         {
-                            MessageBox.Show("请先删除此节点中的子节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            cia.DeleteByID(Convert.ToInt32(id));
-                            cia.Fill(dataSet2.cointype);
-                            treeView2.SelectedNode.Remove();
-                        }
 
+                            DataRow[] rowChildren = dataSet2.cointype.Select("parentid=" + id);
+                            if (rowChildren.Length != 0)
+                            {
+                                MessageBox.Show("请先删除此节点中的子节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                cia.DeleteByID(Convert.ToInt32(id));
+                                cia.Fill(dataSet2.cointype);
+                                treeView2.SelectedNode.Remove();
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此分类的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("请先删除所有属于此分类的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
             }
+            else
+            {
+                MessageBox.Show("请先选中要删除的节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
         private void tcmiUpNode_Click(object sender, EventArgs e)
@@ -1221,20 +1266,25 @@ namespace CollectionManager
 
             if (addStampForm.ShowDialog() == DialogResult.OK)
             {
-                view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
 
-                string name = addStampForm.Tag.ToString();
+
+                string Typeid = addStampForm.Tag.ToString();
                 for (int i = 0; i < this.treeView1.Nodes.Count; i++)
                 {
-                    if (this.treeView1.Nodes[i].Text == name)
+                    if (this.treeView1.Nodes[i].Name == Typeid)
                     {
                         this.treeView1.SelectedNode = this.treeView1.Nodes[i];
                     }
-                    SelectTreeNodeByName(this.treeView1.SelectedNode, name);
+                    if (this.treeView1.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
+                    {
+                        SelectTreeNodeByID(this.treeView1.Nodes[i], Typeid);
+                    }
                 }
 
+
+                //view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(addStampForm.Tag.ToString()));
                 //this.treeView1.SelectedNode = this.treeView1.Nodes[addStampForm.Tag.ToString()];
-                ClearStampInfoPanel();
+                //ClearStampInfoPanel();
                 //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
                 FillStampInfoPanel();
@@ -1242,13 +1292,14 @@ namespace CollectionManager
             addStampForm.Dispose();
         }
 
-        private void SelectTreeNodeByName(TreeNode node, string name)
+        private void SelectTreeNodeByID(TreeNode node, string Typeid)
         {
             for (int i = 0; i < node.Nodes.Count; i++)
             {
-                if (node.Nodes[i].Text == name)
+                if (node.Nodes[i].Name == Typeid)
                 {
                     this.treeView1.SelectedNode = node.Nodes[i];
+                    break;
                 }
             }
 
@@ -1298,25 +1349,28 @@ namespace CollectionManager
         {
             if (dataGridView1.SelectedRows.Count != 0)
             {
-                try
+                if (MessageBox.Show("是否确定要删除选中的邮票？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    stampinfoTableAdapter stainfoAdp = new stampinfoTableAdapter();
-                    TreeNode selectedTreeNode = this.treeView1.SelectedNode;
-                    stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
-                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                    this.treeView1.SelectedNode = selectedTreeNode;
+                    try
+                    {
+                        stampinfoTableAdapter stainfoAdp = new stampinfoTableAdapter();
+                        TreeNode selectedTreeNode = this.treeView1.SelectedNode;
+                        stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
+                        view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
+                        this.treeView1.SelectedNode = selectedTreeNode;
 
-                    ClearStampInfoPanel();
-                }
-                catch
-                {
-                    MessageBox.Show("未成功删除！");
+                        ClearStampInfoPanel();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("未成功删除！");
+                    }
                 }
 
             }
             else
             {
-                MessageBox.Show("请先选择要编辑的邮票！");
+                MessageBox.Show("请先选择要删除的邮票！");
             }
 
         }
