@@ -10666,7 +10666,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> ScalarQueryUnitID(global::System.Nullable<int> unitid) {
+        public virtual global::System.Nullable<int> ScalarQueryByUnitID(global::System.Nullable<int> unitid) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
             if ((unitid.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(unitid.Value));

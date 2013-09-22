@@ -1294,9 +1294,9 @@ namespace CollectionManager
                 }
 
 
-                //view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(addStampForm.Tag.ToString()));
+                view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(addStampForm.Tag.ToString()));
                 //this.treeView1.SelectedNode = this.treeView1.Nodes[addStampForm.Tag.ToString()];
-                //ClearStampInfoPanel();
+                ClearStampInfoPanel();
                 //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
                 FillStampInfoPanel();
@@ -1340,9 +1340,9 @@ namespace CollectionManager
                     this.treeView1.SelectedNode = selectedTreeNode;
 
 
-                    //ClearStampInfoPanel();
-                    //dataGridView1.Rows[selectedrow].Selected = true;
-                    //FillStampInfoPanel();
+                    ClearStampInfoPanel();
+                    dataGridView1.Rows[selectedrow].Selected = true;
+                    FillStampInfoPanel();
 
 
 
@@ -1459,12 +1459,22 @@ namespace CollectionManager
 
         private void tsmiCoinClassManage_Click(object sender, EventArgs e)
         {
-
+            ClassManageForm coinClassManageFrom = new ClassManageForm();
+            coinClassManageFrom.Text = "钱币类型管理";
+            if (coinClassManageFrom.ShowDialog() == DialogResult.Cancel)
+            {
+                TreeView2_Init();
+            }
         }
 
         private void tsmiCoinUnitManage_Click(object sender, EventArgs e)
         {
-
+            ClassManageForm coinUnitManageFrom = new ClassManageForm();
+            coinUnitManageFrom.Text = "邮票单位管理";
+            if (coinUnitManageFrom.ShowDialog() == DialogResult.Cancel)
+            {
+                TreeView2_Init();
+            }
         }
 
 

@@ -17,6 +17,9 @@ namespace CollectionManager
         }
         private DATA.Database.CollectionDataSetTableAdapters.stampclassTableAdapter stampclassTableAdapter;
         private DATA.Database.CollectionDataSetTableAdapters.stampunitTableAdapter stampunitTableAdapter;
+        private DATA.Database.CollectionDataSetTableAdapters.coinclassTableAdapter coinclassTableAdapter;
+        private DATA.Database.CollectionDataSetTableAdapters.coinunitTableAdapter coinunitTableAdapter;
+
         private void StampClassManage_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“collectionDataSet.stampclass”中。您可以根据需要移动或删除它。
@@ -38,7 +41,24 @@ namespace CollectionManager
                 this.listBox1.DisplayMember = "unitname";
                 this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
             }
+            if (this.Text == "钱币类型管理")
+            {
+                this.coinclassTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.coinclassTableAdapter();
+                this.listBoxBindingSource.DataMember = "coinclass";
+                this.listBox1.ValueMember = "id";
+                this.listBox1.DisplayMember = "classname";
 
+                this.coinclassTableAdapter.Fill(this.collectionDataSet.coinclass);
+            }
+
+            if (this.Text == "钱币单位管理")
+            {
+                this.coinunitTableAdapter = new CollectionManager.DATA.Database.CollectionDataSetTableAdapters.coinunitTableAdapter();
+                this.listBoxBindingSource.DataMember = "coinunit";
+                this.listBox1.ValueMember = "id";
+                this.listBox1.DisplayMember = "unitname";
+                this.coinunitTableAdapter.Fill(this.collectionDataSet.coinunit);
+            }
 
         }
 
@@ -48,6 +68,7 @@ namespace CollectionManager
             if (this.Text == "邮票类型管理")
             {
                 AddQueryItemNameForm addStampClassForm = new AddQueryItemNameForm();
+                addStampClassForm.Text = "请输入邮票类型名称";
                 if (addStampClassForm.ShowDialog() == DialogResult.OK)
                 {
                     string txt = addStampClassForm.addTxt;
@@ -59,6 +80,7 @@ namespace CollectionManager
             if (this.Text == "邮票单位管理")
             {
                 AddQueryItemNameForm addStampUnitForm = new AddQueryItemNameForm();
+                addStampUnitForm.Text = "请输入邮票单位名称";
                 if (addStampUnitForm.ShowDialog() == DialogResult.OK)
                 {
                     string txt = addStampUnitForm.addTxt;
@@ -66,7 +88,29 @@ namespace CollectionManager
                     this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
                 }
             }
+            if (this.Text == "钱币类型管理")
+            {
+                AddQueryItemNameForm addCoinClassForm = new AddQueryItemNameForm();
+                addCoinClassForm.Text = "请输入钱币类型名称";
+                if (addCoinClassForm.ShowDialog() == DialogResult.OK)
+                {
+                    string txt = addCoinClassForm.addTxt;
+                    this.coinclassTableAdapter.Insert(txt);
+                    this.coinclassTableAdapter.Fill(this.collectionDataSet.coinclass);
+                }
+            }
 
+            if (this.Text == "钱币单位管理")
+            {
+                AddQueryItemNameForm addCoinUnitForm = new AddQueryItemNameForm();
+                addCoinUnitForm.Text = "请输入钱币单位名称";
+                if (addCoinUnitForm.ShowDialog() == DialogResult.OK)
+                {
+                    string txt = addCoinUnitForm.addTxt;
+                    this.coinunitTableAdapter.Insert(txt);
+                    this.coinunitTableAdapter.Fill(this.collectionDataSet.coinunit);
+                }
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -95,7 +139,28 @@ namespace CollectionManager
                         this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
                     }
                 }
-
+                if (this.Text == "钱币类型管理")
+                {
+                    AddQueryItemNameForm addCoinClassForm = new AddQueryItemNameForm();
+                    addCoinClassForm.Text = "请输入新的名称";
+                    if (addCoinClassForm.ShowDialog() == DialogResult.OK)
+                    {
+                        string txt = addCoinClassForm.addTxt;
+                        this.coinclassTableAdapter.Update(txt, Convert.ToInt32(listBox1.SelectedValue.ToString()), listBox1.Text);
+                        this.coinclassTableAdapter.Fill(this.collectionDataSet.coinclass);
+                    }
+                }
+                if (this.Text == "钱币单位管理")
+                {
+                    AddQueryItemNameForm addCoinUnitForm = new AddQueryItemNameForm();
+                    addCoinUnitForm.Text = "请输入新的名称";
+                    if (addCoinUnitForm.ShowDialog() == DialogResult.OK)
+                    {
+                        string txt = addCoinUnitForm.addTxt;
+                        this.coinunitTableAdapter.Update(txt, Convert.ToInt32(listBox1.SelectedValue.ToString()), listBox1.Text);
+                        this.coinunitTableAdapter.Fill(this.collectionDataSet.coinunit);
+                    }
+                }
 
 
             }
@@ -106,6 +171,8 @@ namespace CollectionManager
         }
 
         private DATA.Database.CollectionDataSetTableAdapters.stampinfoTableAdapter stampinfoAdapter = new DATA.Database.CollectionDataSetTableAdapters.stampinfoTableAdapter();
+        private DATA.Database.CollectionDataSetTableAdapters.coininfoTableAdapter coininfoAdapter = new DATA.Database.CollectionDataSetTableAdapters.coininfoTableAdapter();
+        
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count != 0)
@@ -136,6 +203,34 @@ namespace CollectionManager
                         MessageBox.Show("请先删除所有属于此单位的邮票信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
+
+                if (this.Text == "钱币类型管理")
+                {
+                    if (coininfoAdapter.ScalarQueryByClassID(Convert.ToInt32(this.listBox1.SelectedValue)) == 0)
+                    {
+                        this.coinclassTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
+                        this.coinclassTableAdapter.Fill(this.collectionDataSet.coinclass);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此类型的钱币信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                }
+                if (this.Text == "钱币单位管理")
+                {
+                    if (coininfoAdapter.ScalarQueryByUnitID(Convert.ToInt32(this.listBox1.SelectedValue)) == 0)
+                    {
+                        this.coinunitTableAdapter.Delete(Convert.ToInt32(listBox1.SelectedValue), listBox1.Text);
+                        this.coinunitTableAdapter.Fill(this.collectionDataSet.coinunit);
+                    }
+                    else
+                    {
+                        MessageBox.Show("请先删除所有属于此单位的钱币信息再进行删除！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
 
 
             }
