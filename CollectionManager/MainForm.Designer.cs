@@ -33,8 +33,8 @@ namespace CollectionManager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.数据处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +48,14 @@ namespace CollectionManager
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbAddStamp = new System.Windows.Forms.ToolStripButton();
             this.tsbEditStamp = new System.Windows.Forms.ToolStripButton();
-            this.tsbDeleteAtamp = new System.Windows.Forms.ToolStripButton();
+            this.tsbDeleteStamp = new System.Windows.Forms.ToolStripButton();
+            this.tsddbCoinQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiCoinClassManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCoinUnitManage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbAddCoin = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditCoin = new System.Windows.Forms.ToolStripButton();
+            this.tsbDeleteCoin = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -262,7 +269,12 @@ namespace CollectionManager
             this.toolStripSeparator1,
             this.tsbAddStamp,
             this.tsbEditStamp,
-            this.tsbDeleteAtamp});
+            this.tsbDeleteStamp,
+            this.tsddbCoinQueryManage,
+            this.toolStripSeparator2,
+            this.tsbAddCoin,
+            this.tsbEditCoin,
+            this.tsbDeleteCoin});
             this.toolStrip1.Location = new System.Drawing.Point(0, 30);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -322,15 +334,76 @@ namespace CollectionManager
             this.tsbEditStamp.Text = "编辑邮票";
             this.tsbEditStamp.Click += new System.EventHandler(this.tsbEditStamp_Click);
             // 
-            // tsbDeleteAtamp
+            // tsbDeleteStamp
             // 
-            this.tsbDeleteAtamp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbDeleteAtamp.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteAtamp.Image")));
-            this.tsbDeleteAtamp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDeleteAtamp.Name = "tsbDeleteAtamp";
-            this.tsbDeleteAtamp.Size = new System.Drawing.Size(76, 22);
-            this.tsbDeleteAtamp.Text = "删除邮票";
-            this.tsbDeleteAtamp.Click += new System.EventHandler(this.tsbDeleteStamp_Click);
+            this.tsbDeleteStamp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteStamp.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteStamp.Image")));
+            this.tsbDeleteStamp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteStamp.Name = "tsbDeleteStamp";
+            this.tsbDeleteStamp.Size = new System.Drawing.Size(76, 22);
+            this.tsbDeleteStamp.Text = "删除邮票";
+            this.tsbDeleteStamp.Click += new System.EventHandler(this.tsbDeleteStamp_Click);
+            // 
+            // tsddbCoinQueryManage
+            // 
+            this.tsddbCoinQueryManage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbCoinQueryManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiCoinClassManage,
+            this.tsmiCoinUnitManage});
+            this.tsddbCoinQueryManage.Image = ((System.Drawing.Image)(resources.GetObject("tsddbCoinQueryManage.Image")));
+            this.tsddbCoinQueryManage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbCoinQueryManage.Name = "tsddbCoinQueryManage";
+            this.tsddbCoinQueryManage.Size = new System.Drawing.Size(85, 22);
+            this.tsddbCoinQueryManage.Text = "查询管理";
+            // 
+            // tsmiCoinClassManage
+            // 
+            this.tsmiCoinClassManage.Name = "tsmiCoinClassManage";
+            this.tsmiCoinClassManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCoinClassManage.Text = "分类管理";
+            this.tsmiCoinClassManage.Click += new System.EventHandler(this.tsmiCoinClassManage_Click);
+            // 
+            // tsmiCoinUnitManage
+            // 
+            this.tsmiCoinUnitManage.Name = "tsmiCoinUnitManage";
+            this.tsmiCoinUnitManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCoinUnitManage.Text = "单位管理";
+            this.tsmiCoinUnitManage.Click += new System.EventHandler(this.tsmiCoinUnitManage_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tsbAddCoin
+            // 
+            this.tsbAddCoin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAddCoin.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddCoin.Image")));
+            this.tsbAddCoin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAddCoin.Name = "tsbAddCoin";
+            this.tsbAddCoin.Size = new System.Drawing.Size(76, 22);
+            this.tsbAddCoin.Text = "新增钱币";
+            // 
+            // tsbEditCoin
+            // 
+            this.tsbEditCoin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbEditCoin.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tsbEditCoin.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditCoin.Image")));
+            this.tsbEditCoin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditCoin.Name = "tsbEditCoin";
+            this.tsbEditCoin.Size = new System.Drawing.Size(76, 22);
+            this.tsbEditCoin.Text = "编辑钱币";
+            this.tsbEditCoin.Click += new System.EventHandler(this.tsbEditCoin_Click);
+            // 
+            // tsbDeleteCoin
+            // 
+            this.tsbDeleteCoin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteCoin.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteCoin.Image")));
+            this.tsbDeleteCoin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteCoin.Name = "tsbDeleteCoin";
+            this.tsbDeleteCoin.Size = new System.Drawing.Size(76, 22);
+            this.tsbDeleteCoin.Text = "删除钱币";
+            this.tsbDeleteCoin.Click += new System.EventHandler(this.tsbDeleteCoin_Click);
             // 
             // tabControl1
             // 
@@ -343,15 +416,16 @@ namespace CollectionManager
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1026, 679);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 649);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -370,7 +444,7 @@ namespace CollectionManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 642);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 641);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
@@ -385,7 +459,7 @@ namespace CollectionManager
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 638);
+            this.treeView1.Size = new System.Drawing.Size(236, 637);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -405,8 +479,8 @@ namespace CollectionManager
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 642);
-            this.splitContainer2.SplitterDistance = 195;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 641);
+            this.splitContainer2.SplitterDistance = 194;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -415,8 +489,8 @@ namespace CollectionManager
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -446,7 +520,7 @@ namespace CollectionManager
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 191);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 190);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
@@ -804,11 +878,11 @@ namespace CollectionManager
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 649);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -827,7 +901,7 @@ namespace CollectionManager
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(1010, 642);
+            this.splitContainer5.Size = new System.Drawing.Size(1010, 641);
             this.splitContainer5.SplitterDistance = 240;
             this.splitContainer5.SplitterWidth = 2;
             this.splitContainer5.TabIndex = 1;
@@ -842,7 +916,7 @@ namespace CollectionManager
             this.treeView2.Location = new System.Drawing.Point(0, 0);
             this.treeView2.Margin = new System.Windows.Forms.Padding(4);
             this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(236, 638);
+            this.treeView2.Size = new System.Drawing.Size(236, 637);
             this.treeView2.TabIndex = 0;
             this.treeView2.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
             this.treeView2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView2_MouseDown);
@@ -862,8 +936,8 @@ namespace CollectionManager
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer6.Size = new System.Drawing.Size(764, 638);
-            this.splitContainer6.SplitterDistance = 190;
+            this.splitContainer6.Size = new System.Drawing.Size(764, 637);
+            this.splitContainer6.SplitterDistance = 188;
             this.splitContainer6.SplitterWidth = 3;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -872,8 +946,8 @@ namespace CollectionManager
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -903,7 +977,7 @@ namespace CollectionManager
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(760, 186);
+            this.dataGridView2.Size = new System.Drawing.Size(760, 184);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
@@ -1049,7 +1123,7 @@ namespace CollectionManager
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 441);
+            this.groupBox2.Size = new System.Drawing.Size(760, 442);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "详细信息";
@@ -1067,8 +1141,8 @@ namespace CollectionManager
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel2);
-            this.splitContainer7.Size = new System.Drawing.Size(754, 421);
-            this.splitContainer7.SplitterDistance = 313;
+            this.splitContainer7.Size = new System.Drawing.Size(754, 422);
+            this.splitContainer7.SplitterDistance = 312;
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
             // 
@@ -1102,7 +1176,7 @@ namespace CollectionManager
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.rtCMemo);
-            this.splitContainer8.Size = new System.Drawing.Size(313, 421);
+            this.splitContainer8.Size = new System.Drawing.Size(312, 422);
             this.splitContainer8.SplitterDistance = 228;
             this.splitContainer8.TabIndex = 16;
             // 
@@ -1240,7 +1314,7 @@ namespace CollectionManager
             this.rtCMemo.Location = new System.Drawing.Point(0, 0);
             this.rtCMemo.Name = "rtCMemo";
             this.rtCMemo.ReadOnly = true;
-            this.rtCMemo.Size = new System.Drawing.Size(313, 189);
+            this.rtCMemo.Size = new System.Drawing.Size(312, 190);
             this.rtCMemo.TabIndex = 0;
             this.rtCMemo.Text = "";
             // 
@@ -1252,7 +1326,7 @@ namespace CollectionManager
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(439, 421);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(440, 422);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // cMSDataGridView
@@ -1261,19 +1335,19 @@ namespace CollectionManager
             this.tsmiEditStamp,
             this.tsmiDeleteStamp});
             this.cMSDataGridView.Name = "cMSDataGridView";
-            this.cMSDataGridView.Size = new System.Drawing.Size(119, 48);
+            this.cMSDataGridView.Size = new System.Drawing.Size(125, 48);
             // 
             // tsmiEditStamp
             // 
             this.tsmiEditStamp.Name = "tsmiEditStamp";
-            this.tsmiEditStamp.Size = new System.Drawing.Size(118, 22);
+            this.tsmiEditStamp.Size = new System.Drawing.Size(124, 22);
             this.tsmiEditStamp.Text = "编辑邮票";
             this.tsmiEditStamp.Click += new System.EventHandler(this.tsmiEditStamp_Click);
             // 
             // tsmiDeleteStamp
             // 
             this.tsmiDeleteStamp.Name = "tsmiDeleteStamp";
-            this.tsmiDeleteStamp.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDeleteStamp.Size = new System.Drawing.Size(124, 22);
             this.tsmiDeleteStamp.Text = "删除邮票";
             this.tsmiDeleteStamp.Click += new System.EventHandler(this.tsmiDeleteStamp_Click);
             // 
@@ -1287,48 +1361,48 @@ namespace CollectionManager
             this.tsmiUpNode,
             this.tsmiDownNode});
             this.cMSTypeTreeNode.Name = "contextMenuStrip1";
-            this.cMSTypeTreeNode.Size = new System.Drawing.Size(119, 136);
+            this.cMSTypeTreeNode.Size = new System.Drawing.Size(125, 136);
             this.cMSTypeTreeNode.Opening += new System.ComponentModel.CancelEventHandler(this.cMSTypeTreeNode_Opening);
             // 
             // tsmiAddStamp
             // 
             this.tsmiAddStamp.Name = "tsmiAddStamp";
-            this.tsmiAddStamp.Size = new System.Drawing.Size(118, 22);
+            this.tsmiAddStamp.Size = new System.Drawing.Size(124, 22);
             this.tsmiAddStamp.Text = "新增邮票";
             this.tsmiAddStamp.Click += new System.EventHandler(this.addStampMS_Click);
             // 
             // tsmiAddChild
             // 
             this.tsmiAddChild.Name = "tsmiAddChild";
-            this.tsmiAddChild.Size = new System.Drawing.Size(118, 22);
+            this.tsmiAddChild.Size = new System.Drawing.Size(124, 22);
             this.tsmiAddChild.Text = "增加子类";
             this.tsmiAddChild.Click += new System.EventHandler(this.addChild_Click);
             // 
             // tsmiEditNode
             // 
             this.tsmiEditNode.Name = "tsmiEditNode";
-            this.tsmiEditNode.Size = new System.Drawing.Size(118, 22);
+            this.tsmiEditNode.Size = new System.Drawing.Size(124, 22);
             this.tsmiEditNode.Text = "编辑选中";
             this.tsmiEditNode.Click += new System.EventHandler(this.tsmiEditNode_Click);
             // 
             // tsmiDeleteNode
             // 
             this.tsmiDeleteNode.Name = "tsmiDeleteNode";
-            this.tsmiDeleteNode.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDeleteNode.Size = new System.Drawing.Size(124, 22);
             this.tsmiDeleteNode.Text = "删除选中";
             this.tsmiDeleteNode.Click += new System.EventHandler(this.deleteNode_Click);
             // 
             // tsmiUpNode
             // 
             this.tsmiUpNode.Name = "tsmiUpNode";
-            this.tsmiUpNode.Size = new System.Drawing.Size(118, 22);
+            this.tsmiUpNode.Size = new System.Drawing.Size(124, 22);
             this.tsmiUpNode.Text = "向上移动";
             this.tsmiUpNode.Click += new System.EventHandler(this.tsmiUpNode_Click);
             // 
             // tsmiDownNode
             // 
             this.tsmiDownNode.Name = "tsmiDownNode";
-            this.tsmiDownNode.Size = new System.Drawing.Size(118, 22);
+            this.tsmiDownNode.Size = new System.Drawing.Size(124, 22);
             this.tsmiDownNode.Text = "向下移动";
             this.tsmiDownNode.Click += new System.EventHandler(this.tsmiDownNode_Click);
             // 
@@ -1350,47 +1424,47 @@ namespace CollectionManager
             this.tcmiUpNode,
             this.tcmiDownNode});
             this.cMCTypeTreeNode.Name = "contextMenuStrip1";
-            this.cMCTypeTreeNode.Size = new System.Drawing.Size(119, 136);
+            this.cMCTypeTreeNode.Size = new System.Drawing.Size(125, 136);
             // 
             // tcmiAddCoin
             // 
             this.tcmiAddCoin.Name = "tcmiAddCoin";
-            this.tcmiAddCoin.Size = new System.Drawing.Size(118, 22);
+            this.tcmiAddCoin.Size = new System.Drawing.Size(124, 22);
             this.tcmiAddCoin.Text = "新增钱币";
             this.tcmiAddCoin.Click += new System.EventHandler(this.tcmiAddCoin_Click);
             // 
             // tcmiAddChild
             // 
             this.tcmiAddChild.Name = "tcmiAddChild";
-            this.tcmiAddChild.Size = new System.Drawing.Size(118, 22);
+            this.tcmiAddChild.Size = new System.Drawing.Size(124, 22);
             this.tcmiAddChild.Text = "增加子类";
             this.tcmiAddChild.Click += new System.EventHandler(this.tcmiAddChild_Click);
             // 
             // tcmiEditNode
             // 
             this.tcmiEditNode.Name = "tcmiEditNode";
-            this.tcmiEditNode.Size = new System.Drawing.Size(118, 22);
+            this.tcmiEditNode.Size = new System.Drawing.Size(124, 22);
             this.tcmiEditNode.Text = "编辑选中";
             this.tcmiEditNode.Click += new System.EventHandler(this.tcmiEditNode_Click);
             // 
             // tcmiDeleteNode
             // 
             this.tcmiDeleteNode.Name = "tcmiDeleteNode";
-            this.tcmiDeleteNode.Size = new System.Drawing.Size(118, 22);
+            this.tcmiDeleteNode.Size = new System.Drawing.Size(124, 22);
             this.tcmiDeleteNode.Text = "删除选中";
             this.tcmiDeleteNode.Click += new System.EventHandler(this.tcmiDeleteNode_Click);
             // 
             // tcmiUpNode
             // 
             this.tcmiUpNode.Name = "tcmiUpNode";
-            this.tcmiUpNode.Size = new System.Drawing.Size(118, 22);
+            this.tcmiUpNode.Size = new System.Drawing.Size(124, 22);
             this.tcmiUpNode.Text = "向上移动";
             this.tcmiUpNode.Click += new System.EventHandler(this.tcmiUpNode_Click);
             // 
             // tcmiDownNode
             // 
             this.tcmiDownNode.Name = "tcmiDownNode";
-            this.tcmiDownNode.Size = new System.Drawing.Size(118, 22);
+            this.tcmiDownNode.Size = new System.Drawing.Size(124, 22);
             this.tcmiDownNode.Text = "向下移动";
             this.tcmiDownNode.Click += new System.EventHandler(this.tcmiDownNode_Click);
             // 
@@ -1400,19 +1474,19 @@ namespace CollectionManager
             this.tcmiEditCoin,
             this.tcmiDeleteCoin});
             this.cMCDataGridView.Name = "cMSDataGridView";
-            this.cMCDataGridView.Size = new System.Drawing.Size(119, 48);
+            this.cMCDataGridView.Size = new System.Drawing.Size(125, 48);
             // 
             // tcmiEditCoin
             // 
             this.tcmiEditCoin.Name = "tcmiEditCoin";
-            this.tcmiEditCoin.Size = new System.Drawing.Size(118, 22);
+            this.tcmiEditCoin.Size = new System.Drawing.Size(124, 22);
             this.tcmiEditCoin.Text = "编辑钱币";
             this.tcmiEditCoin.Click += new System.EventHandler(this.tcmiEditCoin_Click);
             // 
             // tcmiDeleteCoin
             // 
             this.tcmiDeleteCoin.Name = "tcmiDeleteCoin";
-            this.tcmiDeleteCoin.Size = new System.Drawing.Size(118, 22);
+            this.tcmiDeleteCoin.Size = new System.Drawing.Size(124, 22);
             this.tcmiDeleteCoin.Text = "删除钱币";
             this.tcmiDeleteCoin.Click += new System.EventHandler(this.tcmiDeleteCoin_Click);
             // 
@@ -1528,7 +1602,7 @@ namespace CollectionManager
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddStamp;
         private System.Windows.Forms.ToolStripButton tsbEditStamp;
-        private System.Windows.Forms.ToolStripButton tsbDeleteAtamp;
+        private System.Windows.Forms.ToolStripButton tsbDeleteStamp;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripDropDownButton tsddbStampQueryManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStampClassManage;
@@ -1612,5 +1686,12 @@ namespace CollectionManager
         private System.Windows.Forms.ContextMenuStrip cMCDataGridView;
         private System.Windows.Forms.ToolStripMenuItem tcmiEditCoin;
         private System.Windows.Forms.ToolStripMenuItem tcmiDeleteCoin;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbCoinQueryManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCoinClassManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCoinUnitManage;
+        private System.Windows.Forms.ToolStripButton tsbAddCoin;
+        private System.Windows.Forms.ToolStripButton tsbEditCoin;
+        private System.Windows.Forms.ToolStripButton tsbDeleteCoin;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }

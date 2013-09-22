@@ -21,6 +21,18 @@ namespace CollectionManager
             this.treeView1.DrawNode += new DrawTreeNodeEventHandler(treeView1_DrawNode);
             this.treeView2.DrawMode = TreeViewDrawMode.OwnerDrawText;
             this.treeView2.DrawNode += new DrawTreeNodeEventHandler(treeView1_DrawNode);
+
+            tsddbStampQueryManage.Visible = true;
+            tsbAddStamp.Visible = true;
+            tsbEditStamp.Visible = true;
+            tsbDeleteStamp.Visible = true;
+            toolStripSeparator1.Visible = true;
+
+            tsddbCoinQueryManage.Visible = false;
+            tsbAddCoin.Visible = false;
+            tsbEditCoin.Visible = false;
+            tsbDeleteCoin.Visible = false;
+            toolStripSeparator2.Visible = false;
         }
 
 
@@ -734,7 +746,7 @@ namespace CollectionManager
 
         private void tcmiAddCoin_Click(object sender, EventArgs e)
         {
-
+            tsbAddCoin_Click(sender,e);
         }
 
         private void tcmiAddChild_Click(object sender, EventArgs e)
@@ -1050,12 +1062,12 @@ namespace CollectionManager
 
         private void tcmiEditCoin_Click(object sender, EventArgs e)
         {
-
+            tsbEditCoin_Click(sender, e);
         }
 
         private void tcmiDeleteCoin_Click(object sender, EventArgs e)
         {
-
+            tsbDeleteCoin_Click(sender, e);
         }
 
 
@@ -1254,7 +1266,7 @@ namespace CollectionManager
 
 
         /// <summary>
-        /// 工具栏中的增加、编辑、删除邮票。
+        /// 工具栏中的增加、编辑、删除邮票。分类管理
         /// </summary>
 
 
@@ -1328,9 +1340,9 @@ namespace CollectionManager
                     this.treeView1.SelectedNode = selectedTreeNode;
 
 
-                    ClearStampInfoPanel();
-                    dataGridView1.Rows[selectedrow].Selected = true;
-                    FillStampInfoPanel();
+                    //ClearStampInfoPanel();
+                    //dataGridView1.Rows[selectedrow].Selected = true;
+                    //FillStampInfoPanel();
 
 
 
@@ -1357,9 +1369,11 @@ namespace CollectionManager
                         TreeNode selectedTreeNode = this.treeView1.SelectedNode;
                         stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
                         view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                        this.treeView1.SelectedNode = selectedTreeNode;
-
+                        
                         ClearStampInfoPanel();
+
+
+
                     }
                     catch
                     {
@@ -1397,6 +1411,66 @@ namespace CollectionManager
                 TreeView1_Init();
             }
         }
+
+
+        /// <summary>
+        /// 工具栏中的增加、编辑、删除钱币。分类管理
+        /// </summary>
+
+
+        private void tsbAddCoin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbEditCoin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsbDeleteCoin_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                if (MessageBox.Show("是否确定要删除选中的钱币？", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        coininfoTableAdapter coininfoAdp = new coininfoTableAdapter();
+                        TreeNode selectedTreeNode = this.treeView2.SelectedNode;
+                        coininfoAdp.DeleteByID(Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
+                        view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(selectedTreeNode.Name));
+                        //this.treeView2.SelectedNode = selectedTreeNode;
+
+                        ClearCoinInfoPanel();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("未成功删除！");
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("请先选择要删除的邮票！");
+            }
+        }
+
+        private void tsmiCoinClassManage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiCoinUnitManage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
 
 
 
@@ -1591,6 +1665,40 @@ namespace CollectionManager
             
 
         }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if (tabControl1.SelectedTab == this.tabPage1)
+            {
+                tsddbStampQueryManage.Visible = true;
+                tsbAddStamp.Visible = true;
+                tsbEditStamp.Visible = true;
+                tsbDeleteStamp.Visible = true;
+                toolStripSeparator1.Visible = true;
+
+                tsddbCoinQueryManage.Visible = false;
+                tsbAddCoin.Visible = false;
+                tsbEditCoin.Visible = false;
+                tsbDeleteCoin.Visible = false;
+                toolStripSeparator2.Visible = false;
+            }
+            if (tabControl1.SelectedTab == this.tabPage2)
+            {
+                tsddbStampQueryManage.Visible = false;
+                tsbAddStamp.Visible = false;
+                tsbEditStamp.Visible = false;
+                tsbDeleteStamp.Visible = false;
+                toolStripSeparator1.Visible = false;
+
+                tsddbCoinQueryManage.Visible = true;
+                tsbAddCoin.Visible = true;
+                tsbEditCoin.Visible = true;
+                tsbDeleteCoin.Visible = true;
+                toolStripSeparator2.Visible = true;
+            }
+        }
+
+
 
 
 
