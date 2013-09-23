@@ -10148,7 +10148,7 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `coininfo` WHERE ((`id` = ?)";
+            this._commandCollection[1].CommandText = "DELETE FROM coininfo\r\nWHERE   (id = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("id", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "id", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
@@ -10574,7 +10574,6 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteByID(int id) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
             command.Parameters[0].Value = ((int)(id));
@@ -11317,15 +11316,6 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._coinunitTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._coinunitTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._coinclassTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -11335,12 +11325,12 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cointypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._coinunitTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cointypeTableAdapter.Update(updatedRows));
+                    result = (result + this._coinunitTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11350,6 +11340,15 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._stamptypeTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._cointypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cointypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11398,14 +11397,6 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._coinunitTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._coinunitTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._coinclassTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11414,11 +11405,11 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cointypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._coinunitTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.coinunit.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cointypeTableAdapter.Update(addedRows));
+                    result = (result + this._coinunitTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11427,6 +11418,14 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._stamptypeTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._cointypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cointypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11488,14 +11487,6 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._stamptypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.stamptype.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._stamptypeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._cointypeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.cointype.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11504,11 +11495,11 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._coinclassTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._stamptypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.stamptype.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._coinclassTableAdapter.Update(deletedRows));
+                    result = (result + this._stamptypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11517,6 +11508,14 @@ namespace CollectionManager.DATA.Database.CollectionDataSetTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._coinunitTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._coinclassTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.coinclass.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._coinclassTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

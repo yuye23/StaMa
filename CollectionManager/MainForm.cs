@@ -284,7 +284,7 @@ namespace CollectionManager
             loadTreeViewByUnit2();
             treeView2.EndUpdate();
             treeView2.Nodes[0].Expand();
-            treeView2.SelectedNode = treeView2.TopNode;
+            treeView2.SelectedNode = treeView2.Nodes[0];
         }
 
         private void loadTreeView2()
@@ -1212,7 +1212,7 @@ namespace CollectionManager
                 string picPath = row.Cells["picpathCoinDataGridViewTextBoxColumn"].Value.ToString();
 
                 List<string> imgPath = new List<string>();
-                String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
+                String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\CoinPicture\\";
                 while (picPath.IndexOf(",") != -1)
                 {
                     imgPath.Add(imgdr + picPath.Substring(0, picPath.IndexOf(",")));
@@ -1289,7 +1289,7 @@ namespace CollectionManager
                     }
                     if (this.treeView1.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
                     {
-                        SelectTreeNodeByID(this.treeView1.Nodes[i], Typeid);
+                        SelectTree1NodeByID(this.treeView1.Nodes[i], Typeid);
                     }
                 }
 
@@ -1304,7 +1304,7 @@ namespace CollectionManager
             addStampForm.Dispose();
         }
 
-        private void SelectTreeNodeByID(TreeNode node, string Typeid)
+        private void SelectTree1NodeByID(TreeNode node, string Typeid)
         {
             for (int i = 0; i < node.Nodes.Count; i++)
             {
@@ -1420,12 +1420,79 @@ namespace CollectionManager
 
         private void tsbAddCoin_Click(object sender, EventArgs e)
         {
+            AddCoinForm addCoinForm = new AddCoinForm();
+            addCoinForm.Tag = this.treeView2.SelectedNode.Name;
+            TreeNode selectedTreeNode = this.treeView2.SelectedNode;
+
+            if (addCoinForm.ShowDialog() == DialogResult.OK)
+            {
+
+
+                string Typeid = addCoinForm.Tag.ToString();
+                for (int i = 0; i < this.treeView2.Nodes.Count; i++)
+                {
+                    if (this.treeView2.Nodes[i].Name == Typeid)
+                    {
+                        this.treeView2.SelectedNode = this.treeView2.Nodes[i];
+                    }
+                    if (this.treeView2.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
+                    {
+                        SelectTree2NodeByID(this.treeView2.Nodes[i], Typeid);
+                    }
+                }
+
+
+                view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(addCoinForm.Tag.ToString()));
+                //this.treeView1.SelectedNode = this.treeView1.Nodes[addStampForm.Tag.ToString()];
+                ClearCoinInfoPanel();
+                //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
+                FillCoinInfoPanel();
+            }
+            addCoinForm.Dispose();
+        }
+        private void SelectTree2NodeByID(TreeNode node, string Typeid)
+        {
+            for (int i = 0; i < node.Nodes.Count; i++)
+            {
+                if (node.Nodes[i].Name == Typeid)
+                {
+                    this.treeView2.SelectedNode = node.Nodes[i];
+                    break;
+                }
+            }
 
         }
-
         private void tsbEditCoin_Click(object sender, EventArgs e)
         {
+            AddCoinForm addCoinForm = new AddCoinForm();
+            TreeNode selectedTreeNode = this.treeView2.SelectedNode;
+            //this.dataGridView1.se;
+            addCoinForm.Text = "编辑钱币";
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                int selectedrow = dataGridView2.SelectedRows[0].Index;
+                addCoinForm.Tag = dataGridView2.SelectedRows[0].Cells["idCoinDataGridViewTextBoxColumn"].Value;
+                if (addCoinForm.ShowDialog() == DialogResult.OK)
+                {
+                    ////////
+                    view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(selectedTreeNode.Name));
+                    this.treeView2.SelectedNode = selectedTreeNode;
 
+
+                    ClearCoinInfoPanel();
+                    dataGridView2.Rows[selectedrow].Selected = true;
+                    FillCoinInfoPanel();
+
+
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先选择要编辑的钱币！");
+            }
+            addCoinForm.Dispose();
         }
 
         private void tsbDeleteCoin_Click(object sender, EventArgs e)
@@ -1438,7 +1505,7 @@ namespace CollectionManager
                     {
                         coininfoTableAdapter coininfoAdp = new coininfoTableAdapter();
                         TreeNode selectedTreeNode = this.treeView2.SelectedNode;
-                        coininfoAdp.DeleteByID(Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
+                        coininfoAdp.DeleteByID(Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["idCoinDataGridViewTextBoxColumn"].Value));
                         view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(selectedTreeNode.Name));
                         //this.treeView2.SelectedNode = selectedTreeNode;
 
@@ -1508,19 +1575,28 @@ namespace CollectionManager
 
         }
 
-
-
-
-
-
-
-
-
-
         private void deleteUnnecessaryImge()
         {
+            this.view_stampinfoTableAdapter.Fill(this.dataSet1.view_stampinfo);
+            DataTable table1 = dataSet1.view_stampinfo;
+            deleteUnnecessaryImge("\\DATA\\StampPicture\\", table1);
+
+            this.view_coininfoTableAdapter.Fill(this.dataSet1.view_coininfo);
+            DataTable table2 = dataSet1.view_stampinfo;
+            deleteUnnecessaryImge("\\DATA\\CoinPicture\\", table2);
+        }
+
+
+
+
+
+
+
+
+        private void deleteUnnecessaryImge(string dir,DataTable table)
+        {
             //返回picture下所有文件列表
-            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\");
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + dir );
             FileInfo[] files = TheFolder.GetFiles();
             List<string> allFiles = new List<string>();
             foreach (FileInfo file in files)
@@ -1528,8 +1604,7 @@ namespace CollectionManager
                 allFiles.Add(file.FullName);
             }
             //获取数据库中的文件列表
-            this.view_stampinfoTableAdapter.Fill(this.dataSet1.view_stampinfo);
-            DataTable table = dataSet1.view_stampinfo;
+            
             DataRow[] row = table.Select();
             List<string> imgPath = new List<string>();
 
@@ -1539,7 +1614,7 @@ namespace CollectionManager
                 {
                     string picPath = r["picpath"].ToString();
 
-                    String imgdr = System.Windows.Forms.Application.StartupPath + "\\DATA\\StampPicture\\";
+                    String imgdr = System.Windows.Forms.Application.StartupPath + "dir";
 
                     while (picPath.IndexOf(",") != -1)
                     {

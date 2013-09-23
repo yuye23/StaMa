@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCoinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCoinForm.Designer.cs">
+      <DependentUpon>AddCoinForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddQueryItemNameForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </Compile>
     <Compile Include="UnZipFloClass .cs" />
     <Compile Include="ZipFloClass.cs" />
+    <EmbeddedResource Include="AddCoinForm.resx">
+      <DependentUpon>AddCoinForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNodeForm.resx">
       <DependentUpon>AddNodeForm.cs</DependentUpon>
     </EmbeddedResource>

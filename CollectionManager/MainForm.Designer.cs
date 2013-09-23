@@ -359,14 +359,14 @@ namespace CollectionManager
             // tsmiCoinClassManage
             // 
             this.tsmiCoinClassManage.Name = "tsmiCoinClassManage";
-            this.tsmiCoinClassManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCoinClassManage.Size = new System.Drawing.Size(140, 22);
             this.tsmiCoinClassManage.Text = "分类管理";
             this.tsmiCoinClassManage.Click += new System.EventHandler(this.tsmiCoinClassManage_Click);
             // 
             // tsmiCoinUnitManage
             // 
             this.tsmiCoinUnitManage.Name = "tsmiCoinUnitManage";
-            this.tsmiCoinUnitManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCoinUnitManage.Size = new System.Drawing.Size(140, 22);
             this.tsmiCoinUnitManage.Text = "单位管理";
             this.tsmiCoinUnitManage.Click += new System.EventHandler(this.tsmiCoinUnitManage_Click);
             // 
@@ -383,6 +383,7 @@ namespace CollectionManager
             this.tsbAddCoin.Name = "tsbAddCoin";
             this.tsbAddCoin.Size = new System.Drawing.Size(76, 22);
             this.tsbAddCoin.Text = "新增钱币";
+            this.tsbAddCoin.Click += new System.EventHandler(this.tsbAddCoin_Click);
             // 
             // tsbEditCoin
             // 
@@ -421,11 +422,11 @@ namespace CollectionManager
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 649);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -444,7 +445,7 @@ namespace CollectionManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 642);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 641);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
@@ -459,7 +460,7 @@ namespace CollectionManager
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 638);
+            this.treeView1.Size = new System.Drawing.Size(236, 637);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -479,8 +480,8 @@ namespace CollectionManager
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 642);
-            this.splitContainer2.SplitterDistance = 194;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 641);
+            this.splitContainer2.SplitterDistance = 193;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -520,7 +521,7 @@ namespace CollectionManager
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 189);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
@@ -878,11 +879,11 @@ namespace CollectionManager
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 649);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -936,8 +937,8 @@ namespace CollectionManager
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer6.Size = new System.Drawing.Size(764, 637);
-            this.splitContainer6.SplitterDistance = 188;
+            this.splitContainer6.Size = new System.Drawing.Size(768, 641);
+            this.splitContainer6.SplitterDistance = 189;
             this.splitContainer6.SplitterWidth = 3;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -977,7 +978,7 @@ namespace CollectionManager
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(760, 184);
+            this.dataGridView2.Size = new System.Drawing.Size(764, 185);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
@@ -1123,7 +1124,7 @@ namespace CollectionManager
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 442);
+            this.groupBox2.Size = new System.Drawing.Size(764, 445);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "详细信息";
@@ -1131,7 +1132,7 @@ namespace CollectionManager
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer7.Location = new System.Drawing.Point(3, 17);
+            this.splitContainer7.Location = new System.Drawing.Point(3, 22);
             this.splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -1141,8 +1142,8 @@ namespace CollectionManager
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel2);
-            this.splitContainer7.Size = new System.Drawing.Size(754, 422);
-            this.splitContainer7.SplitterDistance = 312;
+            this.splitContainer7.Size = new System.Drawing.Size(758, 420);
+            this.splitContainer7.SplitterDistance = 313;
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
             // 
@@ -1176,7 +1177,7 @@ namespace CollectionManager
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.rtCMemo);
-            this.splitContainer8.Size = new System.Drawing.Size(312, 422);
+            this.splitContainer8.Size = new System.Drawing.Size(313, 420);
             this.splitContainer8.SplitterDistance = 228;
             this.splitContainer8.TabIndex = 16;
             // 
@@ -1314,7 +1315,7 @@ namespace CollectionManager
             this.rtCMemo.Location = new System.Drawing.Point(0, 0);
             this.rtCMemo.Name = "rtCMemo";
             this.rtCMemo.ReadOnly = true;
-            this.rtCMemo.Size = new System.Drawing.Size(312, 190);
+            this.rtCMemo.Size = new System.Drawing.Size(313, 188);
             this.rtCMemo.TabIndex = 0;
             this.rtCMemo.Text = "";
             // 
@@ -1326,7 +1327,7 @@ namespace CollectionManager
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(440, 422);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(443, 420);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // cMSDataGridView
