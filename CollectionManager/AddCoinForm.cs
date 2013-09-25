@@ -24,6 +24,36 @@ namespace CollectionManager
             InitializeComponent();
         }
 
+
+
+
+        private List<ComboItem> comboItem = new List<ComboItem>();
+
+        private void LoadcbCType(string kg, string id)
+        {
+            DataTable table = this.collectionDataSet.cointype;
+            DataRow[] row = table.Select("parentid=" + id);
+
+            if (row != null)
+            {
+                if (id != "0")
+                {
+                    kg += "  ";
+                }
+                foreach (DataRow r in row)
+                {
+
+                    //TreeNode node = nodes.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()), , );
+                    //cbType.DisplayMember = ;
+                    //cbType.ValueMember = ;
+                    comboItem.Add(new ComboItem(kg + r["typename"].ToString(), r["id"].ToString()));
+                    LoadcbCType(kg, r["id"].ToString());
+                }
+
+            }
+
+        }
+
         private void AddCoinForm_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“collectionDataSet.coinclass”中。您可以根据需要移动或删除它。
@@ -32,6 +62,16 @@ namespace CollectionManager
             this.cointypeTableAdapter.Fill(this.collectionDataSet.cointype);
             // TODO: 这行代码将数据加载到表“collectionDataSet.coinunit”中。您可以根据需要移动或删除它。
             this.coinunitTableAdapter.Fill(this.collectionDataSet.coinunit);
+
+            LoadcbCType("", "0");
+            cbCType.DataSource = comboItem;
+            cbCType.DisplayMember = "DisplayText";
+            cbCType.ValueMember = "RealValue";
+
+
+
+
+
             if (this.Text == "编辑钱币")
             {
 

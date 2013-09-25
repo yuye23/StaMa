@@ -1286,6 +1286,7 @@ namespace CollectionManager
                     if (this.treeView1.Nodes[i].Name == Typeid)
                     {
                         this.treeView1.SelectedNode = this.treeView1.Nodes[i];
+                        
                     }
                     if (this.treeView1.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
                     {
@@ -1311,10 +1312,12 @@ namespace CollectionManager
                 if (node.Nodes[i].Name == Typeid)
                 {
                     this.treeView1.SelectedNode = node.Nodes[i];
+                    
                     break;
                 }
-            }
 
+                SelectTree1NodeByID(node.Nodes[i], Typeid);
+            }
         }
 
 
@@ -1460,6 +1463,7 @@ namespace CollectionManager
                     this.treeView2.SelectedNode = node.Nodes[i];
                     break;
                 }
+                SelectTree2NodeByID(node.Nodes[i], Typeid);
             }
 
         }

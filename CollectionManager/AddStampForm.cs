@@ -26,6 +26,37 @@ namespace CollectionManager
         }
 
 
+
+        private List<ComboItem> comboItem=new List<ComboItem>();
+        
+        private void LoadcbType(string kg,string id)
+        {
+            DataTable table = this.collectionDataSet.stamptype;
+            DataRow[] row = table.Select("parentid=" + id);
+            
+            if (row != null)
+            {
+                if (id != "0")
+                {
+                    kg += "  ";
+                }
+                foreach (DataRow r in row)
+                {
+
+                    //TreeNode node = nodes.Nodes.Insert(Convert.ToInt32(r["orderid"].ToString()), , );
+                    //cbType.DisplayMember = ;
+                    //cbType.ValueMember = ;
+                    comboItem.Add(new ComboItem(kg+r["typename"].ToString(),r["id"].ToString()));
+                    LoadcbType(kg,r["id"].ToString());
+                }
+                
+            }
+            
+        }
+
+
+
+
         private void AddStampForm_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“collectionDataSet.stampclass”中。您可以根据需要移动或删除它。
@@ -34,6 +65,12 @@ namespace CollectionManager
             this.stamptypeTableAdapter.Fill(this.collectionDataSet.stamptype);
             // TODO: 这行代码将数据加载到表“collectionDataSet.stampunit”中。您可以根据需要移动或删除它。
             this.stampunitTableAdapter.Fill(this.collectionDataSet.stampunit);
+
+            LoadcbType("","0");
+            cbType.DataSource = comboItem;
+            cbType.DisplayMember = "DisplayText";
+            cbType.ValueMember = "RealValue";
+            
 
             if (this.Text == "编辑邮票")
             {

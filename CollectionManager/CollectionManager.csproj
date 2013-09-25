@@ -83,6 +83,7 @@
     <Compile Include="AddStampForm.Designer.cs">
       <DependentUpon>AddStampForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboItem.cs" />
     <Compile Include="DATA\Database\CollectionDataSet.cs">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>

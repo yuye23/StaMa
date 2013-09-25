@@ -168,7 +168,7 @@
             this.cbClass.Location = new System.Drawing.Point(89, 194);
             this.cbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cbClass.Name = "cbClass";
-            this.cbClass.Size = new System.Drawing.Size(120, 24);
+            this.cbClass.Size = new System.Drawing.Size(240, 24);
             this.cbClass.TabIndex = 19;
             this.cbClass.ValueMember = "id";
             // 
@@ -184,15 +184,12 @@
             // 
             // cbType
             // 
-            this.cbType.DataSource = this.stamptypeBindingSource;
-            this.cbType.DisplayMember = "typename";
             this.cbType.FormattingEnabled = true;
             this.cbType.Location = new System.Drawing.Point(89, 165);
             this.cbType.Margin = new System.Windows.Forms.Padding(4);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(120, 24);
+            this.cbType.Size = new System.Drawing.Size(240, 24);
             this.cbType.TabIndex = 18;
-            this.cbType.ValueMember = "id";
             // 
             // stamptypeBindingSource
             // 
