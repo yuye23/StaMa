@@ -33,14 +33,8 @@ namespace CollectionManager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.数据处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmideleteUnnecessaryImge = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiBackData = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRestoreData = new System.Windows.Forms.ToolStripMenuItem();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsddbStampQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiStampClassManage = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,12 +50,31 @@ namespace CollectionManager
             this.tsbAddCoin = new System.Windows.Forms.ToolStripButton();
             this.tsbEditCoin = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteCoin = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tssbDataManage = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiDelUnuseedImg = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiBackAllData = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceoriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picpathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewstampinfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.collectionDataSet = new CollectionManager.DATA.Database.CollectionDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -89,6 +102,21 @@ namespace CollectionManager
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publisherCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parentidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.publishdateCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitnameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price_oriCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typenameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classnameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picpathCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.memoCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viewcoininfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
@@ -132,37 +160,9 @@ namespace CollectionManager
             this.cMCDataGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcmiEditCoin = new System.Windows.Forms.ToolStripMenuItem();
             this.tcmiDeleteCoin = new System.Windows.Forms.ToolStripMenuItem();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceoriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picpathDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publisherCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.parentidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.publishdateCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitnameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price_oriCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typenameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classnameCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picpathCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memoCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unitidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeidCoinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStrip1.SuspendLayout();
+            this.tsddbHelp = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -212,55 +212,6 @@ namespace CollectionManager
             this.cMCDataGridView.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.数据处理ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1026, 30);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(49, 24);
-            this.toolStripMenuItem1.Text = "菜单";
-            // 
-            // 数据处理ToolStripMenuItem
-            // 
-            this.数据处理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmideleteUnnecessaryImge,
-            this.tsmiBackData,
-            this.tsmiRestoreData});
-            this.数据处理ToolStripMenuItem.Name = "数据处理ToolStripMenuItem";
-            this.数据处理ToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.数据处理ToolStripMenuItem.Text = "数据处理";
-            // 
-            // tsmideleteUnnecessaryImge
-            // 
-            this.tsmideleteUnnecessaryImge.Name = "tsmideleteUnnecessaryImge";
-            this.tsmideleteUnnecessaryImge.Size = new System.Drawing.Size(162, 24);
-            this.tsmideleteUnnecessaryImge.Text = "清除多余图片";
-            this.tsmideleteUnnecessaryImge.Click += new System.EventHandler(this.tsmideleteUnnecessaryImge_Click);
-            // 
-            // tsmiBackData
-            // 
-            this.tsmiBackData.Name = "tsmiBackData";
-            this.tsmiBackData.Size = new System.Drawing.Size(162, 24);
-            this.tsmiBackData.Text = "备份数据";
-            this.tsmiBackData.Click += new System.EventHandler(this.tsmiBackData_Click);
-            // 
-            // tsmiRestoreData
-            // 
-            this.tsmiRestoreData.Name = "tsmiRestoreData";
-            this.tsmiRestoreData.Size = new System.Drawing.Size(162, 24);
-            this.tsmiRestoreData.Text = "恢复数据";
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -274,8 +225,11 @@ namespace CollectionManager
             this.toolStripSeparator2,
             this.tsbAddCoin,
             this.tsbEditCoin,
-            this.tsbDeleteCoin});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
+            this.tsbDeleteCoin,
+            this.toolStripSeparator3,
+            this.tssbDataManage,
+            this.tsddbHelp});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStrip1.Size = new System.Drawing.Size(1026, 25);
@@ -297,14 +251,14 @@ namespace CollectionManager
             // tsmiStampClassManage
             // 
             this.tsmiStampClassManage.Name = "tsmiStampClassManage";
-            this.tsmiStampClassManage.Size = new System.Drawing.Size(140, 22);
+            this.tsmiStampClassManage.Size = new System.Drawing.Size(152, 22);
             this.tsmiStampClassManage.Text = "分类管理";
             this.tsmiStampClassManage.Click += new System.EventHandler(this.tsmiClassManage_Click);
             // 
             // tsmiStampUnitManage
             // 
             this.tsmiStampUnitManage.Name = "tsmiStampUnitManage";
-            this.tsmiStampUnitManage.Size = new System.Drawing.Size(140, 22);
+            this.tsmiStampUnitManage.Size = new System.Drawing.Size(152, 22);
             this.tsmiStampUnitManage.Text = "单位管理";
             this.tsmiStampUnitManage.Click += new System.EventHandler(this.tsmiUnitManage_Click);
             // 
@@ -406,16 +360,49 @@ namespace CollectionManager
             this.tsbDeleteCoin.Text = "删除钱币";
             this.tsbDeleteCoin.Click += new System.EventHandler(this.tsbDeleteCoin_Click);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tssbDataManage
+            // 
+            this.tssbDataManage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tssbDataManage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiDelUnuseedImg,
+            this.tsmiBackAllData});
+            this.tssbDataManage.Image = ((System.Drawing.Image)(resources.GetObject("tssbDataManage.Image")));
+            this.tssbDataManage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tssbDataManage.Name = "tssbDataManage";
+            this.tssbDataManage.Size = new System.Drawing.Size(85, 22);
+            this.tssbDataManage.Text = "数据处理";
+            this.tssbDataManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tssbDataManage.ToolTipText = "数据处理";
+            // 
+            // tsmiDelUnuseedImg
+            // 
+            this.tsmiDelUnuseedImg.Name = "tsmiDelUnuseedImg";
+            this.tsmiDelUnuseedImg.Size = new System.Drawing.Size(172, 22);
+            this.tsmiDelUnuseedImg.Text = "清除多余图片";
+            this.tsmiDelUnuseedImg.Click += new System.EventHandler(this.tsmiDelUnuseedImg_Click);
+            // 
+            // tsmiBackAllData
+            // 
+            this.tsmiBackAllData.Name = "tsmiBackAllData";
+            this.tsmiBackAllData.Size = new System.Drawing.Size(172, 22);
+            this.tsmiBackAllData.Text = "备份数据";
+            this.tsmiBackAllData.Click += new System.EventHandler(this.tsmiBackAllData_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 55);
+            this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1026, 679);
+            this.tabControl1.Size = new System.Drawing.Size(1026, 709);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -426,7 +413,7 @@ namespace CollectionManager
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 680);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -445,7 +432,7 @@ namespace CollectionManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 642);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 672);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
@@ -460,7 +447,7 @@ namespace CollectionManager
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 638);
+            this.treeView1.Size = new System.Drawing.Size(236, 668);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -480,8 +467,8 @@ namespace CollectionManager
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 642);
-            this.splitContainer2.SplitterDistance = 193;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 672);
+            this.splitContainer2.SplitterDistance = 202;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -490,8 +477,8 @@ namespace CollectionManager
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -521,11 +508,131 @@ namespace CollectionManager
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 189);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 198);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             this.dataGridView1.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codeDataGridViewTextBoxColumn
+            // 
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
+            this.codeDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.codeDataGridViewTextBoxColumn.HeaderText = "志号";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 27F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "名称";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // parentidDataGridViewTextBoxColumn
+            // 
+            this.parentidDataGridViewTextBoxColumn.DataPropertyName = "parentid";
+            this.parentidDataGridViewTextBoxColumn.HeaderText = "parentid";
+            this.parentidDataGridViewTextBoxColumn.Name = "parentidDataGridViewTextBoxColumn";
+            this.parentidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.parentidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // orderidDataGridViewTextBoxColumn
+            // 
+            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "orderid";
+            this.orderidDataGridViewTextBoxColumn.HeaderText = "orderid";
+            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
+            this.orderidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // publishdateDataGridViewTextBoxColumn
+            // 
+            this.publishdateDataGridViewTextBoxColumn.DataPropertyName = "publishdate";
+            this.publishdateDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.publishdateDataGridViewTextBoxColumn.HeaderText = "出版日期";
+            this.publishdateDataGridViewTextBoxColumn.Name = "publishdateDataGridViewTextBoxColumn";
+            this.publishdateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitnameDataGridViewTextBoxColumn
+            // 
+            this.unitnameDataGridViewTextBoxColumn.DataPropertyName = "unitname";
+            this.unitnameDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.unitnameDataGridViewTextBoxColumn.HeaderText = "单位";
+            this.unitnameDataGridViewTextBoxColumn.Name = "unitnameDataGridViewTextBoxColumn";
+            this.unitnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceoriDataGridViewTextBoxColumn
+            // 
+            this.priceoriDataGridViewTextBoxColumn.DataPropertyName = "price_ori";
+            this.priceoriDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.priceoriDataGridViewTextBoxColumn.HeaderText = "面值";
+            this.priceoriDataGridViewTextBoxColumn.Name = "priceoriDataGridViewTextBoxColumn";
+            this.priceoriDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typenameDataGridViewTextBoxColumn
+            // 
+            this.typenameDataGridViewTextBoxColumn.DataPropertyName = "typename";
+            this.typenameDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.typenameDataGridViewTextBoxColumn.HeaderText = "自建分类";
+            this.typenameDataGridViewTextBoxColumn.Name = "typenameDataGridViewTextBoxColumn";
+            this.typenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classnameDataGridViewTextBoxColumn
+            // 
+            this.classnameDataGridViewTextBoxColumn.DataPropertyName = "classname";
+            this.classnameDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.classnameDataGridViewTextBoxColumn.HeaderText = "类型";
+            this.classnameDataGridViewTextBoxColumn.Name = "classnameDataGridViewTextBoxColumn";
+            this.classnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // picpathDataGridViewTextBoxColumn
+            // 
+            this.picpathDataGridViewTextBoxColumn.DataPropertyName = "picpath";
+            this.picpathDataGridViewTextBoxColumn.HeaderText = "picpath";
+            this.picpathDataGridViewTextBoxColumn.Name = "picpathDataGridViewTextBoxColumn";
+            this.picpathDataGridViewTextBoxColumn.ReadOnly = true;
+            this.picpathDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // memoDataGridViewTextBoxColumn
+            // 
+            this.memoDataGridViewTextBoxColumn.DataPropertyName = "memo";
+            this.memoDataGridViewTextBoxColumn.HeaderText = "memo";
+            this.memoDataGridViewTextBoxColumn.Name = "memoDataGridViewTextBoxColumn";
+            this.memoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.memoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // unitidDataGridViewTextBoxColumn
+            // 
+            this.unitidDataGridViewTextBoxColumn.DataPropertyName = "unitid";
+            this.unitidDataGridViewTextBoxColumn.HeaderText = "unitid";
+            this.unitidDataGridViewTextBoxColumn.Name = "unitidDataGridViewTextBoxColumn";
+            this.unitidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // classidDataGridViewTextBoxColumn
+            // 
+            this.classidDataGridViewTextBoxColumn.DataPropertyName = "classid";
+            this.classidDataGridViewTextBoxColumn.HeaderText = "classid";
+            this.classidDataGridViewTextBoxColumn.Name = "classidDataGridViewTextBoxColumn";
+            this.classidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.classidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // typeidDataGridViewTextBoxColumn
+            // 
+            this.typeidDataGridViewTextBoxColumn.DataPropertyName = "typeid";
+            this.typeidDataGridViewTextBoxColumn.HeaderText = "typeid";
+            this.typeidDataGridViewTextBoxColumn.Name = "typeidDataGridViewTextBoxColumn";
+            this.typeidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeidDataGridViewTextBoxColumn.Visible = false;
             // 
             // viewstampinfoBindingSource
             // 
@@ -544,7 +651,7 @@ namespace CollectionManager
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(764, 442);
+            this.groupBox1.Size = new System.Drawing.Size(764, 463);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "详细信息";
@@ -563,7 +670,7 @@ namespace CollectionManager
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
-            this.splitContainer3.Size = new System.Drawing.Size(758, 417);
+            this.splitContainer3.Size = new System.Drawing.Size(758, 438);
             this.splitContainer3.SplitterDistance = 318;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
@@ -598,7 +705,7 @@ namespace CollectionManager
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.rtSMemo);
-            this.splitContainer4.Size = new System.Drawing.Size(318, 417);
+            this.splitContainer4.Size = new System.Drawing.Size(318, 438);
             this.splitContainer4.SplitterDistance = 228;
             this.splitContainer4.TabIndex = 16;
             // 
@@ -736,7 +843,7 @@ namespace CollectionManager
             this.rtSMemo.Location = new System.Drawing.Point(0, 0);
             this.rtSMemo.Name = "rtSMemo";
             this.rtSMemo.ReadOnly = true;
-            this.rtSMemo.Size = new System.Drawing.Size(318, 185);
+            this.rtSMemo.Size = new System.Drawing.Size(318, 206);
             this.rtSMemo.TabIndex = 0;
             this.rtSMemo.Text = "";
             // 
@@ -748,7 +855,7 @@ namespace CollectionManager
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 417);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 438);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // tabPage2
@@ -758,7 +865,7 @@ namespace CollectionManager
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 650);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 680);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -777,7 +884,7 @@ namespace CollectionManager
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(1010, 642);
+            this.splitContainer5.Size = new System.Drawing.Size(1010, 672);
             this.splitContainer5.SplitterDistance = 240;
             this.splitContainer5.SplitterWidth = 2;
             this.splitContainer5.TabIndex = 1;
@@ -792,7 +899,7 @@ namespace CollectionManager
             this.treeView2.Location = new System.Drawing.Point(0, 0);
             this.treeView2.Margin = new System.Windows.Forms.Padding(4);
             this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(236, 638);
+            this.treeView2.Size = new System.Drawing.Size(236, 668);
             this.treeView2.TabIndex = 0;
             this.treeView2.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
             this.treeView2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView2_MouseDown);
@@ -812,8 +919,8 @@ namespace CollectionManager
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer6.Size = new System.Drawing.Size(768, 642);
-            this.splitContainer6.SplitterDistance = 189;
+            this.splitContainer6.Size = new System.Drawing.Size(768, 672);
+            this.splitContainer6.SplitterDistance = 196;
             this.splitContainer6.SplitterWidth = 3;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -822,8 +929,8 @@ namespace CollectionManager
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -853,11 +960,131 @@ namespace CollectionManager
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(764, 185);
+            this.dataGridView2.Size = new System.Drawing.Size(764, 192);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
             this.dataGridView2.Sorted += new System.EventHandler(this.dataGridView2_Sorted);
+            // 
+            // idCoinDataGridViewTextBoxColumn
+            // 
+            this.idCoinDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idCoinDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idCoinDataGridViewTextBoxColumn.Name = "idCoinDataGridViewTextBoxColumn";
+            this.idCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameCoinDataGridViewTextBoxColumn
+            // 
+            this.nameCoinDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameCoinDataGridViewTextBoxColumn.FillWeight = 20F;
+            this.nameCoinDataGridViewTextBoxColumn.HeaderText = "名称";
+            this.nameCoinDataGridViewTextBoxColumn.Name = "nameCoinDataGridViewTextBoxColumn";
+            this.nameCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // publisherCoinDataGridViewTextBoxColumn
+            // 
+            this.publisherCoinDataGridViewTextBoxColumn.DataPropertyName = "publisher";
+            this.publisherCoinDataGridViewTextBoxColumn.FillWeight = 20F;
+            this.publisherCoinDataGridViewTextBoxColumn.HeaderText = "发行单位";
+            this.publisherCoinDataGridViewTextBoxColumn.Name = "publisherCoinDataGridViewTextBoxColumn";
+            this.publisherCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // parentidCoinDataGridViewTextBoxColumn
+            // 
+            this.parentidCoinDataGridViewTextBoxColumn.DataPropertyName = "parentid";
+            this.parentidCoinDataGridViewTextBoxColumn.HeaderText = "parentid";
+            this.parentidCoinDataGridViewTextBoxColumn.Name = "parentidCoinDataGridViewTextBoxColumn";
+            this.parentidCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.parentidCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // orderidCoinDataGridViewTextBoxColumn
+            // 
+            this.orderidCoinDataGridViewTextBoxColumn.DataPropertyName = "orderid";
+            this.orderidCoinDataGridViewTextBoxColumn.HeaderText = "orderid";
+            this.orderidCoinDataGridViewTextBoxColumn.Name = "orderidCoinDataGridViewTextBoxColumn";
+            this.orderidCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderidCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // publishdateCoinDataGridViewTextBoxColumn
+            // 
+            this.publishdateCoinDataGridViewTextBoxColumn.DataPropertyName = "publishdate";
+            this.publishdateCoinDataGridViewTextBoxColumn.FillWeight = 13F;
+            this.publishdateCoinDataGridViewTextBoxColumn.HeaderText = "发行日期";
+            this.publishdateCoinDataGridViewTextBoxColumn.Name = "publishdateCoinDataGridViewTextBoxColumn";
+            this.publishdateCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // unitnameCoinDataGridViewTextBoxColumn
+            // 
+            this.unitnameCoinDataGridViewTextBoxColumn.DataPropertyName = "unitname";
+            this.unitnameCoinDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.unitnameCoinDataGridViewTextBoxColumn.HeaderText = "单位";
+            this.unitnameCoinDataGridViewTextBoxColumn.Name = "unitnameCoinDataGridViewTextBoxColumn";
+            this.unitnameCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // price_oriCoinDataGridViewTextBoxColumn
+            // 
+            this.price_oriCoinDataGridViewTextBoxColumn.DataPropertyName = "price_ori";
+            this.price_oriCoinDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.price_oriCoinDataGridViewTextBoxColumn.HeaderText = "面值";
+            this.price_oriCoinDataGridViewTextBoxColumn.Name = "price_oriCoinDataGridViewTextBoxColumn";
+            this.price_oriCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typenameCoinDataGridViewTextBoxColumn
+            // 
+            this.typenameCoinDataGridViewTextBoxColumn.DataPropertyName = "typename";
+            this.typenameCoinDataGridViewTextBoxColumn.FillWeight = 15F;
+            this.typenameCoinDataGridViewTextBoxColumn.HeaderText = "自建分类";
+            this.typenameCoinDataGridViewTextBoxColumn.Name = "typenameCoinDataGridViewTextBoxColumn";
+            this.typenameCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // classnameCoinDataGridViewTextBoxColumn
+            // 
+            this.classnameCoinDataGridViewTextBoxColumn.DataPropertyName = "classname";
+            this.classnameCoinDataGridViewTextBoxColumn.FillWeight = 12F;
+            this.classnameCoinDataGridViewTextBoxColumn.HeaderText = "类型";
+            this.classnameCoinDataGridViewTextBoxColumn.Name = "classnameCoinDataGridViewTextBoxColumn";
+            this.classnameCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // picpathCoinDataGridViewTextBoxColumn
+            // 
+            this.picpathCoinDataGridViewTextBoxColumn.DataPropertyName = "picpath";
+            this.picpathCoinDataGridViewTextBoxColumn.HeaderText = "picpath";
+            this.picpathCoinDataGridViewTextBoxColumn.Name = "picpathCoinDataGridViewTextBoxColumn";
+            this.picpathCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.picpathCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // memoCoinDataGridViewTextBoxColumn
+            // 
+            this.memoCoinDataGridViewTextBoxColumn.DataPropertyName = "memo";
+            this.memoCoinDataGridViewTextBoxColumn.HeaderText = "memo";
+            this.memoCoinDataGridViewTextBoxColumn.Name = "memoCoinDataGridViewTextBoxColumn";
+            this.memoCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.memoCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // unitidCoinDataGridViewTextBoxColumn
+            // 
+            this.unitidCoinDataGridViewTextBoxColumn.DataPropertyName = "unitid";
+            this.unitidCoinDataGridViewTextBoxColumn.HeaderText = "unitid";
+            this.unitidCoinDataGridViewTextBoxColumn.Name = "unitidCoinDataGridViewTextBoxColumn";
+            this.unitidCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.unitidCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // classidCoinDataGridViewTextBoxColumn
+            // 
+            this.classidCoinDataGridViewTextBoxColumn.DataPropertyName = "classid";
+            this.classidCoinDataGridViewTextBoxColumn.HeaderText = "classid";
+            this.classidCoinDataGridViewTextBoxColumn.Name = "classidCoinDataGridViewTextBoxColumn";
+            this.classidCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.classidCoinDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // typeidCoinDataGridViewTextBoxColumn
+            // 
+            this.typeidCoinDataGridViewTextBoxColumn.DataPropertyName = "typeid";
+            this.typeidCoinDataGridViewTextBoxColumn.HeaderText = "typeid";
+            this.typeidCoinDataGridViewTextBoxColumn.Name = "typeidCoinDataGridViewTextBoxColumn";
+            this.typeidCoinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.typeidCoinDataGridViewTextBoxColumn.Visible = false;
             // 
             // viewcoininfoBindingSource
             // 
@@ -871,7 +1098,7 @@ namespace CollectionManager
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(764, 446);
+            this.groupBox2.Size = new System.Drawing.Size(764, 469);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "详细信息";
@@ -890,7 +1117,7 @@ namespace CollectionManager
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel2);
-            this.splitContainer7.Size = new System.Drawing.Size(758, 421);
+            this.splitContainer7.Size = new System.Drawing.Size(758, 444);
             this.splitContainer7.SplitterDistance = 313;
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
@@ -925,7 +1152,7 @@ namespace CollectionManager
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.rtCMemo);
-            this.splitContainer8.Size = new System.Drawing.Size(313, 421);
+            this.splitContainer8.Size = new System.Drawing.Size(313, 444);
             this.splitContainer8.SplitterDistance = 228;
             this.splitContainer8.TabIndex = 16;
             // 
@@ -1063,7 +1290,7 @@ namespace CollectionManager
             this.rtCMemo.Location = new System.Drawing.Point(0, 0);
             this.rtCMemo.Name = "rtCMemo";
             this.rtCMemo.ReadOnly = true;
-            this.rtCMemo.Size = new System.Drawing.Size(313, 189);
+            this.rtCMemo.Size = new System.Drawing.Size(313, 212);
             this.rtCMemo.TabIndex = 0;
             this.rtCMemo.Text = "";
             // 
@@ -1075,7 +1302,7 @@ namespace CollectionManager
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(443, 421);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(443, 444);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // cMSDataGridView
@@ -1239,245 +1466,33 @@ namespace CollectionManager
             this.tcmiDeleteCoin.Text = "删除钱币";
             this.tcmiDeleteCoin.Click += new System.EventHandler(this.tcmiDeleteCoin_Click);
             // 
-            // idDataGridViewTextBoxColumn
+            // tsddbHelp
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.tsddbHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsddbHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiHelp,
+            this.tsmiAbout});
+            this.tsddbHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsddbHelp.Image")));
+            this.tsddbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbHelp.Name = "tsddbHelp";
+            this.tsddbHelp.Size = new System.Drawing.Size(53, 22);
+            this.tsddbHelp.Text = "帮助";
+            this.tsddbHelp.ToolTipText = "帮助";
             // 
-            // codeDataGridViewTextBoxColumn
+            // tsmiHelp
             // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.FillWeight = 10F;
-            this.codeDataGridViewTextBoxColumn.HeaderText = "志号";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tsmiHelp.Name = "tsmiHelp";
+            this.tsmiHelp.Size = new System.Drawing.Size(152, 22);
+            this.tsmiHelp.Text = "查看帮助";
+            this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
             // 
-            // nameDataGridViewTextBoxColumn
+            // tsmiAbout
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 27F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "名称";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // parentidDataGridViewTextBoxColumn
-            // 
-            this.parentidDataGridViewTextBoxColumn.DataPropertyName = "parentid";
-            this.parentidDataGridViewTextBoxColumn.HeaderText = "parentid";
-            this.parentidDataGridViewTextBoxColumn.Name = "parentidDataGridViewTextBoxColumn";
-            this.parentidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.parentidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // orderidDataGridViewTextBoxColumn
-            // 
-            this.orderidDataGridViewTextBoxColumn.DataPropertyName = "orderid";
-            this.orderidDataGridViewTextBoxColumn.HeaderText = "orderid";
-            this.orderidDataGridViewTextBoxColumn.Name = "orderidDataGridViewTextBoxColumn";
-            this.orderidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // publishdateDataGridViewTextBoxColumn
-            // 
-            this.publishdateDataGridViewTextBoxColumn.DataPropertyName = "publishdate";
-            this.publishdateDataGridViewTextBoxColumn.FillWeight = 15F;
-            this.publishdateDataGridViewTextBoxColumn.HeaderText = "出版日期";
-            this.publishdateDataGridViewTextBoxColumn.Name = "publishdateDataGridViewTextBoxColumn";
-            this.publishdateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitnameDataGridViewTextBoxColumn
-            // 
-            this.unitnameDataGridViewTextBoxColumn.DataPropertyName = "unitname";
-            this.unitnameDataGridViewTextBoxColumn.FillWeight = 10F;
-            this.unitnameDataGridViewTextBoxColumn.HeaderText = "单位";
-            this.unitnameDataGridViewTextBoxColumn.Name = "unitnameDataGridViewTextBoxColumn";
-            this.unitnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceoriDataGridViewTextBoxColumn
-            // 
-            this.priceoriDataGridViewTextBoxColumn.DataPropertyName = "price_ori";
-            this.priceoriDataGridViewTextBoxColumn.FillWeight = 10F;
-            this.priceoriDataGridViewTextBoxColumn.HeaderText = "面值";
-            this.priceoriDataGridViewTextBoxColumn.Name = "priceoriDataGridViewTextBoxColumn";
-            this.priceoriDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typenameDataGridViewTextBoxColumn
-            // 
-            this.typenameDataGridViewTextBoxColumn.DataPropertyName = "typename";
-            this.typenameDataGridViewTextBoxColumn.FillWeight = 15F;
-            this.typenameDataGridViewTextBoxColumn.HeaderText = "自建分类";
-            this.typenameDataGridViewTextBoxColumn.Name = "typenameDataGridViewTextBoxColumn";
-            this.typenameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // classnameDataGridViewTextBoxColumn
-            // 
-            this.classnameDataGridViewTextBoxColumn.DataPropertyName = "classname";
-            this.classnameDataGridViewTextBoxColumn.FillWeight = 15F;
-            this.classnameDataGridViewTextBoxColumn.HeaderText = "类型";
-            this.classnameDataGridViewTextBoxColumn.Name = "classnameDataGridViewTextBoxColumn";
-            this.classnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // picpathDataGridViewTextBoxColumn
-            // 
-            this.picpathDataGridViewTextBoxColumn.DataPropertyName = "picpath";
-            this.picpathDataGridViewTextBoxColumn.HeaderText = "picpath";
-            this.picpathDataGridViewTextBoxColumn.Name = "picpathDataGridViewTextBoxColumn";
-            this.picpathDataGridViewTextBoxColumn.ReadOnly = true;
-            this.picpathDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // memoDataGridViewTextBoxColumn
-            // 
-            this.memoDataGridViewTextBoxColumn.DataPropertyName = "memo";
-            this.memoDataGridViewTextBoxColumn.HeaderText = "memo";
-            this.memoDataGridViewTextBoxColumn.Name = "memoDataGridViewTextBoxColumn";
-            this.memoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.memoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // unitidDataGridViewTextBoxColumn
-            // 
-            this.unitidDataGridViewTextBoxColumn.DataPropertyName = "unitid";
-            this.unitidDataGridViewTextBoxColumn.HeaderText = "unitid";
-            this.unitidDataGridViewTextBoxColumn.Name = "unitidDataGridViewTextBoxColumn";
-            this.unitidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // classidDataGridViewTextBoxColumn
-            // 
-            this.classidDataGridViewTextBoxColumn.DataPropertyName = "classid";
-            this.classidDataGridViewTextBoxColumn.HeaderText = "classid";
-            this.classidDataGridViewTextBoxColumn.Name = "classidDataGridViewTextBoxColumn";
-            this.classidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.classidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // typeidDataGridViewTextBoxColumn
-            // 
-            this.typeidDataGridViewTextBoxColumn.DataPropertyName = "typeid";
-            this.typeidDataGridViewTextBoxColumn.HeaderText = "typeid";
-            this.typeidDataGridViewTextBoxColumn.Name = "typeidDataGridViewTextBoxColumn";
-            this.typeidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeidDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idCoinDataGridViewTextBoxColumn
-            // 
-            this.idCoinDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idCoinDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idCoinDataGridViewTextBoxColumn.Name = "idCoinDataGridViewTextBoxColumn";
-            this.idCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameCoinDataGridViewTextBoxColumn
-            // 
-            this.nameCoinDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameCoinDataGridViewTextBoxColumn.FillWeight = 20F;
-            this.nameCoinDataGridViewTextBoxColumn.HeaderText = "名称";
-            this.nameCoinDataGridViewTextBoxColumn.Name = "nameCoinDataGridViewTextBoxColumn";
-            this.nameCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // publisherCoinDataGridViewTextBoxColumn
-            // 
-            this.publisherCoinDataGridViewTextBoxColumn.DataPropertyName = "publisher";
-            this.publisherCoinDataGridViewTextBoxColumn.FillWeight = 20F;
-            this.publisherCoinDataGridViewTextBoxColumn.HeaderText = "发行单位";
-            this.publisherCoinDataGridViewTextBoxColumn.Name = "publisherCoinDataGridViewTextBoxColumn";
-            this.publisherCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // parentidCoinDataGridViewTextBoxColumn
-            // 
-            this.parentidCoinDataGridViewTextBoxColumn.DataPropertyName = "parentid";
-            this.parentidCoinDataGridViewTextBoxColumn.HeaderText = "parentid";
-            this.parentidCoinDataGridViewTextBoxColumn.Name = "parentidCoinDataGridViewTextBoxColumn";
-            this.parentidCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.parentidCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // orderidCoinDataGridViewTextBoxColumn
-            // 
-            this.orderidCoinDataGridViewTextBoxColumn.DataPropertyName = "orderid";
-            this.orderidCoinDataGridViewTextBoxColumn.HeaderText = "orderid";
-            this.orderidCoinDataGridViewTextBoxColumn.Name = "orderidCoinDataGridViewTextBoxColumn";
-            this.orderidCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderidCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // publishdateCoinDataGridViewTextBoxColumn
-            // 
-            this.publishdateCoinDataGridViewTextBoxColumn.DataPropertyName = "publishdate";
-            this.publishdateCoinDataGridViewTextBoxColumn.FillWeight = 13F;
-            this.publishdateCoinDataGridViewTextBoxColumn.HeaderText = "发行日期";
-            this.publishdateCoinDataGridViewTextBoxColumn.Name = "publishdateCoinDataGridViewTextBoxColumn";
-            this.publishdateCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // unitnameCoinDataGridViewTextBoxColumn
-            // 
-            this.unitnameCoinDataGridViewTextBoxColumn.DataPropertyName = "unitname";
-            this.unitnameCoinDataGridViewTextBoxColumn.FillWeight = 10F;
-            this.unitnameCoinDataGridViewTextBoxColumn.HeaderText = "单位";
-            this.unitnameCoinDataGridViewTextBoxColumn.Name = "unitnameCoinDataGridViewTextBoxColumn";
-            this.unitnameCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // price_oriCoinDataGridViewTextBoxColumn
-            // 
-            this.price_oriCoinDataGridViewTextBoxColumn.DataPropertyName = "price_ori";
-            this.price_oriCoinDataGridViewTextBoxColumn.FillWeight = 10F;
-            this.price_oriCoinDataGridViewTextBoxColumn.HeaderText = "面值";
-            this.price_oriCoinDataGridViewTextBoxColumn.Name = "price_oriCoinDataGridViewTextBoxColumn";
-            this.price_oriCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typenameCoinDataGridViewTextBoxColumn
-            // 
-            this.typenameCoinDataGridViewTextBoxColumn.DataPropertyName = "typename";
-            this.typenameCoinDataGridViewTextBoxColumn.FillWeight = 15F;
-            this.typenameCoinDataGridViewTextBoxColumn.HeaderText = "自建分类";
-            this.typenameCoinDataGridViewTextBoxColumn.Name = "typenameCoinDataGridViewTextBoxColumn";
-            this.typenameCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // classnameCoinDataGridViewTextBoxColumn
-            // 
-            this.classnameCoinDataGridViewTextBoxColumn.DataPropertyName = "classname";
-            this.classnameCoinDataGridViewTextBoxColumn.FillWeight = 12F;
-            this.classnameCoinDataGridViewTextBoxColumn.HeaderText = "类型";
-            this.classnameCoinDataGridViewTextBoxColumn.Name = "classnameCoinDataGridViewTextBoxColumn";
-            this.classnameCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // picpathCoinDataGridViewTextBoxColumn
-            // 
-            this.picpathCoinDataGridViewTextBoxColumn.DataPropertyName = "picpath";
-            this.picpathCoinDataGridViewTextBoxColumn.HeaderText = "picpath";
-            this.picpathCoinDataGridViewTextBoxColumn.Name = "picpathCoinDataGridViewTextBoxColumn";
-            this.picpathCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.picpathCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // memoCoinDataGridViewTextBoxColumn
-            // 
-            this.memoCoinDataGridViewTextBoxColumn.DataPropertyName = "memo";
-            this.memoCoinDataGridViewTextBoxColumn.HeaderText = "memo";
-            this.memoCoinDataGridViewTextBoxColumn.Name = "memoCoinDataGridViewTextBoxColumn";
-            this.memoCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.memoCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // unitidCoinDataGridViewTextBoxColumn
-            // 
-            this.unitidCoinDataGridViewTextBoxColumn.DataPropertyName = "unitid";
-            this.unitidCoinDataGridViewTextBoxColumn.HeaderText = "unitid";
-            this.unitidCoinDataGridViewTextBoxColumn.Name = "unitidCoinDataGridViewTextBoxColumn";
-            this.unitidCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitidCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // classidCoinDataGridViewTextBoxColumn
-            // 
-            this.classidCoinDataGridViewTextBoxColumn.DataPropertyName = "classid";
-            this.classidCoinDataGridViewTextBoxColumn.HeaderText = "classid";
-            this.classidCoinDataGridViewTextBoxColumn.Name = "classidCoinDataGridViewTextBoxColumn";
-            this.classidCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.classidCoinDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // typeidCoinDataGridViewTextBoxColumn
-            // 
-            this.typeidCoinDataGridViewTextBoxColumn.DataPropertyName = "typeid";
-            this.typeidCoinDataGridViewTextBoxColumn.HeaderText = "typeid";
-            this.typeidCoinDataGridViewTextBoxColumn.Name = "typeidCoinDataGridViewTextBoxColumn";
-            this.typeidCoinDataGridViewTextBoxColumn.ReadOnly = true;
-            this.typeidCoinDataGridViewTextBoxColumn.Visible = false;
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAbout.Text = "关于..";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
             // MainForm
             // 
@@ -1486,16 +1501,12 @@ namespace CollectionManager
             this.ClientSize = new System.Drawing.Size(1026, 734);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "收藏管理";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -1555,7 +1566,6 @@ namespace CollectionManager
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -1592,7 +1602,6 @@ namespace CollectionManager
         private System.Windows.Forms.ToolStripMenuItem tsmiAddStamp;
         private System.Windows.Forms.ToolStripButton tsbEditStamp;
         private System.Windows.Forms.ToolStripButton tsbDeleteStamp;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripDropDownButton tsddbStampQueryManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStampClassManage;
         private System.Windows.Forms.ToolStripMenuItem tsmiStampUnitManage;
@@ -1603,10 +1612,6 @@ namespace CollectionManager
         private System.Windows.Forms.ToolStripMenuItem tsmiUpNode;
         private System.Windows.Forms.ToolStripMenuItem tsmiDownNode;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditNode;
-        private System.Windows.Forms.ToolStripMenuItem 数据处理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmideleteUnnecessaryImge;
-        private System.Windows.Forms.ToolStripMenuItem tsmiBackData;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRestoreData;
         private CollectionManager.DATA.Database.CollectionDataSet collectionDataSet;
         private CollectionManager.DATA.Database.CollectionDataSetTableAdapters.view_stampinfoTableAdapter view_stampinfoTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer5;
@@ -1682,5 +1687,12 @@ namespace CollectionManager
         private System.Windows.Forms.DataGridViewTextBoxColumn unitidCoinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classidCoinDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeidCoinDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripDropDownButton tssbDataManage;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelUnuseedImg;
+        private System.Windows.Forms.ToolStripMenuItem tsmiBackAllData;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiHelp;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAbout;
     }
 }

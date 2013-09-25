@@ -1579,6 +1579,36 @@ namespace CollectionManager
 
         }
 
+
+        private void tsmiDelUnuseedImg_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("清除多余图片应在打开程序未进行其他操作时进行！是否继续", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                deleteUnnecessaryImge();
+                MessageBox.Show("清除完毕！");
+            }
+        }
+
+        private void tsmiBackAllData_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                BackAllData();
+
+                //BackDB();
+                MessageBox.Show("备份成功!，请妥善保管备份文件。");
+            }
+            catch
+            {
+                MessageBox.Show("备份不成功!，请重启程序重新备份。");
+            }
+        }
+
+
+
+
+
         private void deleteUnnecessaryImge()
         {
             this.view_stampinfoTableAdapter.Fill(this.dataSet1.view_stampinfo);
@@ -1589,11 +1619,6 @@ namespace CollectionManager
             DataTable table2 = dataSet1.view_stampinfo;
             deleteUnnecessaryImge("\\DATA\\CoinPicture\\", table2);
         }
-
-
-
-
-
 
 
 
@@ -1656,41 +1681,7 @@ namespace CollectionManager
 
 
 
-
-
-
-
-
-
-
-
-
-        private void tsmideleteUnnecessaryImge_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("清除多余图片应在打开程序未进行其他操作时进行！是否继续", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                deleteUnnecessaryImge();
-                MessageBox.Show("清除完毕！");
-            }
-        }
-
-        private void tsmiBackData_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                BackImg();
-
-                //BackDB();
-                MessageBox.Show("备份成功!，请妥善保管备份文件。");
-            }
-            catch
-            {
-                MessageBox.Show("备份不成功!，请重启程序重新备份。");
-            }
-        }
-
-        private static void BackImg()
+        private static void BackAllData()
         {
             string copyPath = System.Windows.Forms.Application.StartupPath + "\\DATA\\";
             string zipFilePath = System.Windows.Forms.Application.StartupPath + "\\DataBack\\";
@@ -1786,6 +1777,17 @@ namespace CollectionManager
                 toolStripSeparator2.Visible = true;
             }
         }
+
+        private void tsmiHelp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmiAbout_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
