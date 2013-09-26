@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PrcBarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PrcBarForm.Designer.cs">
-      <DependentUpon>PrcBarForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="RestoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="PrcBarForm.resx">
-      <DependentUpon>PrcBarForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RestoreForm.resx">
       <DependentUpon>RestoreForm.cs</DependentUpon>
     </EmbeddedResource>
