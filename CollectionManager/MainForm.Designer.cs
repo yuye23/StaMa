@@ -33,8 +33,8 @@ namespace CollectionManager
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsddbStampQueryManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiStampClassManage = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +54,9 @@ namespace CollectionManager
             this.tssbDataManage = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmiDelUnuseedImg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackAllData = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbHelp = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -160,9 +163,6 @@ namespace CollectionManager
             this.cMCDataGridView = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcmiEditCoin = new System.Windows.Forms.ToolStripMenuItem();
             this.tcmiDeleteCoin = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsddbHelp = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmiHelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -251,14 +251,14 @@ namespace CollectionManager
             // tsmiStampClassManage
             // 
             this.tsmiStampClassManage.Name = "tsmiStampClassManage";
-            this.tsmiStampClassManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiStampClassManage.Size = new System.Drawing.Size(140, 22);
             this.tsmiStampClassManage.Text = "分类管理";
             this.tsmiStampClassManage.Click += new System.EventHandler(this.tsmiClassManage_Click);
             // 
             // tsmiStampUnitManage
             // 
             this.tsmiStampUnitManage.Name = "tsmiStampUnitManage";
-            this.tsmiStampUnitManage.Size = new System.Drawing.Size(152, 22);
+            this.tsmiStampUnitManage.Size = new System.Drawing.Size(140, 22);
             this.tsmiStampUnitManage.Text = "单位管理";
             this.tsmiStampUnitManage.Click += new System.EventHandler(this.tsmiUnitManage_Click);
             // 
@@ -393,6 +393,34 @@ namespace CollectionManager
             this.tsmiBackAllData.Text = "备份数据";
             this.tsmiBackAllData.Click += new System.EventHandler(this.tsmiBackAllData_Click);
             // 
+            // tsddbHelp
+            // 
+            this.tsddbHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsddbHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiHelp,
+            this.tsmiAbout});
+            this.tsddbHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsddbHelp.Image")));
+            this.tsddbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbHelp.Name = "tsddbHelp";
+            this.tsddbHelp.Size = new System.Drawing.Size(53, 22);
+            this.tsddbHelp.Text = "帮助";
+            this.tsddbHelp.ToolTipText = "帮助";
+            // 
+            // tsmiHelp
+            // 
+            this.tsmiHelp.Name = "tsmiHelp";
+            this.tsmiHelp.Size = new System.Drawing.Size(140, 22);
+            this.tsmiHelp.Text = "查看帮助";
+            this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
+            // 
+            // tsmiAbout
+            // 
+            this.tsmiAbout.Name = "tsmiAbout";
+            this.tsmiAbout.Size = new System.Drawing.Size(140, 22);
+            this.tsmiAbout.Text = "关于..";
+            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -409,11 +437,11 @@ namespace CollectionManager
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 680);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 679);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "邮票收藏";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -432,7 +460,7 @@ namespace CollectionManager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1010, 672);
+            this.splitContainer1.Size = new System.Drawing.Size(1010, 671);
             this.splitContainer1.SplitterDistance = 240;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 0;
@@ -447,7 +475,7 @@ namespace CollectionManager
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(4);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(236, 668);
+            this.treeView1.Size = new System.Drawing.Size(236, 667);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.treeView1_MouseDown);
@@ -467,8 +495,8 @@ namespace CollectionManager
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 672);
-            this.splitContainer2.SplitterDistance = 202;
+            this.splitContainer2.Size = new System.Drawing.Size(768, 671);
+            this.splitContainer2.SplitterDistance = 201;
             this.splitContainer2.SplitterWidth = 3;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -477,8 +505,8 @@ namespace CollectionManager
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -508,7 +536,7 @@ namespace CollectionManager
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 198);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 197);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
@@ -861,11 +889,11 @@ namespace CollectionManager
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.splitContainer5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 680);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 679);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "钱币收藏";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -919,8 +947,8 @@ namespace CollectionManager
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer6.Size = new System.Drawing.Size(768, 672);
-            this.splitContainer6.SplitterDistance = 196;
+            this.splitContainer6.Size = new System.Drawing.Size(764, 668);
+            this.splitContainer6.SplitterDistance = 194;
             this.splitContainer6.SplitterWidth = 3;
             this.splitContainer6.TabIndex = 0;
             // 
@@ -929,8 +957,8 @@ namespace CollectionManager
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToOrderColumns = true;
             this.dataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -960,7 +988,7 @@ namespace CollectionManager
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(764, 192);
+            this.dataGridView2.Size = new System.Drawing.Size(760, 190);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_CellMouseDown);
@@ -1098,7 +1126,7 @@ namespace CollectionManager
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(764, 469);
+            this.groupBox2.Size = new System.Drawing.Size(760, 467);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "详细信息";
@@ -1107,7 +1135,7 @@ namespace CollectionManager
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer7.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer7.Location = new System.Drawing.Point(3, 22);
+            this.splitContainer7.Location = new System.Drawing.Point(3, 17);
             this.splitContainer7.Name = "splitContainer7";
             // 
             // splitContainer7.Panel1
@@ -1117,7 +1145,7 @@ namespace CollectionManager
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel2);
-            this.splitContainer7.Size = new System.Drawing.Size(758, 444);
+            this.splitContainer7.Size = new System.Drawing.Size(754, 447);
             this.splitContainer7.SplitterDistance = 313;
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
@@ -1152,7 +1180,7 @@ namespace CollectionManager
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.rtCMemo);
-            this.splitContainer8.Size = new System.Drawing.Size(313, 444);
+            this.splitContainer8.Size = new System.Drawing.Size(313, 447);
             this.splitContainer8.SplitterDistance = 228;
             this.splitContainer8.TabIndex = 16;
             // 
@@ -1290,7 +1318,7 @@ namespace CollectionManager
             this.rtCMemo.Location = new System.Drawing.Point(0, 0);
             this.rtCMemo.Name = "rtCMemo";
             this.rtCMemo.ReadOnly = true;
-            this.rtCMemo.Size = new System.Drawing.Size(313, 212);
+            this.rtCMemo.Size = new System.Drawing.Size(313, 215);
             this.rtCMemo.TabIndex = 0;
             this.rtCMemo.Text = "";
             // 
@@ -1302,7 +1330,7 @@ namespace CollectionManager
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(443, 444);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(439, 447);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // cMSDataGridView
@@ -1465,34 +1493,6 @@ namespace CollectionManager
             this.tcmiDeleteCoin.Size = new System.Drawing.Size(118, 22);
             this.tcmiDeleteCoin.Text = "删除钱币";
             this.tcmiDeleteCoin.Click += new System.EventHandler(this.tcmiDeleteCoin_Click);
-            // 
-            // tsddbHelp
-            // 
-            this.tsddbHelp.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsddbHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiHelp,
-            this.tsmiAbout});
-            this.tsddbHelp.Image = ((System.Drawing.Image)(resources.GetObject("tsddbHelp.Image")));
-            this.tsddbHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbHelp.Name = "tsddbHelp";
-            this.tsddbHelp.Size = new System.Drawing.Size(53, 22);
-            this.tsddbHelp.Text = "帮助";
-            this.tsddbHelp.ToolTipText = "帮助";
-            // 
-            // tsmiHelp
-            // 
-            this.tsmiHelp.Name = "tsmiHelp";
-            this.tsmiHelp.Size = new System.Drawing.Size(152, 22);
-            this.tsmiHelp.Text = "查看帮助";
-            this.tsmiHelp.Click += new System.EventHandler(this.tsmiHelp_Click);
-            // 
-            // tsmiAbout
-            // 
-            this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(152, 22);
-            this.tsmiAbout.Text = "关于..";
-            this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
             // MainForm
             // 

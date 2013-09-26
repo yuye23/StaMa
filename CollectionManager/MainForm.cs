@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CollectionManager.DATA.Database;
 using CollectionManager.DATA.Database.CollectionDataSetTableAdapters;
 using System.IO;
+using System.Threading;
 
 namespace CollectionManager
 {
@@ -1591,18 +1592,14 @@ namespace CollectionManager
 
         private void tsmiBackAllData_Click(object sender, EventArgs e)
         {
-            try
-            {
 
-                BackAllData();
+                ProcessBarForm proBarForm = new ProcessBarForm();
+                proBarForm.task = "BackAllData";
+                if (proBarForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("备份成功!，请妥善保管备份文件。备份路径："+proBarForm.savePath);
+                }
 
-                //BackDB();
-                MessageBox.Show("备份成功!，请妥善保管备份文件。");
-            }
-            catch
-            {
-                MessageBox.Show("备份不成功!，请重启程序重新备份。");
-            }
         }
 
 
@@ -1618,6 +1615,7 @@ namespace CollectionManager
             this.view_coininfoTableAdapter.Fill(this.dataSet1.view_coininfo);
             DataTable table2 = dataSet1.view_stampinfo;
             deleteUnnecessaryImge("\\DATA\\CoinPicture\\", table2);
+
         }
 
 
@@ -1643,7 +1641,7 @@ namespace CollectionManager
                 {
                     string picPath = r["picpath"].ToString();
 
-                    String imgdr = System.Windows.Forms.Application.StartupPath + "dir";
+                    String imgdr = System.Windows.Forms.Application.StartupPath + dir;
 
                     while (picPath.IndexOf(",") != -1)
                     {
@@ -1681,70 +1679,6 @@ namespace CollectionManager
 
 
 
-        private static void BackAllData()
-        {
-            string copyPath = System.Windows.Forms.Application.StartupPath + "\\DATA\\";
-            string zipFilePath = System.Windows.Forms.Application.StartupPath + "\\DataBack\\";
-
-            if (!File.Exists(copyPath))
-            {
-                Directory.CreateDirectory(copyPath);
-            }
-
-            if (!File.Exists(zipFilePath))
-            {
-                Directory.CreateDirectory(zipFilePath);
-            }
-
-            zipFilePath = zipFilePath + @"\back" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".zip";
-
-
-            ZipFloClass Zc = new ZipFloClass();
-            Zc.ZipFile(copyPath, zipFilePath);
-        }
-
-        /**
-         *
-         * 数据库备份
-         */
-        private void BackDB()
-        {
-
-
-
-
-                SaveFileDialog savefile = new SaveFileDialog();//提示用户选择保存文件
-                savefile.InitialDirectory =System.Windows.Forms.Application.StartupPath + "\\back\\";//打开文件的初始目录
-                savefile.Filter = "数据库文件(*.mdb)|";
-
-                savefile.FileName = "数据备份" +
-                    System.DateTime.Now.ToString("yyyyMMddHHmmss");//格式转换如此简单
-
-                savefile.DefaultExt = ".mdb";//设置或获取文件后缀
-                DialogResult dr = savefile.ShowDialog();
-
-                if (dr == DialogResult.OK)
-                {
-                    String filePath = savefile.FileName.ToString();//数据备份,BackDB为备份保存的位置 
-                    try
-                    {
-                        string path = System.Windows.Forms.Application.StartupPath + "\\Database\\Collection.mdb";
-                        File.Copy(path, filePath, true);
-
-                    }
-                    catch
-                    {
-
-                    }
-                }
-                else
-                {
-
-                }
-
-            
-
-        }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -1787,9 +1721,6 @@ namespace CollectionManager
         {
 
         }
-
-
-
 
 
 
