@@ -115,7 +115,7 @@
     <Compile Include="ProcessBarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProcessBarForm.Designer.cs">
+    <Compile Include="ProcessBarForm.designer.cs">
       <DependentUpon>ProcessBarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

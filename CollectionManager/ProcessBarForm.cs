@@ -21,6 +21,9 @@ namespace CollectionManager
 
         public string task;
         public string savePath;
+        public string restoreFilePath;
+        public string restoreDate;
+
 
         private void BackAllData()
         {
@@ -39,7 +42,7 @@ namespace CollectionManager
                     Directory.CreateDirectory(zipFilePath);
                 }
 
-                zipFilePath = zipFilePath + @"back_" + System.DateTime.Now.ToString("yyyy-MM-dd-HHmmss") + ".zip";
+                zipFilePath = zipFilePath + @"back_" + System.DateTime.Now.ToString("yyyy-MM-dd-HHmmss") + ".cmz";
 
 
                 ZipFile(copyPath, zipFilePath);
@@ -154,7 +157,217 @@ namespace CollectionManager
                 this.Text = "正在为您备份数据...";
                 BackAllData();
             }
+
+            if (task == "RestoreAllData")
+            {
+                this.Text = "正在为您恢复数据...";
+                RestoreAllData();
+            }
         }
+
+
+        private void RestoreAllData()
+        {
+            try
+            {
+                deleteOldData();
+
+
+                string restorePath = System.Windows.Forms.Application.StartupPath + "\\DATA";           
+
+
+                unZipFile(this.restoreFilePath,restorePath);
+
+                prcBar.Value = prcBar.Maximum;
+                                
+                this.DialogResult = DialogResult.OK;
+                //this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("恢复不成功!，请重启程序重新恢复。");
+            }
+
+
+
+
+        }
+
+        public int GetZipFileNum(string srcPath)
+        {
+
+                //读取压缩文件(zip文件)，准备解压缩
+                ZipInputStream s = new ZipInputStream(File.OpenRead(srcPath.Trim()));
+                ZipEntry theEntry;
+
+                int num = 0;
+                //根目录下的第一个子文件夹的名称
+                while ((theEntry = s.GetNextEntry()) != null)
+                {
+                    num++;
+                    int size = 2048;
+                    byte[] data = new byte[2048];
+                    while (true)
+                    {
+                        size = s.Read(data, 0, data.Length);
+                        if (size > 0)
+                        {
+                            
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                }
+                return num;
+
+
+        }
+
+
+        public string unZipFile(string TargetFile, string fileDir)
+        {
+            int zipFileNum = GetZipFileNum(TargetFile);
+            prcBar.Maximum = zipFileNum;
+
+            prcBar.Minimum = 0;
+
+
+
+            string rootFile = " ";
+            try
+            {
+                //读取压缩文件(zip文件)，准备解压缩
+                ZipInputStream s = new ZipInputStream(File.OpenRead(TargetFile.Trim()));
+                ZipEntry theEntry;
+                string path = fileDir;
+                //解压出来的文件保存的路径
+
+                string rootDir = " ";
+                //根目录下的第一个子文件夹的名称
+                while ((theEntry = s.GetNextEntry()) != null)
+                {
+                    rootDir = Path.GetDirectoryName(theEntry.Name);
+                    //得到根目录下的第一级子文件夹的名称
+                    if (rootDir.IndexOf("\\") >= 0)
+                    {
+                        rootDir = rootDir.Substring(0, rootDir.IndexOf("\\") + 1);
+                    }
+                    string dir = Path.GetDirectoryName(theEntry.Name);
+                    //根目录下的第一级子文件夹的下的文件夹的名称
+                    string fileName = Path.GetFileName(theEntry.Name);
+                    //根目录下的文件名称
+                    if (dir != " ")
+                    //创建根目录下的子文件夹,不限制级别
+                    {
+                        if (!Directory.Exists(fileDir + "\\" + dir))
+                        {
+                            path = fileDir + "\\" + dir;
+                            //在指定的路径创建文件夹
+                            Directory.CreateDirectory(path);
+                        }
+                    }
+                    else if (dir == " " && fileName != "")
+                    //根目录下的文件
+                    {
+                        path = fileDir;
+                        rootFile = fileName;
+                    }
+                    else if (dir != " " && fileName != "")
+                    //根目录下的第一级子文件夹下的文件
+                    {
+                        if (dir.IndexOf("\\") > 0)
+                        //指定文件保存的路径
+                        {
+                            path = fileDir + "\\" + dir;
+                        }
+                    }
+
+                    if (dir == rootDir)
+                    //判断是不是需要保存在根目录下的文件
+                    {
+                        path = fileDir + "\\" + rootDir;
+                    }
+
+                    //以下为解压缩zip文件的基本步骤
+                    //基本思路就是遍历压缩文件里的所有文件，创建一个相同的文件。
+                    if (fileName != String.Empty)
+                    {
+                        FileStream streamWriter = File.Create(path + "\\" + fileName);
+
+                        int size = 2048;
+                        byte[] data = new byte[2048];
+                        while (true)
+                        {
+                            size = s.Read(data, 0, data.Length);
+                            if (size > 0)
+                            {
+                                streamWriter.Write(data, 0, size);
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+
+                        streamWriter.Close();
+
+
+                        prcBar.Value = prcBar.Value + 1;
+                    }
+                }
+                s.Close();
+
+                return rootFile;
+            }
+            catch (Exception ex)
+            {
+                return "1; " + ex.Message;
+            }
+        }
+
+
+        private void deleteOldData()
+        {
+            deleteOldData("\\DATA\\StampPicture\\");
+            deleteOldData("\\DATA\\Database\\");
+            deleteOldData("\\DATA\\CoinPicture\\");
+        }
+
+
+
+
+
+        private void deleteOldData(string dir)
+        {
+            //返回picture下所有文件列表
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + dir);
+            FileInfo[] files = TheFolder.GetFiles();
+            List<string> allFiles = new List<string>();
+            foreach (FileInfo file in files)
+            {
+                allFiles.Add(file.FullName);
+            }
+
+            //删除picture下allFiles中剩余的文件
+            foreach (string file in allFiles)
+            {
+                try
+                {
+                    if (File.Exists(file))
+                    {
+                        //如果存在则删除
+                        File.Delete(file);
+                    }
+                }
+                catch
+                {
+                }
+            }
+
+        }
+
     }
 
 }

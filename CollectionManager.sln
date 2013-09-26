@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionManager", "Collec
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{39EF74E4-4104-411A-AC5E-4FC9CE484154}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoreData", "RestoreData\RestoreData.csproj", "{E45A1C39-F282-4EC4-8862-8844F50381E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -17,6 +19,10 @@ Global
 		{FA7C481A-3173-4424-AA4F-9BF0242DB52D}.Release|x86.Build.0 = Release|x86
 		{39EF74E4-4104-411A-AC5E-4FC9CE484154}.Debug|x86.ActiveCfg = Debug
 		{39EF74E4-4104-411A-AC5E-4FC9CE484154}.Release|x86.ActiveCfg = Release
+		{E45A1C39-F282-4EC4-8862-8844F50381E5}.Debug|x86.ActiveCfg = Debug|x86
+		{E45A1C39-F282-4EC4-8862-8844F50381E5}.Debug|x86.Build.0 = Debug|x86
+		{E45A1C39-F282-4EC4-8862-8844F50381E5}.Release|x86.ActiveCfg = Release|x86
+		{E45A1C39-F282-4EC4-8862-8844F50381E5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

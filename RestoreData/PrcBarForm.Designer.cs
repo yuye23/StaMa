@@ -1,6 +1,6 @@
-﻿namespace CollectionManager
+﻿namespace RestoreData
 {
-    partial class ProcessBarForm
+    partial class PrcBarForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,26 +33,25 @@
             // 
             // prcBar
             // 
-            this.prcBar.Location = new System.Drawing.Point(17, 23);
+            this.prcBar.Location = new System.Drawing.Point(13, 13);
             this.prcBar.Margin = new System.Windows.Forms.Padding(4);
             this.prcBar.Name = "prcBar";
             this.prcBar.Size = new System.Drawing.Size(522, 31);
-            this.prcBar.TabIndex = 0;
+            this.prcBar.TabIndex = 1;
             // 
-            // ProcessBarForm
+            // PrcBarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 69);
+            this.ClientSize = new System.Drawing.Size(550, 59);
             this.Controls.Add(this.prcBar);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ProcessBarForm";
+            this.Name = "PrcBarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ProcessBar_Form";
-            this.Shown += new System.EventHandler(this.ProcessBarForm_Shown);
+            this.Text = "PrcBarForm";
             this.ResumeLayout(false);
 
         }
