@@ -108,7 +108,7 @@ namespace CollectionManager
             treeView1.TopNode.Expand();
             treeView1.SelectedNode = treeView1.TopNode;
         }
-        
+
         private void loadTreeView1()
         {
             this.sta.Fill(dataSet1.stamptype);
@@ -355,7 +355,7 @@ namespace CollectionManager
 
         }
 
-        
+
         /// <summary>
         /// treeView2的动作
         /// </summary>
@@ -447,7 +447,7 @@ namespace CollectionManager
 
             }
         }
-        
+
         /// <summary>
         /// stamp的上下文菜单菜单contextMenuStrip1及菜单动作
         /// </summary>
@@ -569,7 +569,7 @@ namespace CollectionManager
                 MessageBox.Show("请先选择要删除的节点！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-            
+
 
 
         private void tsmiUpNode_Click(object sender, EventArgs e)
@@ -747,7 +747,7 @@ namespace CollectionManager
 
         private void tcmiAddCoin_Click(object sender, EventArgs e)
         {
-            tsbAddCoin_Click(sender,e);
+            tsbAddCoin_Click(sender, e);
         }
 
         private void tcmiAddChild_Click(object sender, EventArgs e)
@@ -766,12 +766,12 @@ namespace CollectionManager
                     //创建一个节点对象，并初始化
 
                     int parentid = Convert.ToInt32(treeView2.SelectedNode.Name);
-                    int? orderid=cia.ScalarQueryByParentID(parentid);
+                    int? orderid = cia.ScalarQueryByParentID(parentid);
                     if (orderid == null)
                     {
                         orderid = 0;
                     }
-                    int idd=cia.InsertByName(txt, parentid,orderid);
+                    int idd = cia.InsertByName(txt, parentid, orderid);
                     cia.GetData();
                     cia.Fill(dataSet2.cointype);
                     DataTable table = dataSet2.cointype;
@@ -1029,7 +1029,7 @@ namespace CollectionManager
         {
             tsbDeleteStamp_Click(sender, e);
         }
-        
+
 
         /// <summary>
         /// dataGridView2的动作
@@ -1139,14 +1139,14 @@ namespace CollectionManager
                     try
                     {
                         Panel panel = new Panel();
-                        panel.Size = new System.Drawing.Size(200, 185);
+                        panel.Size = new System.Drawing.Size(imgPanelWidth, imgPanelHeight);
                         panel.BorderStyle = BorderStyle.FixedSingle;
                         Bitmap newbitmap = (Bitmap)Image.FromFile(img);
                         PictureBox picBox = new PictureBox();
                         picBox.Image = newbitmap;
                         picBox.SizeMode = PictureBoxSizeMode.Zoom;
-                        picBox.Width = 200;
-                        picBox.Height = 150;
+                        picBox.Width = imgWidth;
+                        picBox.Height = imgHeight;
                         picBox.Location = new Point(0, 0);
                         //panel.Name = Path.GetFileNameWithoutExtension(img);
 
@@ -1157,7 +1157,7 @@ namespace CollectionManager
                         btnViewImg.TextAlign = ContentAlignment.MiddleCenter;
                         btnViewImg.Width = 80;
                         btnViewImg.Height = 25;
-                        btnViewImg.Location = new Point(60, 155);
+                        btnViewImg.Location = new Point(btnX, btnY);
                         btnViewImg.Tag = newbitmap;
                         btnViewImg.Click += new System.EventHandler(this.btnViewImg_Click);
 
@@ -1196,6 +1196,16 @@ namespace CollectionManager
             this.rtCMemo.Text = "";
             this.flowLayoutPanel2.Controls.Clear();
         }
+
+
+
+
+        int imgPanelWidth = 200;
+        int imgPanelHeight = 185;
+        int imgWidth = 200;
+        int imgHeight = 150;
+        int btnX = 60;
+        int btnY = 155;
         private void FillCoinInfoPanel()
         {
             if (dataGridView2.SelectedRows.Count > 0)
@@ -1228,14 +1238,14 @@ namespace CollectionManager
                     try
                     {
                         Panel panel = new Panel();
-                        panel.Size = new System.Drawing.Size(200, 185);
+                        panel.Size = new System.Drawing.Size(imgPanelWidth, imgPanelHeight);
                         panel.BorderStyle = BorderStyle.FixedSingle;
                         Bitmap newbitmap = (Bitmap)Image.FromFile(img);
                         PictureBox picBox = new PictureBox();
                         picBox.Image = newbitmap;
                         picBox.SizeMode = PictureBoxSizeMode.Zoom;
-                        picBox.Width = 200;
-                        picBox.Height = 150;
+                        picBox.Width = imgWidth;
+                        picBox.Height = imgHeight;
                         picBox.Location = new Point(0, 0);
                         //panel.Name = Path.GetFileNameWithoutExtension(img);
 
@@ -1246,7 +1256,7 @@ namespace CollectionManager
                         btnViewImg.TextAlign = ContentAlignment.MiddleCenter;
                         btnViewImg.Width = 80;
                         btnViewImg.Height = 25;
-                        btnViewImg.Location = new Point(60, 155);
+                        btnViewImg.Location = new Point(btnX, btnY);
                         btnViewImg.Tag = newbitmap;
                         btnViewImg.Click += new System.EventHandler(this.btnViewImg_Click);
 
@@ -1287,7 +1297,7 @@ namespace CollectionManager
                     if (this.treeView1.Nodes[i].Name == Typeid)
                     {
                         this.treeView1.SelectedNode = this.treeView1.Nodes[i];
-                        
+
                     }
                     if (this.treeView1.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
                     {
@@ -1313,7 +1323,7 @@ namespace CollectionManager
                 if (node.Nodes[i].Name == Typeid)
                 {
                     this.treeView1.SelectedNode = node.Nodes[i];
-                    
+
                     break;
                 }
 
@@ -1373,7 +1383,7 @@ namespace CollectionManager
                         TreeNode selectedTreeNode = this.treeView1.SelectedNode;
                         stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
                         view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                        
+
                         ClearStampInfoPanel();
 
 
@@ -1593,12 +1603,12 @@ namespace CollectionManager
         private void tsmiBackAllData_Click(object sender, EventArgs e)
         {
 
-                ProcessBarForm proBarForm = new ProcessBarForm();
-                proBarForm.task = "BackAllData";
-                if (proBarForm.ShowDialog() == DialogResult.OK)
-                {
-                    MessageBox.Show("备份成功!，请妥善保管备份文件。备份路径："+proBarForm.savePath);
-                }
+            ProcessBarForm proBarForm = new ProcessBarForm();
+            proBarForm.task = "BackAllData";
+            if (proBarForm.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("备份成功!，请妥善保管备份文件。备份路径：" + proBarForm.savePath);
+            }
 
         }
 
@@ -1620,10 +1630,10 @@ namespace CollectionManager
 
 
 
-        private void deleteUnnecessaryImge(string dir,DataTable table)
+        private void deleteUnnecessaryImge(string dir, DataTable table)
         {
             //返回picture下所有文件列表
-            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + dir );
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath + dir);
             FileInfo[] files = TheFolder.GetFiles();
             List<string> allFiles = new List<string>();
             foreach (FileInfo file in files)
@@ -1631,7 +1641,7 @@ namespace CollectionManager
                 allFiles.Add(file.FullName);
             }
             //获取数据库中的文件列表
-            
+
             DataRow[] row = table.Select();
             List<string> imgPath = new List<string>();
 
@@ -1721,11 +1731,116 @@ namespace CollectionManager
         {
 
         }
+        private System.Windows.Forms.SplitContainer splitContainer9 = new System.Windows.Forms.SplitContainer();
+        private void tsbChangeMode_Click(object sender, EventArgs e)
+        {
+
+
+            if (tsbChangeMode.Text == "欣赏模式")
+            {
+                //this.splitContainer9
+                ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+                this.splitContainer9.Panel1.SuspendLayout();
+                this.splitContainer9.Panel2.SuspendLayout();
+                this.splitContainer9.SuspendLayout();
+
+                this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
+                this.splitContainer9.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+                this.splitContainer9.Location = new System.Drawing.Point(0, 0);
+                this.splitContainer9.Margin = new System.Windows.Forms.Padding(0);
+                this.splitContainer9.Name = "splitContainer9";
+                this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
+
+                this.splitContainer1.Panel1.Controls.Add(this.splitContainer9);
+
+                this.splitContainer9.Panel1.Controls.Add(this.treeView1);
+                this.splitContainer9.Panel1.AutoScroll = true;
+                this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+                // 
+                // splitContainer1.Panel2
+                // 
+                this.splitContainer9.Panel2.Controls.Add(this.dataGridView1);
+                this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+                //this.splitContainer9.Size = new System.Drawing.Size(1010, 672);
+                this.splitContainer9.Panel2.AutoScroll = true;
+                this.splitContainer9.SplitterDistance = 480;
+                this.splitContainer9.SplitterWidth = 3;
+                this.splitContainer9.TabIndex = 0;
+
+
+                this.splitContainer9.Panel1.ResumeLayout(false);
+                this.splitContainer9.Panel2.ResumeLayout(false);
+                ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+                this.splitContainer9.ResumeLayout(false);
+
+
+
+                this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
+                this.splitContainer2.SplitterDistance = 500;
+
+                this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Vertical;
+                this.splitContainer4.SplitterDistance = 200;
+
+                this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+                this.splitContainer3.SplitterDistance = 160;
+                this.splitContainer3.BorderStyle = BorderStyle.Fixed3D;
+
+                imgPanelWidth = 640;
+                imgPanelHeight = 488;
+                imgWidth = 640;
+                imgHeight = 480;
+                btnX = 160;
+                btnY = 305;
+                FillStampInfoPanel();
+
+
+                btnNext = new Button();
+                btnNext.Name = "btnNext";
+                btnNext.Text = "下一个";
+                btnNext.TextAlign = ContentAlignment.MiddleCenter;
+                btnNext.Width = 80;
+                btnNext.Height = 25;
+                btnNext.Location = new Point(400, 5);
+
+                btnNext.Click += new System.EventHandler(this.btnNext_Click);
+                this.splitContainer3.Panel2.Controls.Add(btnNext);
+
+
+
+            }
+
+            if (tsbChangeMode.Text == "管理模式")
+            {
+            }
+
+
+        }
+        Button btnNext;
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                int i = dataGridView1.SelectedRows[0].Index;
+                i++;
+                dataGridView1.Rows[i].Selected = true;
+                FillStampInfoPanel();
+
+
+                if (i == dataGridView1.Rows.Count-1)
+                {
+                    btnNext.Enabled = false;
+
+                }
+                else
+                {
+                    
+                }
+            }
 
 
 
 
-
-
+        }
     }
 }
