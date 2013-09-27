@@ -54,7 +54,9 @@ namespace CollectionManager
             }
             catch
             {
+
                 MessageBox.Show("备份不成功!，请重启程序重新备份。");
+                this.DialogResult = DialogResult.Cancel;
             }
 
 
@@ -178,14 +180,33 @@ namespace CollectionManager
 
                 unZipFile(this.restoreFilePath,restorePath);
 
+
                 prcBar.Value = prcBar.Maximum;
-                                
+
+                string fileName = Path.GetFileName(this.restoreFilePath);
+
+                List<string> dateL = new List<string>();
+                int i = 0;
+                while (fileName.IndexOf("-") != -1)
+                {
+                    dateL.Add(fileName.Substring(0, fileName.IndexOf("-")));
+                    fileName = fileName.Substring(fileName.IndexOf("-") + 1);
+                    i++;
+
+                }
+                dateL.Add(fileName.Substring(0, fileName.IndexOf(".")));
+
+
+
+
+                this.restoreDate = dateL[0].Substring(5) + "年" + dateL[1] + "月" + dateL[2] + "日" + dateL[3].Substring(0, 2) + "时" + dateL[3].Substring(2, 2) + "分 备份的数据！";
                 this.DialogResult = DialogResult.OK;
                 //this.Close();
             }
             catch
             {
                 MessageBox.Show("恢复不成功!，请重启程序重新恢复。");
+                this.DialogResult = DialogResult.Cancel;
             }
 
 
