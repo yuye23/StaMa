@@ -195,7 +195,8 @@ namespace CollectionManager
                         if (dataGridView1.Rows.Count != 0)
                         {
                             dataGridView1.Rows[0].Selected = true;
-                            FillStampInfoPanel();
+                            dataGridView1_CellClick(sender,new DataGridViewCellEventArgs(0,0));
+                            //FillStampInfoPanel();
                         }
 
                     }
@@ -1000,10 +1001,36 @@ namespace CollectionManager
             if (selectedRowIndex != e.RowIndex || selectedCellIndex != e.ColumnIndex)
             {
                 FillStampInfoPanel();
-                selectedCellIndex = e.ColumnIndex;
-                selectedRowIndex = e.RowIndex;
+
             }
+            selectedCellIndex = e.ColumnIndex;
+            selectedRowIndex = e.RowIndex;
+            if (selectedRowIndex == 0)
+            {
+                btnSFirst.Enabled = false;
+                btnSPrevious.Enabled = false;
+            }
+            else
+            {
+                btnSFirst.Enabled = true;
+                btnSPrevious.Enabled = true;
+            }
+
+            if (selectedRowIndex == dataGridView1.Rows.Count - 1)
+            {
+                btnSNext.Enabled = false;
+                btnSEnd.Enabled = false;
+            }
+            else
+            {
+                btnSNext.Enabled = true;
+                btnSEnd.Enabled = true;
+            }
+
+
         }
+
+
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right && e.RowIndex > -1 && e.ColumnIndex > -1)
@@ -1738,6 +1765,7 @@ namespace CollectionManager
 
             if (tsbChangeMode.Text == "欣赏模式")
             {
+
                 //this.splitContainer9
                 ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
                 this.splitContainer9.Panel1.SuspendLayout();
@@ -1760,8 +1788,10 @@ namespace CollectionManager
                 // splitContainer1.Panel2
                 // 
                 this.splitContainer9.Panel2.Controls.Add(this.dataGridView1);
-                this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-                //this.splitContainer9.Size = new System.Drawing.Size(1010, 672);
+
+                this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                //this.dataGridView1.Size = new System.Drawing.Size(500, 150);
                 this.splitContainer9.Panel2.AutoScroll = true;
                 this.splitContainer9.SplitterDistance = 480;
                 this.splitContainer9.SplitterWidth = 3;
@@ -1779,11 +1809,11 @@ namespace CollectionManager
                 this.splitContainer2.SplitterDistance = 500;
 
                 this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Vertical;
-                this.splitContainer4.SplitterDistance = 200;
+                this.splitContainer4.SplitterDistance = 185;
 
                 this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-                this.splitContainer3.SplitterDistance = 160;
-                this.splitContainer3.BorderStyle = BorderStyle.Fixed3D;
+                this.splitContainer3.SplitterDistance = 110;
+                //this.splitContainer3.BorderStyle = BorderStyle.Fixed3D;
 
                 imgPanelWidth = 640;
                 imgPanelHeight = 488;
@@ -1791,56 +1821,356 @@ namespace CollectionManager
                 imgHeight = 480;
                 btnX = 160;
                 btnY = 305;
+                setSLandT();
+
                 FillStampInfoPanel();
 
 
-                btnNext = new Button();
-                btnNext.Name = "btnNext";
-                btnNext.Text = "下一个";
-                btnNext.TextAlign = ContentAlignment.MiddleCenter;
-                btnNext.Width = 80;
-                btnNext.Height = 25;
-                btnNext.Location = new Point(400, 5);
 
-                btnNext.Click += new System.EventHandler(this.btnNext_Click);
-                this.splitContainer3.Panel2.Controls.Add(btnNext);
+                btnSNext.Name = "btnNext";
+                btnSNext.Text = "下一个";
+                btnSNext.TextAlign = ContentAlignment.MiddleCenter;
+                btnSNext.Width = 80;
+                btnSNext.Height = 25;
+                btnSNext.Location = new Point(410, 1);
+                btnSNext.Click += new System.EventHandler(this.btnSNext_Click);
 
 
+                btnSPrevious.Name = "btnSPrevious";
+                btnSPrevious.Text = "上一个";
+                btnSPrevious.TextAlign = ContentAlignment.MiddleCenter;
+                btnSPrevious.Width = 80;
+                btnSPrevious.Height = 25;
+                btnSPrevious.Location = new Point(260, 1);
+                btnSPrevious.Click += new System.EventHandler(this.btnSPrevious_Click);
 
+
+                btnSFirst.Name = "btnSFirst";
+                btnSFirst.Text = "第一个";
+                btnSFirst.TextAlign = ContentAlignment.MiddleCenter;
+                btnSFirst.Width = 80;
+                btnSFirst.Height = 25;
+                btnSFirst.Location = new Point(110, 1);
+                btnSFirst.Click += new System.EventHandler(this.btnSFirst_Click);
+
+
+                btnSEnd.Name = "btnSEnd";
+                btnSEnd.Text = "最后一个";
+                btnSEnd.TextAlign = ContentAlignment.MiddleCenter;
+                btnSEnd.Width = 80;
+                btnSEnd.Height = 25;
+                btnSEnd.Location = new Point(560, 1);
+                btnSEnd.Click += new System.EventHandler(this.btnSEnd_Click);
+
+
+
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    btnSNext.Enabled = false;
+                    btnSEnd.Enabled = false;
+                    btnSPrevious.Enabled = false;
+                    btnSFirst.Enabled = false;
+                }
+
+                this.splitContainer3.Panel2.Controls.Add(btnSFirst);
+                this.splitContainer3.Panel2.Controls.Add(btnSPrevious);
+                this.splitContainer3.Panel2.Controls.Add(btnSNext);
+                this.splitContainer3.Panel2.Controls.Add(btnSEnd);
+
+
+                tsbChangeMode.Text = "管理模式";
             }
-
-            if (tsbChangeMode.Text == "管理模式")
+            else
             {
+
+                if (tsbChangeMode.Text == "管理模式")
+                {
+
+                    this.splitContainer3.Panel2.Controls.Remove(btnSFirst);
+                    this.splitContainer3.Panel2.Controls.Remove(btnSPrevious);
+                    this.splitContainer3.Panel2.Controls.Remove(btnSNext);
+                    this.splitContainer3.Panel2.Controls.Remove(btnSEnd);
+
+                    //if (dataGridView1.SelectedRows.Count != 0)
+                    //{
+                    //    dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.SelectedRows[0].Index));
+                    //}
+
+                    setSLandT();
+
+
+                    imgPanelWidth = 200;
+                    imgPanelHeight = 185;
+                    imgWidth = 200;
+                    imgHeight = 150;
+                    btnX = 60;
+                    btnY = 155;
+                    FillStampInfoPanel();
+
+                    this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Vertical;
+                    this.splitContainer3.SplitterDistance = 318;
+
+                    this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+                    this.splitContainer4.Size = new System.Drawing.Size(318, 439);
+                    this.splitContainer4.SplitterDistance = 158;
+
+                    this.splitContainer2.Panel1.Controls.Remove(this.flowLayoutPanel1);
+                    this.splitContainer2.SplitterDistance = 200;
+
+                    this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
+
+                    this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+
+                    this.splitContainer1.Panel1.Controls.Remove(this.splitContainer9);
+                    this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+
+
+
+
+
+
+
+
+
+                    tsbChangeMode.Text = "欣赏模式";
+
+                }
             }
 
 
         }
-        Button btnNext;
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void setSLandT()
+        {
+
+            if (tsbChangeMode.Text == "欣赏模式")
+            {
+
+                // label8
+                // 
+                this.label8.Location = new System.Drawing.Point(222, 93);
+                this.label8.Size = new System.Drawing.Size(88, 16);
+
+                // 
+                // tbSClass
+                // 
+                this.tbSClass.Location = new System.Drawing.Point(298, 61);
+                this.tbSClass.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbSType
+                // 
+                this.tbSType.Location = new System.Drawing.Point(298, 32);
+                this.tbSType.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbSPrice
+                // 
+                this.tbSPrice.Location = new System.Drawing.Point(298, 3);
+                this.tbSPrice.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbSUnit
+                // 
+                this.tbSUnit.Location = new System.Drawing.Point(78, 90);
+                this.tbSUnit.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbSPubDate
+                // 
+                this.tbSPubDate.Location = new System.Drawing.Point(78, 61);
+                this.tbSPubDate.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbSName
+                // 
+                this.tbSName.Location = new System.Drawing.Point(78, 32);
+                this.tbSName.Size = new System.Drawing.Size(140, 26);
+                // 
+                // label7
+                // 
+                this.label7.Location = new System.Drawing.Point(222, 64);
+                this.label7.Size = new System.Drawing.Size(88, 16);
+                // 
+                // label6
+                // 
+                this.label6.Location = new System.Drawing.Point(222, 35);
+                this.label6.Size = new System.Drawing.Size(88, 16);
+                // 
+                // label5
+                // 
+                this.label5.Location = new System.Drawing.Point(222, 6);
+                this.label5.Size = new System.Drawing.Size(88, 16);
+                // 
+                // label4
+                // 
+                this.label4.Location = new System.Drawing.Point(2, 93);
+                this.label4.Size = new System.Drawing.Size(88, 16);
+
+                // 
+                // label3
+                // 
+
+                this.label3.Location = new System.Drawing.Point(2, 64);
+                this.label3.Size = new System.Drawing.Size(88, 16);
+
+                // 
+                // label2
+                // 
+                this.label2.Location = new System.Drawing.Point(2, 35);
+                this.label2.Size = new System.Drawing.Size(88, 16);
+                // 
+                // tbSCode
+                // 
+                this.tbSCode.Location = new System.Drawing.Point(78, 3);
+                this.tbSCode.Size = new System.Drawing.Size(140, 26);
+                // 
+                // label1
+                // 
+                this.label1.Location = new System.Drawing.Point(2, 6);
+                this.label1.Size = new System.Drawing.Size(88, 16);
+                // 
+                // rtSMemo
+                // 
+                this.rtSMemo.Location = new System.Drawing.Point(0, 0);
+                this.rtSMemo.Size = new System.Drawing.Size(318, 207);
+            }
+            else{
+                if (tsbChangeMode.Text == "管理模式")
+                {
+
+                    // label8
+                    // 
+                    this.label8.Location = new System.Drawing.Point(6, 208);
+                    this.label8.Size = new System.Drawing.Size(88, 16);
+
+                    // 
+                    // tbSClass
+                    // 
+                    this.tbSClass.Location = new System.Drawing.Point(82, 177);
+                    this.tbSClass.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbSType
+                    // 
+                    this.tbSType.Location = new System.Drawing.Point(82, 148);
+                    this.tbSType.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbSPrice
+                    // 
+                    this.tbSPrice.Location = new System.Drawing.Point(82, 119);
+                    this.tbSPrice.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbSUnit
+                    // 
+                    this.tbSUnit.Location = new System.Drawing.Point(82, 90);
+                    this.tbSUnit.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbSPubDate
+                    // 
+                    this.tbSPubDate.Location = new System.Drawing.Point(82, 61);
+                    this.tbSPubDate.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbSName
+                    // 
+                    this.tbSName.Location = new System.Drawing.Point(82, 32);
+                    this.tbSName.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // label7
+                    // 
+                    this.label7.Location = new System.Drawing.Point(6, 180);
+                    this.label7.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // label6
+                    // 
+                    this.label6.Location = new System.Drawing.Point(5, 151);
+                    this.label6.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // label5
+                    // 
+                    this.label5.Location = new System.Drawing.Point(6, 122);
+                    this.label5.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // label4
+                    // 
+                    this.label4.Location = new System.Drawing.Point(6, 93);
+                    this.label4.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // label3
+                    // 
+                    this.label3.Location = new System.Drawing.Point(5, 64);
+                    this.label3.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // label2
+                    // 
+                    this.label2.Location = new System.Drawing.Point(5, 35);
+                    this.label2.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // tbSCode
+                    // 
+                    this.tbSCode.Location = new System.Drawing.Point(82, 3);
+                    this.tbSCode.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // label1
+                    // 
+                    this.label1.Location = new System.Drawing.Point(6, 6);
+                    this.label1.Size = new System.Drawing.Size(88, 16);
+                    // 
+                    // rtSMemo
+                    // 
+                    this.rtSMemo.Location = new System.Drawing.Point(0, 0);
+                    this.rtSMemo.Size = new System.Drawing.Size(318, 207);
+                }
+            }
+        }
+        Button btnSNext = new Button();
+        Button btnSPrevious = new Button();
+        Button btnSFirst = new Button();
+        Button btnSEnd = new Button();
+
+
+        private void btnSNext_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count != 0)
             {
                 int i = dataGridView1.SelectedRows[0].Index;
                 i++;
                 dataGridView1.Rows[i].Selected = true;
-                FillStampInfoPanel();
+                dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0,i));
 
 
-                if (i == dataGridView1.Rows.Count-1)
-                {
-                    btnNext.Enabled = false;
-
-                }
-                else
-                {
-                    
-                }
             }
 
+        }
+
+        private void btnSPrevious_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                int i = dataGridView1.SelectedRows[0].Index;
+                i--;
+                dataGridView1.Rows[i].Selected = true;
+                dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, i));
 
 
+            }
+        }
 
+        private void btnSFirst_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                
+                dataGridView1.Rows[0].Selected = true;
+                dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
+
+
+            }
+        }
+
+        private void btnSEnd_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                dataGridView1.Rows[dataGridView1.Rows.Count-1].Selected = true;
+                
+                dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.Rows.Count - 1));
+
+            }
         }
     }
 }
