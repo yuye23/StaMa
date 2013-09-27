@@ -994,18 +994,18 @@ namespace CollectionManager
         /// <summary>
         /// dataGridView1的动作
         /// </summary>
-        int selectedRowIndex = -1;
-        int selectedCellIndex = -1;
+        int SselectedRowIndex = -1;
+        int SselectedCellIndex = -1;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (selectedRowIndex != e.RowIndex || selectedCellIndex != e.ColumnIndex)
+            if (SselectedRowIndex != e.RowIndex || SselectedCellIndex != e.ColumnIndex)
             {
                 FillStampInfoPanel();
 
             }
-            selectedCellIndex = e.ColumnIndex;
-            selectedRowIndex = e.RowIndex;
-            if (selectedRowIndex == 0)
+            SselectedCellIndex = e.ColumnIndex;
+            SselectedRowIndex = e.RowIndex;
+            if (SselectedRowIndex == 0)
             {
                 btnSFirst.Enabled = false;
                 btnSPrevious.Enabled = false;
@@ -1016,7 +1016,7 @@ namespace CollectionManager
                 btnSPrevious.Enabled = true;
             }
 
-            if (selectedRowIndex == dataGridView1.Rows.Count - 1)
+            if (SselectedRowIndex == dataGridView1.Rows.Count - 1)
             {
                 btnSNext.Enabled = false;
                 btnSEnd.Enabled = false;
@@ -1063,14 +1063,15 @@ namespace CollectionManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
+        int CselectedRowIndex = -1;
+        int CselectedCellIndex = -1;
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (selectedRowIndex != e.RowIndex || selectedCellIndex != e.ColumnIndex)
+            if (CselectedRowIndex != e.RowIndex || CselectedCellIndex != e.ColumnIndex)
             {
                 FillCoinInfoPanel();
-                selectedCellIndex = e.ColumnIndex;
-                selectedRowIndex = e.RowIndex;
+                CselectedCellIndex = e.ColumnIndex;
+                CselectedRowIndex = e.RowIndex;
             }
         }
         private void dataGridView2_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -1120,8 +1121,8 @@ namespace CollectionManager
             {
                 dataGridView1.Rows[0].Selected = false;
             }
-            selectedCellIndex = -1;
-            selectedRowIndex = -1;
+            SselectedCellIndex = -1;
+            SselectedRowIndex = -1;
             this.tbSCode.Text = "";
             this.tbSClass.Text = "";
             this.tbSName.Text = "";
@@ -1211,8 +1212,8 @@ namespace CollectionManager
             {
                 dataGridView2.Rows[0].Selected = false;
             }
-            selectedCellIndex = -1;
-            selectedRowIndex = -1;
+            CselectedCellIndex = -1;
+            CselectedRowIndex = -1;
             this.tbCPublisher.Text = "";
             this.tbCClass.Text = "";
             this.tbCName.Text = "";
@@ -1758,7 +1759,7 @@ namespace CollectionManager
         {
 
         }
-        private System.Windows.Forms.SplitContainer splitContainer9 = new System.Windows.Forms.SplitContainer();
+        
         private void tsbChangeMode_Click(object sender, EventArgs e)
         {
 
@@ -1766,44 +1767,35 @@ namespace CollectionManager
             if (tsbChangeMode.Text == "欣赏模式")
             {
 
-                //this.splitContainer9
-                ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
-                this.splitContainer9.Panel1.SuspendLayout();
-                this.splitContainer9.Panel2.SuspendLayout();
-                this.splitContainer9.SuspendLayout();
+                
 
-                this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
-                this.splitContainer9.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-                this.splitContainer9.Location = new System.Drawing.Point(0, 0);
-                this.splitContainer9.Margin = new System.Windows.Forms.Padding(0);
-                this.splitContainer9.Name = "splitContainer9";
-                this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
+
 
                 this.splitContainer1.Panel1.Controls.Add(this.splitContainer9);
 
                 this.splitContainer9.Panel1.Controls.Add(this.treeView1);
+                
                 this.splitContainer9.Panel1.AutoScroll = true;
                 this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
                 // 
                 // splitContainer1.Panel2
                 // 
                 this.splitContainer9.Panel2.Controls.Add(this.dataGridView1);
-
-                this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-                this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+                if (this.dataGridView1.Rows.Count!=0)
+                {
+                    this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
+                }
+                //this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+                //this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                 //this.dataGridView1.Size = new System.Drawing.Size(500, 150);
+                this.dataGridView1.Dock = DockStyle.None;
                 this.splitContainer9.Panel2.AutoScroll = true;
                 this.splitContainer9.SplitterDistance = 480;
                 this.splitContainer9.SplitterWidth = 3;
-                this.splitContainer9.TabIndex = 0;
 
 
-                this.splitContainer9.Panel1.ResumeLayout(false);
-                this.splitContainer9.Panel2.ResumeLayout(false);
-                ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
-                this.splitContainer9.ResumeLayout(false);
 
-
+                
 
                 this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
                 this.splitContainer2.SplitterDistance = 500;
@@ -1824,43 +1816,6 @@ namespace CollectionManager
                 setSLandT();
 
                 FillStampInfoPanel();
-
-
-
-                btnSNext.Name = "btnNext";
-                btnSNext.Text = "下一个";
-                btnSNext.TextAlign = ContentAlignment.MiddleCenter;
-                btnSNext.Width = 80;
-                btnSNext.Height = 25;
-                btnSNext.Location = new Point(410, 1);
-                btnSNext.Click += new System.EventHandler(this.btnSNext_Click);
-
-
-                btnSPrevious.Name = "btnSPrevious";
-                btnSPrevious.Text = "上一个";
-                btnSPrevious.TextAlign = ContentAlignment.MiddleCenter;
-                btnSPrevious.Width = 80;
-                btnSPrevious.Height = 25;
-                btnSPrevious.Location = new Point(260, 1);
-                btnSPrevious.Click += new System.EventHandler(this.btnSPrevious_Click);
-
-
-                btnSFirst.Name = "btnSFirst";
-                btnSFirst.Text = "第一个";
-                btnSFirst.TextAlign = ContentAlignment.MiddleCenter;
-                btnSFirst.Width = 80;
-                btnSFirst.Height = 25;
-                btnSFirst.Location = new Point(110, 1);
-                btnSFirst.Click += new System.EventHandler(this.btnSFirst_Click);
-
-
-                btnSEnd.Name = "btnSEnd";
-                btnSEnd.Text = "最后一个";
-                btnSEnd.TextAlign = ContentAlignment.MiddleCenter;
-                btnSEnd.Width = 80;
-                btnSEnd.Height = 25;
-                btnSEnd.Location = new Point(560, 1);
-                btnSEnd.Click += new System.EventHandler(this.btnSEnd_Click);
 
 
 
@@ -1905,27 +1860,32 @@ namespace CollectionManager
                     imgHeight = 150;
                     btnX = 60;
                     btnY = 155;
-                    FillStampInfoPanel();
-
+                    
+                    
                     this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Vertical;
                     this.splitContainer3.SplitterDistance = 318;
 
-                    this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-                    this.splitContainer4.Size = new System.Drawing.Size(318, 439);
-                    this.splitContainer4.SplitterDistance = 158;
+                    
 
                     this.splitContainer2.Panel1.Controls.Remove(this.flowLayoutPanel1);
                     this.splitContainer2.SplitterDistance = 200;
 
                     this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
 
+                    this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+                    this.splitContainer4.Size = new System.Drawing.Size(318, 439);
+                    this.splitContainer4.SplitterDistance = 228;
                     this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
-
+                    if (this.dataGridView1.Rows.Count != 0)
+                    {
+                        this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
+                    }
+                    this.dataGridView1.Dock = DockStyle.Fill;
                     this.splitContainer1.Panel1.Controls.Remove(this.splitContainer9);
                     this.splitContainer1.Panel1.Controls.Add(this.treeView1);
 
 
-
+                    FillStampInfoPanel();
 
 
 
@@ -2117,10 +2077,7 @@ namespace CollectionManager
                 }
             }
         }
-        Button btnSNext = new Button();
-        Button btnSPrevious = new Button();
-        Button btnSFirst = new Button();
-        Button btnSEnd = new Button();
+
 
 
         private void btnSNext_Click(object sender, EventArgs e)
