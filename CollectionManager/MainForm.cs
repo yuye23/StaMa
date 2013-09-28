@@ -214,7 +214,7 @@ namespace CollectionManager
                         if (dataGridView1.Rows.Count != 0)
                         {
                             dataGridView1.Rows[0].Selected = true;
-                            FillStampInfoPanel();
+                            dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
                     }
                     catch (System.Exception ex)
@@ -231,7 +231,7 @@ namespace CollectionManager
                         if (dataGridView1.Rows.Count != 0)
                         {
                             dataGridView1.Rows[0].Selected = true;
-                            FillStampInfoPanel();
+                            dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
                     }
                     catch (System.Exception ex)
@@ -376,7 +376,7 @@ namespace CollectionManager
                         if (dataGridView2.Rows.Count != 0)
                         {
                             dataGridView2.Rows[0].Selected = true;
-                            FillCoinInfoPanel();
+                            dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
 
                     }
@@ -394,7 +394,7 @@ namespace CollectionManager
                         if (dataGridView2.Rows.Count != 0)
                         {
                             dataGridView2.Rows[0].Selected = true;
-                            FillCoinInfoPanel();
+                            dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
                     }
                     catch (System.Exception ex)
@@ -411,7 +411,7 @@ namespace CollectionManager
                         if (dataGridView2.Rows.Count != 0)
                         {
                             dataGridView2.Rows[0].Selected = true;
-                            FillCoinInfoPanel();
+                            dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
                     }
                     catch (System.Exception ex)
@@ -998,7 +998,7 @@ namespace CollectionManager
         int SselectedCellIndex = -1;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (SselectedRowIndex != e.RowIndex || SselectedCellIndex != e.ColumnIndex)
+            if (SselectedRowIndex != e.RowIndex)
             {
                 FillStampInfoPanel();
 
@@ -1067,11 +1067,33 @@ namespace CollectionManager
         int CselectedCellIndex = -1;
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (CselectedRowIndex != e.RowIndex || CselectedCellIndex != e.ColumnIndex)
+            if (CselectedRowIndex != e.RowIndex)
             {
                 FillCoinInfoPanel();
-                CselectedCellIndex = e.ColumnIndex;
-                CselectedRowIndex = e.RowIndex;
+
+            }
+            CselectedCellIndex = e.ColumnIndex;
+            CselectedRowIndex = e.RowIndex;
+            if (CselectedRowIndex == 0)
+            {
+                btnCFirst.Enabled = false;
+                btnCPrevious.Enabled = false;
+            }
+            else
+            {
+                btnCFirst.Enabled = true;
+                btnCPrevious.Enabled = true;
+            }
+
+            if (CselectedRowIndex == dataGridView2.Rows.Count - 1)
+            {
+                btnCNext.Enabled = false;
+                btnCEnd.Enabled = false;
+            }
+            else
+            {
+                btnCNext.Enabled = true;
+                btnCEnd.Enabled = true;
             }
         }
         private void dataGridView2_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -1339,7 +1361,7 @@ namespace CollectionManager
                 ClearStampInfoPanel();
                 //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
-                FillStampInfoPanel();
+                dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.Rows.Count - 1));
             }
             addStampForm.Dispose();
         }
@@ -1384,7 +1406,7 @@ namespace CollectionManager
 
                     ClearStampInfoPanel();
                     dataGridView1.Rows[selectedrow].Selected = true;
-                    FillStampInfoPanel();
+                    dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
 
 
 
@@ -1407,14 +1429,28 @@ namespace CollectionManager
                 {
                     try
                     {
+                        int selectedrow = dataGridView1.SelectedRows[0].Index;
+
                         stampinfoTableAdapter stainfoAdp = new stampinfoTableAdapter();
                         TreeNode selectedTreeNode = this.treeView1.SelectedNode;
                         stainfoAdp.DeleteByID(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value));
                         view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
 
                         ClearStampInfoPanel();
+                        selectedrow--;
+                        
+                        if (selectedrow >= 0)
+                        {
+                            dataGridView1.Rows[selectedrow].Selected = true;
+                            dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
+                        }
 
-
+                        if (selectedrow == -1&&dataGridView1.Rows.Count!=0)
+                        {
+                            selectedrow++;
+                            dataGridView1.Rows[selectedrow].Selected = true;
+                            dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
+                        }
 
                     }
                     catch
@@ -1489,7 +1525,7 @@ namespace CollectionManager
                 ClearCoinInfoPanel();
                 //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
                 dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
-                FillCoinInfoPanel();
+                dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView2.Rows.Count - 1));
             }
             addCoinForm.Dispose();
         }
@@ -1525,9 +1561,7 @@ namespace CollectionManager
 
                     ClearCoinInfoPanel();
                     dataGridView2.Rows[selectedrow].Selected = true;
-                    FillCoinInfoPanel();
-
-
+                    dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
 
                 }
             }
@@ -1546,6 +1580,8 @@ namespace CollectionManager
                 {
                     try
                     {
+
+                        int selectedrow = dataGridView2.SelectedRows[0].Index;
                         coininfoTableAdapter coininfoAdp = new coininfoTableAdapter();
                         TreeNode selectedTreeNode = this.treeView2.SelectedNode;
                         coininfoAdp.DeleteByID(Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["idCoinDataGridViewTextBoxColumn"].Value));
@@ -1553,6 +1589,21 @@ namespace CollectionManager
                         //this.treeView2.SelectedNode = selectedTreeNode;
 
                         ClearCoinInfoPanel();
+
+                        selectedrow--;
+
+                        if (selectedrow >= 0)
+                        {
+                            dataGridView2.Rows[selectedrow].Selected = true;
+                            dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
+                        }
+
+                        if (selectedrow == -1 && dataGridView2.Rows.Count != 0)
+                        {
+                            selectedrow++;
+                            dataGridView2.Rows[selectedrow].Selected = true;
+                            dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, selectedrow));
+                        }
                     }
                     catch
                     {
@@ -1767,72 +1818,8 @@ namespace CollectionManager
             if (tsbChangeMode.Text == "欣赏模式")
             {
 
-                
-
-
-
-                this.splitContainer1.Panel1.Controls.Add(this.splitContainer9);
-
-                this.splitContainer9.Panel1.Controls.Add(this.treeView1);
-                
-                this.splitContainer9.Panel1.AutoScroll = true;
-                this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-                // 
-                // splitContainer1.Panel2
-                // 
-                this.splitContainer9.Panel2.Controls.Add(this.dataGridView1);
-                if (this.dataGridView1.Rows.Count!=0)
-                {
-                    this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
-                }
-                //this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
-                //this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
-                //this.dataGridView1.Size = new System.Drawing.Size(500, 150);
-                this.dataGridView1.Dock = DockStyle.None;
-                this.splitContainer9.Panel2.AutoScroll = true;
-                this.splitContainer9.SplitterDistance = 480;
-                this.splitContainer9.SplitterWidth = 3;
-
-
-
-                
-
-                this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
-                this.splitContainer2.SplitterDistance = 500;
-
-                this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Vertical;
-                this.splitContainer4.SplitterDistance = 185;
-
-                this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
-                this.splitContainer3.SplitterDistance = 110;
-                //this.splitContainer3.BorderStyle = BorderStyle.Fixed3D;
-
-                imgPanelWidth = 640;
-                imgPanelHeight = 488;
-                imgWidth = 640;
-                imgHeight = 480;
-                btnX = 160;
-                btnY = 305;
-                setSLandT();
-
-                FillStampInfoPanel();
-
-
-
-                if (dataGridView1.SelectedRows.Count == 0)
-                {
-                    btnSNext.Enabled = false;
-                    btnSEnd.Enabled = false;
-                    btnSPrevious.Enabled = false;
-                    btnSFirst.Enabled = false;
-                }
-
-                this.splitContainer3.Panel2.Controls.Add(btnSFirst);
-                this.splitContainer3.Panel2.Controls.Add(btnSPrevious);
-                this.splitContainer3.Panel2.Controls.Add(btnSNext);
-                this.splitContainer3.Panel2.Controls.Add(btnSEnd);
-
-
+                SModeChange();
+                CModeChange();
                 tsbChangeMode.Text = "管理模式";
             }
             else
@@ -1841,57 +1828,8 @@ namespace CollectionManager
                 if (tsbChangeMode.Text == "管理模式")
                 {
 
-                    this.splitContainer3.Panel2.Controls.Remove(btnSFirst);
-                    this.splitContainer3.Panel2.Controls.Remove(btnSPrevious);
-                    this.splitContainer3.Panel2.Controls.Remove(btnSNext);
-                    this.splitContainer3.Panel2.Controls.Remove(btnSEnd);
-
-                    //if (dataGridView1.SelectedRows.Count != 0)
-                    //{
-                    //    dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.SelectedRows[0].Index));
-                    //}
-
-                    setSLandT();
-
-
-                    imgPanelWidth = 200;
-                    imgPanelHeight = 185;
-                    imgWidth = 200;
-                    imgHeight = 150;
-                    btnX = 60;
-                    btnY = 155;
-                    
-                    
-                    this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Vertical;
-                    this.splitContainer3.SplitterDistance = 318;
-
-                    
-
-                    this.splitContainer2.Panel1.Controls.Remove(this.flowLayoutPanel1);
-                    this.splitContainer2.SplitterDistance = 200;
-
-                    this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
-
-                    this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
-                    this.splitContainer4.Size = new System.Drawing.Size(318, 439);
-                    this.splitContainer4.SplitterDistance = 228;
-                    this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
-                    if (this.dataGridView1.Rows.Count != 0)
-                    {
-                        this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
-                    }
-                    this.dataGridView1.Dock = DockStyle.Fill;
-                    this.splitContainer1.Panel1.Controls.Remove(this.splitContainer9);
-                    this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-
-
-                    FillStampInfoPanel();
-
-
-
-
-
-
+                    SRestoreChange();
+                    CRestoreChange();
                     tsbChangeMode.Text = "欣赏模式";
 
                 }
@@ -1900,6 +1838,189 @@ namespace CollectionManager
 
         }
 
+        private void SRestoreChange()
+        {
+            this.splitContainer3.Panel2.Controls.Remove(btnSFirst);
+            this.splitContainer3.Panel2.Controls.Remove(btnSPrevious);
+            this.splitContainer3.Panel2.Controls.Remove(btnSNext);
+            this.splitContainer3.Panel2.Controls.Remove(btnSEnd);
+
+            setSLandT();
+
+
+            imgPanelWidth = 200;
+            imgPanelHeight = 185;
+            imgWidth = 200;
+            imgHeight = 150;
+            btnX = 60;
+            btnY = 155;
+
+
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.splitContainer3.SplitterDistance = 318;
+
+            this.splitContainer2.Panel1.Controls.Remove(this.flowLayoutPanel1);
+            this.splitContainer2.SplitterDistance = 200;
+
+            this.splitContainer3.Panel2.Controls.Add(this.flowLayoutPanel1);
+
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer4.Size = new System.Drawing.Size(318, 439);
+            this.splitContainer4.SplitterDistance = 228;
+            this.splitContainer2.Panel1.Controls.Add(this.dataGridView1);
+            if (this.dataGridView1.Rows.Count != 0)
+            {
+                this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
+            }
+            this.dataGridView1.Dock = DockStyle.Fill;
+            this.splitContainer1.Panel1.Controls.Remove(this.splitContainer9);
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+
+
+            FillStampInfoPanel();
+        }
+
+        private void SModeChange()
+        {
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer9);
+            this.splitContainer9.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer9.Panel1.AutoScroll = true;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer9.Panel2.Controls.Add(this.dataGridView1);
+            if (this.dataGridView1.Rows.Count != 0)
+            {
+                this.dataGridView1.Rows[SselectedRowIndex].Selected = true;
+            }
+            this.dataGridView1.Dock = DockStyle.None;
+            this.splitContainer9.Panel2.AutoScroll = true;
+            this.splitContainer9.SplitterDistance = 480;
+            this.splitContainer9.SplitterWidth = 3;
+
+            this.splitContainer2.Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer2.SplitterDistance = 500;
+
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.splitContainer4.SplitterDistance = 185;
+
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer3.SplitterDistance = 110;
+
+            imgPanelWidth = 640;
+            imgPanelHeight = 488;
+            imgWidth = 640;
+            imgHeight = 480;
+            btnX = 160;
+            btnY = 305;
+
+            setSLandT();
+
+            FillStampInfoPanel();
+
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                btnSNext.Enabled = false;
+                btnSEnd.Enabled = false;
+                btnSPrevious.Enabled = false;
+                btnSFirst.Enabled = false;
+            }
+
+            this.splitContainer3.Panel2.Controls.Add(btnSFirst);
+            this.splitContainer3.Panel2.Controls.Add(btnSPrevious);
+            this.splitContainer3.Panel2.Controls.Add(btnSNext);
+            this.splitContainer3.Panel2.Controls.Add(btnSEnd);
+        }
+
+
+        private void CModeChange()
+        {
+            this.splitContainer5.Panel1.Controls.Add(this.splitContainer10);
+            this.splitContainer10.Panel1.Controls.Add(this.treeView2);
+            this.splitContainer10.Panel1.AutoScroll = true;
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer10.Panel2.Controls.Add(this.dataGridView2);
+            if (this.dataGridView2.Rows.Count != 0)
+            {
+                this.dataGridView2.Rows[CselectedRowIndex].Selected = true;
+            }
+            this.dataGridView2.Dock = DockStyle.None;
+            this.splitContainer10.Panel2.AutoScroll = true;
+            this.splitContainer10.SplitterDistance = 480;
+            this.splitContainer10.SplitterWidth = 3;
+
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer7.SplitterDistance = 110;
+
+            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.splitContainer8.SplitterDistance = 440;
+            this.splitContainer6.Panel1.Controls.Add(this.flowLayoutPanel2);
+            this.splitContainer6.SplitterDistance = 500;
+
+
+            imgPanelWidth = 640;
+            imgPanelHeight = 488;
+            imgWidth = 640;
+            imgHeight = 480;
+            btnX = 160;
+            btnY = 305;
+
+            setCLandT();
+
+            FillCoinInfoPanel();
+
+            if (dataGridView2.SelectedRows.Count == 0)
+            {
+                btnCNext.Enabled = false;
+                btnCEnd.Enabled = false;
+                btnCPrevious.Enabled = false;
+                btnCFirst.Enabled = false;
+            }
+
+            this.splitContainer7.Panel2.Controls.Add(btnCFirst);
+            this.splitContainer7.Panel2.Controls.Add(btnCPrevious);
+            this.splitContainer7.Panel2.Controls.Add(btnCNext);
+            this.splitContainer7.Panel2.Controls.Add(btnCEnd);
+        }
+        private void CRestoreChange()
+        {
+            this.splitContainer7.Panel2.Controls.Remove(btnCFirst);
+            this.splitContainer7.Panel2.Controls.Remove(btnCPrevious);
+            this.splitContainer7.Panel2.Controls.Remove(btnCNext);
+            this.splitContainer7.Panel2.Controls.Remove(btnCEnd);
+
+            setCLandT();
+
+
+            imgPanelWidth = 200;
+            imgPanelHeight = 185;
+            imgWidth = 200;
+            imgHeight = 150;
+            btnX = 60;
+            btnY = 155;
+
+
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.splitContainer7.SplitterDistance = 318;
+
+            this.splitContainer6.Panel1.Controls.Remove(this.flowLayoutPanel2);
+            this.splitContainer6.SplitterDistance = 200;
+
+            this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel2);
+
+            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainer8.Size = new System.Drawing.Size(318, 439);
+            this.splitContainer8.SplitterDistance = 228;
+            this.splitContainer6.Panel1.Controls.Add(this.dataGridView2);
+            if (this.dataGridView2.Rows.Count != 0)
+            {
+                this.dataGridView2.Rows[CselectedRowIndex].Selected = true;
+            }
+            this.dataGridView2.Dock = DockStyle.Fill;
+            this.splitContainer5.Panel1.Controls.Remove(this.splitContainer10);
+            this.splitContainer5.Panel1.Controls.Add(this.treeView2);
+
+
+            FillCoinInfoPanel();
+        }
         private void setSLandT()
         {
 
@@ -2078,7 +2199,118 @@ namespace CollectionManager
             }
         }
 
+        private void setCLandT()
+        {
 
+
+            if (tsbChangeMode.Text == "欣赏模式")
+            {
+
+
+                // 
+                // tbCType
+                // 
+                this.tbCType.Location = new System.Drawing.Point(298, 32);
+                this.tbCType.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbCClass
+                // 
+                this.tbCClass.Location = new System.Drawing.Point(298, 61);
+                this.tbCClass.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbCPrice
+                // 
+                this.tbCPrice.Location = new System.Drawing.Point(298, 3);
+                this.tbCPrice.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbCUnit
+                // 
+                this.tbCUnit.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbCPubDate
+                // 
+                this.tbCPubDate.Size = new System.Drawing.Size(140, 26);
+                // 
+                // tbCPublisher
+                // 
+                this.tbCPublisher.Size = new System.Drawing.Size(140, 26);
+                // 
+                // label9
+                // 
+                this.label9.Location = new System.Drawing.Point(222, 93);
+                // 
+                // label10
+                // 
+                this.label10.Location = new System.Drawing.Point(222, 64);
+                // 
+                // label11
+                // 
+                this.label11.Location = new System.Drawing.Point(222, 35);
+                // 
+                // label12
+                // 
+                this.label12.Location = new System.Drawing.Point(222, 7);
+                // 
+                // tbCName
+                // 
+                this.tbCName.Size = new System.Drawing.Size(140, 26);
+            }
+            else
+            {
+                if (tsbChangeMode.Text == "管理模式")
+                {
+
+                    // 
+                    // label9
+                    // 
+                    this.label9.Location = new System.Drawing.Point(6, 208);
+                    // 
+                    // tbCType
+                    // 
+                    this.tbCType.Location = new System.Drawing.Point(82, 177);
+                    this.tbCType.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbCClass
+                    // 
+                    this.tbCClass.Location = new System.Drawing.Point(82, 148);
+                    this.tbCClass.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbCPrice
+                    // 
+                    this.tbCPrice.Location = new System.Drawing.Point(82, 119);
+                    this.tbCPrice.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbCUnit
+                    // 
+                    this.tbCUnit.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbCPubDate
+                    // 
+                    this.tbCPubDate.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // tbCPublisher
+                    // 
+                    this.tbCPublisher.Size = new System.Drawing.Size(235, 26);
+                    // 
+                    // label10
+                    // 
+                    this.label10.Location = new System.Drawing.Point(6, 180);
+                    // 
+                    // label11
+                    // 
+                    this.label11.Location = new System.Drawing.Point(5, 151);
+                    // 
+                    // label12
+                    // 
+                    this.label12.Location = new System.Drawing.Point(6, 122);
+                    // 
+                    // tbCName
+                    // 
+                    this.tbCName.Size = new System.Drawing.Size(235, 26);
+                }
+            }
+
+        }
 
         private void btnSNext_Click(object sender, EventArgs e)
         {
@@ -2126,6 +2358,57 @@ namespace CollectionManager
                 dataGridView1.Rows[dataGridView1.Rows.Count-1].Selected = true;
                 
                 dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.Rows.Count - 1));
+
+            }
+        }
+
+
+        private void btnCNext_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                int i = dataGridView2.SelectedRows[0].Index;
+                i++;
+                dataGridView2.Rows[i].Selected = true;
+                dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, i));
+
+
+            }
+
+        }
+
+        private void btnCPrevious_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                int i = dataGridView2.SelectedRows[0].Index;
+                i--;
+                dataGridView2.Rows[i].Selected = true;
+                dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, i));
+
+
+            }
+        }
+
+        private void btnCFirst_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+
+                dataGridView2.Rows[0].Selected = true;
+                dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
+
+
+            }
+        }
+
+        private void btnCEnd_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count != 0)
+            {
+                dataGridView2.Rows[dataGridView2.Rows.Count - 1].Selected = true;
+
+                dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView2.Rows.Count - 1));
 
             }
         }
