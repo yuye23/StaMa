@@ -176,7 +176,6 @@
       <DependentUpon>ClassManageForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="DATA\Database\CollectionDataSet.xsc">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
     </None>
@@ -188,6 +187,7 @@
     <None Include="DATA\Database\CollectionDataSet.xss">
       <DependentUpon>CollectionDataSet.xsd</DependentUpon>
     </None>
+    <None Include="help.mht" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1905,7 +1905,8 @@ namespace CollectionManager
 
         private void tsmiHelp_Click(object sender, EventArgs e)
         {
-
+            DirectoryInfo TheFolder = new DirectoryInfo(System.Windows.Forms.Application.StartupPath);
+            System.Diagnostics.Process.Start(TheFolder+"\\help.mht");
         }
 
         private void tsmiAbout_Click(object sender, EventArgs e)
