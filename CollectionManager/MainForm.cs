@@ -192,12 +192,20 @@ namespace CollectionManager
                     {
                         this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView1.SelectedNode.Name, typeof(int))))));
                         ClearStampInfoPanel();
-                        if (dataGridView1.Rows.Count != 0)
+                        if (dataGridView1.Rows.Count == 0)
+                        {
+
+                            btnSEnd.Enabled = false;
+                            btnSFirst.Enabled = false;
+                            btnSNext.Enabled = false;
+                            btnSPrevious.Enabled = false;
+                        }
+                        else
                         {
                             dataGridView1.Rows[0].Selected = true;
-                            dataGridView1_CellClick(sender,new DataGridViewCellEventArgs(0,0));
-                            //FillStampInfoPanel();
+                            dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
                         }
+
 
                     }
                     catch (System.Exception ex)
@@ -248,6 +256,19 @@ namespace CollectionManager
                 {
                     this.view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, 1);
                     ClearStampInfoPanel();
+                    if (dataGridView1.Rows.Count == 0)
+                    {
+
+                        btnSEnd.Enabled = false;
+                        btnSFirst.Enabled = false;
+                        btnSNext.Enabled = false;
+                        btnSPrevious.Enabled = false;
+                    }
+                    else
+                    {
+                        dataGridView1.Rows[0].Selected = true;
+                        dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
+                    }
 
                 }
                 catch (System.Exception ex)
@@ -373,7 +394,15 @@ namespace CollectionManager
                     {
                         this.view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, new System.Nullable<int>(((int)(System.Convert.ChangeType(this.treeView2.SelectedNode.Name, typeof(int))))));
                         ClearCoinInfoPanel();
-                        if (dataGridView2.Rows.Count != 0)
+                        if (dataGridView2.Rows.Count == 0)
+                        {
+
+                            btnCEnd.Enabled = false;
+                            btnCFirst.Enabled = false;
+                            btnCNext.Enabled = false;
+                            btnCPrevious.Enabled = false;
+                        }
+                        else
                         {
                             dataGridView2.Rows[0].Selected = true;
                             dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
@@ -428,6 +457,19 @@ namespace CollectionManager
                 {
                     this.view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, 1);
                     ClearCoinInfoPanel();
+                    if (dataGridView2.Rows.Count == 0)
+                    {
+
+                        btnCEnd.Enabled = false;
+                        btnCFirst.Enabled = false;
+                        btnCNext.Enabled = false;
+                        btnCPrevious.Enabled = false;
+                    }
+                    else
+                    {
+                        dataGridView2.Rows[0].Selected = true;
+                        dataGridView2_CellClick(sender, new DataGridViewCellEventArgs(0, 0));
+                    }
 
                 }
                 catch (System.Exception ex)
@@ -1808,7 +1850,8 @@ namespace CollectionManager
 
         private void tsmiAbout_Click(object sender, EventArgs e)
         {
-
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.Show();
         }
         
         private void tsbChangeMode_Click(object sender, EventArgs e)
