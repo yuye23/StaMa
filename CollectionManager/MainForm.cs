@@ -1402,6 +1402,10 @@ namespace CollectionManager
                 //this.treeView1.SelectedNode = this.treeView1.Nodes[addStampForm.Tag.ToString()];
                 ClearStampInfoPanel();
                 //treeView1_AfterSelect(sender, new TreeViewEventArgs(this.treeView1.SelectedNode, new TreeViewAction()));
+                
+                
+                
+                
                 dataGridView1.Rows[dataGridView1.Rows.Count - 1].Selected = true;
                 dataGridView1_CellClick(sender, new DataGridViewCellEventArgs(0, dataGridView1.Rows.Count - 1));
             }
@@ -1438,12 +1442,40 @@ namespace CollectionManager
             if (dataGridView1.SelectedRows.Count != 0)
             {
                 int selectedrow = dataGridView1.SelectedRows[0].Index;
-                addStampForm.Tag = dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value;
+                int selectedid=Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["idDataGridViewTextBoxColumn"].Value);
+                addStampForm.Tag = selectedid;
                 if (addStampForm.ShowDialog() == DialogResult.OK)
                 {
+
+
+                    string Typeid = addStampForm.Tag.ToString();
+                    for (int i = 0; i < this.treeView1.Nodes.Count; i++)
+                    {
+                        if (this.treeView1.Nodes[i].Name == Typeid)
+                        {
+                            this.treeView1.SelectedNode = this.treeView1.Nodes[i];
+
+                        }
+                        if (this.treeView1.Nodes[i].Name != "-1" && this.treeView1.Nodes[i].Name != "-2")
+                        {
+                            SelectTree1NodeByID(this.treeView1.Nodes[i], Typeid);
+                        }
+                    }
                     ////////
-                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(selectedTreeNode.Name));
-                    this.treeView1.SelectedNode = selectedTreeNode;
+                    view_stampinfoTableAdapter.FillByTypeID(this.collectionDataSet.view_stampinfo, Convert.ToInt32(addStampForm.Tag.ToString()));
+                    //this.treeView1.SelectedNode = selectedTreeNode;
+
+                    if(dataGridView1.Rows.Count!=0)
+                    {
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            if (Convert.ToInt32(dataGridView1.Rows[i].Cells["idDataGridViewTextBoxColumn"].Value) == selectedid)
+                            {
+                                selectedrow = i;
+                            }
+                        }
+                    }
+                    
 
 
                     ClearStampInfoPanel();
@@ -1593,13 +1625,41 @@ namespace CollectionManager
             if (dataGridView2.SelectedRows.Count != 0)
             {
                 int selectedrow = dataGridView2.SelectedRows[0].Index;
-                addCoinForm.Tag = dataGridView2.SelectedRows[0].Cells["idCoinDataGridViewTextBoxColumn"].Value;
+                int selectedid = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["idCoinDataGridViewTextBoxColumn"].Value);
+                addCoinForm.Tag = selectedid;
                 if (addCoinForm.ShowDialog() == DialogResult.OK)
                 {
-                    ////////
-                    view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(selectedTreeNode.Name));
-                    this.treeView2.SelectedNode = selectedTreeNode;
 
+
+                    string Typeid = addCoinForm.Tag.ToString();
+                    for (int i = 0; i < this.treeView2.Nodes.Count; i++)
+                    {
+                        if (this.treeView2.Nodes[i].Name == Typeid)
+                        {
+                            this.treeView2.SelectedNode = this.treeView2.Nodes[i];
+
+                        }
+                        if (this.treeView2.Nodes[i].Name != "-1" && this.treeView2.Nodes[i].Name != "-2")
+                        {
+                            SelectTree2NodeByID(this.treeView2.Nodes[i], Typeid);
+                        }
+                    }
+                    ////////
+                    view_coininfoTableAdapter.FillByTypeID(this.collectionDataSet.view_coininfo, Convert.ToInt32(addCoinForm.Tag.ToString()));
+                    //this.treeView1.SelectedNode = selectedTreeNode;
+
+                    if (dataGridView2.Rows.Count != 0)
+                    {
+                        for (int i = 0; i < dataGridView2.Rows.Count; i++)
+                        {
+                            if (Convert.ToInt32(dataGridView2.Rows[i].Cells["idCoinDataGridViewTextBoxColumn"].Value) == selectedid)
+                            {
+                                selectedrow = i;
+                            }
+                        }
+                    }
+                    
+                    
 
                     ClearCoinInfoPanel();
                     dataGridView2.Rows[selectedrow].Selected = true;
@@ -1743,8 +1803,8 @@ namespace CollectionManager
             DataTable table1 = dataSet1.view_stampinfo;
             deleteUnnecessaryImge("\\DATA\\StampPicture\\", table1);
 
-            this.view_coininfoTableAdapter.Fill(this.dataSet1.view_coininfo);
-            DataTable table2 = dataSet1.view_stampinfo;
+            this.view_coininfoTableAdapter.Fill(this.dataSet2.view_coininfo);
+            DataTable table2 = dataSet2.view_coininfo;
             deleteUnnecessaryImge("\\DATA\\CoinPicture\\", table2);
 
         }
